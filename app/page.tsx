@@ -4,7 +4,7 @@ export default function Home() {
       {/* Hero */}
       <div className="mb-24 md:mb-32">
         <h1 className="text-[12vw] md:text-[9vw] leading-[0.85] font-sans font-bold tracking-tighter text-neutral-900 uppercase mb-12">
-          Jabir A.<br/>Haian
+          Jabir Abdullah<br/>Haian
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           <div className="md:col-span-4 font-mono text-xs uppercase tracking-widest text-neutral-500 space-y-2">

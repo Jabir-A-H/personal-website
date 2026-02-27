@@ -1,20 +1,18 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Jabir Abdullah Haian - Personal Portfolio
 
-# Run and deploy your AI Studio app
+One Shell, Multiple Faces. The more you look, the less you see.
 
-This contains everything you need to run your app locally.
+## Tech Stack
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS 4
+- Framer Motion
 
-View your app in AI Studio: https://ai.studio/apps/ff311611-e0b2-490c-900f-812cfad7571e
+## Development
+```bash
+npm install
+npm run dev
+```
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Deployment
+This project is configured for static export (`output: 'export'`) and automatically deploys to GitHub Pages via GitHub Actions on every push to the `main` branch.

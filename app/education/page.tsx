@@ -1,4 +1,10 @@
 import React from 'react';
+import TimelineCard from '../../components/TimelineCard';
+
+export const metadata = {
+  title: 'Education & Career | Jabir Abdullah Haian',
+  description: 'Academic background, timeline, and professional direction of Jabir Abdullah Haian.',
+};
 
 export default function AboutPage() {
   return (
@@ -31,53 +37,36 @@ export default function AboutPage() {
           
           <div className="space-y-8 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-neutral-300 before:to-transparent">
             
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-5 h-5 rounded-full border border-white bg-neutral-300 group-hover:bg-neutral-800 text-neutral-500 group-hover:text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors"></div>
-              <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-neutral-200 bg-white shadow-sm">
-                <div className="flex items-center justify-between space-x-2 mb-1">
-                  <div className="font-serif font-medium text-lg">University of Dhaka</div>
-                  <time className="font-mono text-xs text-neutral-500">Sep 2022 - Present</time>
-                </div>
-                <div className="text-sm font-medium text-neutral-800 mb-2">BBA, Accounting & Information Systems</div>
-                <div className="text-sm text-neutral-600">Exploring Forensic Accounting, Data Analytics, AI & Technology.</div>
-              </div>
-            </div>
+            <TimelineCard 
+              title="University of Dhaka"
+              date="Sep 2022 - Present"
+              role="BBA, Accounting & Information Systems"
+              description="Exploring Forensic Accounting, Data Analytics, AI & Technology."
+              skills={['Microsoft Products', 'Online Research', 'IT Management', 'Technical Support', 'Problem Solving', 'Cycling', 'IT Operations', 'Microsoft Excel', 'Accounting', 'Teamwork', 'Big Data', 'Microsoft Office', 'Communication', 'Table Tennis']}
+            />
 
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-5 h-5 rounded-full border border-white bg-neutral-300 group-hover:bg-neutral-800 text-neutral-500 group-hover:text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors"></div>
-              <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-neutral-200 bg-white shadow-sm">
-                <div className="flex items-center justify-between space-x-2 mb-1">
-                  <div className="font-serif font-medium text-lg">Al Hikmah Society</div>
-                  <time className="font-mono text-xs text-neutral-500">Jun 2024 - Present</time>
-                </div>
-                <div className="text-sm font-medium text-neutral-800 mb-2">Founding Member</div>
-                <div className="text-sm text-neutral-600">Islamic Finance and IT Management.</div>
-              </div>
-            </div>
+            <TimelineCard 
+              title="Notre Dame College"
+              date="Feb 2019 - Jun 2021"
+              role="HSC, Business Studies"
+              description="Activities and societies: Notre Dame Business Club, Notre Dame Information Technology Club. Attained perfect attendance certificate for 100% attendance. Ranked 35th out of 750 Students."
+              skills={['Microsoft Products', 'IT Management', 'Technical Support', 'Problem Solving', 'IT Operations', 'Accounting', 'HTML', 'C (Programming Language)', 'Microsoft Office']}
+            />
 
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-5 h-5 rounded-full border border-white bg-neutral-300 group-hover:bg-neutral-800 text-neutral-500 group-hover:text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors"></div>
-              <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-neutral-200 bg-white shadow-sm">
-                <div className="flex items-center justify-between space-x-2 mb-1">
-                  <div className="font-serif font-medium text-lg">Notre Dame College</div>
-                  <time className="font-mono text-xs text-neutral-500">Feb 2019 - Jun 2021</time>
-                </div>
-                <div className="text-sm font-medium text-neutral-800 mb-2">HSC, Business Studies</div>
-                <div className="text-sm text-neutral-600">Ranked 35th out of 750 Students. 100% attendance. Member of Business Club and IT Club.</div>
-              </div>
-            </div>
+            <TimelineCard 
+              title="Birshreshtha Noor Mohammad Public College"
+              date="Jan 2017 - May 2019"
+              role="SSC, Business Studies"
+              description="Activities and societies: Business Club, Chess Club. Got board scholarship for outstanding performance."
+              skills={['Microsoft Products', 'Problem Solving', 'Cycling', 'IT Operations', 'Microsoft Excel', 'Accounting', 'Microsoft Office']}
+            />
 
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-5 h-5 rounded-full border border-white bg-neutral-300 group-hover:bg-neutral-800 text-neutral-500 group-hover:text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors"></div>
-              <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-neutral-200 bg-white shadow-sm">
-                <div className="flex items-center justify-between space-x-2 mb-1">
-                  <div className="font-serif font-medium text-lg">BNMPC</div>
-                  <time className="font-mono text-xs text-neutral-500">Jan 2017 - May 2019</time>
-                </div>
-                <div className="text-sm font-medium text-neutral-800 mb-2">SSC, Business Studies</div>
-                <div className="text-sm text-neutral-600">Board scholarship for outstanding performance. Member of Business Club and Chess Club.</div>
-              </div>
-            </div>
+            <TimelineCard 
+              title="Birshreshtha Munshi Abdur Rouf Public College"
+              date="Dec 2013 - Dec 2016"
+              role="JSC"
+              skills={['Microsoft Products', 'Problem Solving', 'IT Operations', 'Microsoft Office']}
+            />
 
           </div>
         </section>

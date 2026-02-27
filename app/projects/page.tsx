@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Github, ExternalLink, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -12,7 +13,8 @@ const projects = [
     tech: ['JavaScript', 'Canvas', 'Visuals'],
     description: 'An interactive clock and visual web project exploring the concept of entropy through time representation.',
     repo: 'https://github.com/Jabir-A-H/entropy-clock',
-    live: 'https://jabir-a-h.github.io/entropy-clock/'
+    live: 'https://jabir-a-h.github.io/entropy-clock/',
+    image: 'https://picsum.photos/seed/entropy/800/450'
   },
   {
     id: '02',
@@ -20,7 +22,8 @@ const projects = [
     status: 'active',
     tech: ['FastAPI', 'Next.js', 'JWT'],
     description: 'A complete library management system with authentication, backend API, and a modern frontend interface.',
-    repo: 'https://github.com/Jabir-A-H/library-management'
+    repo: 'https://github.com/Jabir-A-H/library-management',
+    image: 'https://picsum.photos/seed/library/800/450'
   },
   {
     id: '03',
@@ -28,7 +31,8 @@ const projects = [
     status: 'completed',
     tech: ['HTML', 'CSS'],
     description: 'A redesigned and improved academic resort website project focusing on layout structure, UI clarity, and clean presentation.',
-    repo: 'https://github.com/Jabir-A-H/academic-resort'
+    repo: 'https://github.com/Jabir-A-H/academic-resort',
+    image: 'https://picsum.photos/seed/academic/800/450'
   },
   {
     id: '04',
@@ -36,7 +40,8 @@ const projects = [
     status: 'in-progress',
     tech: ['Godot', 'GDScript'],
     description: 'A monster-battling game concept combining strategic combat mechanics with character progression systems.',
-    repo: 'https://github.com/Jabir-A-H/soulbinders'
+    repo: 'https://github.com/Jabir-A-H/soulbinders',
+    image: 'https://picsum.photos/seed/soulbinders/800/450'
   },
   {
     id: '05',
@@ -44,7 +49,8 @@ const projects = [
     status: 'active',
     tech: ['Web Stack', 'Backend'],
     description: 'A structured report management system that processes and organizes user-submitted reports.',
-    repo: 'https://github.com/Jabir-A-H/report-submission'
+    repo: 'https://github.com/Jabir-A-H/report-submission',
+    image: 'https://picsum.photos/seed/report/800/450'
   },
   {
     id: '06',
@@ -53,7 +59,8 @@ const projects = [
     tech: ['React', 'Tailwind'],
     description: 'A media gallery web project designed for clean and immersive media presentation.',
     repo: 'https://github.com/Jabir-A-H/gallery',
-    live: 'https://jabir-a-h.github.io/gallery/'
+    live: 'https://jabir-a-h.github.io/gallery/',
+    image: 'https://picsum.photos/seed/gallery/800/450'
   },
   {
     id: '07',
@@ -61,7 +68,8 @@ const projects = [
     status: 'prototype',
     tech: ['Godot', 'GDScript'],
     description: 'A Godot-based game prototype exploring mechanics, movement systems, and gameplay experimentation.',
-    repo: 'https://github.com/Jabir-A-H/nightblade'
+    repo: 'https://github.com/Jabir-A-H/nightblade',
+    image: 'https://picsum.photos/seed/nightblade/800/450'
   },
   {
     id: '08',
@@ -69,7 +77,8 @@ const projects = [
     status: 'experimental',
     tech: ['Go'],
     description: 'A side-scrolling game project built to explore game mechanics and rendering logic using Go.',
-    repo: 'https://github.com/Jabir-A-H/Sidescroller'
+    repo: 'https://github.com/Jabir-A-H/Sidescroller',
+    image: 'https://picsum.photos/seed/sidescroller/800/450'
   }
 ];
 
@@ -93,7 +102,16 @@ export default function ProjectsPage() {
         <div 
           key={project.id}
           onClick={() => setSelectedProject(project)}
-          className="col-span-12 md:col-span-6 lg:col-span-4 group border border-neutral-800 bg-neutral-900/50 p-6 cursor-pointer hover:border-neutral-500 hover:bg-neutral-900 transition-all duration-300 flex flex-col"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setSelectedProject(project);
+            }
+          }}
+          tabIndex={0}
+          role="button"
+          aria-label={`View details for ${project.title}`}
+          className="col-span-12 md:col-span-6 lg:col-span-4 group border border-neutral-800 bg-neutral-900/50 p-6 cursor-pointer hover:border-neutral-500 hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-500 transition-all duration-300 flex flex-col"
         >
           <div className="flex justify-between items-start mb-8">
             <span className="text-xs text-neutral-600">{project.id}</span>
@@ -132,14 +150,26 @@ export default function ProjectsPage() {
             >
               <button 
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 text-neutral-500 hover:text-white transition-colors"
+                className="absolute top-4 right-4 text-neutral-500 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-500 rounded-sm"
+                aria-label="Close project details"
               >
                 <X className="w-5 h-5" />
               </button>
               
               <div className="mb-6">
                 <span className="text-xs text-neutral-500 mb-2 block">{selectedProject.id} {'//'} {selectedProject.status.toUpperCase()}</span>
-                <h2 className="text-3xl font-bold text-white">{selectedProject.title}</h2>
+                <h2 className="text-3xl font-bold text-white mb-4">{selectedProject.title}</h2>
+                {selectedProject.image && (
+                  <div className="relative w-full h-48 md:h-64 mb-6 border border-neutral-800 overflow-hidden">
+                    <Image 
+                      src={selectedProject.image} 
+                      alt={`Screenshot of ${selectedProject.title}`}
+                      fill
+                      className="object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                )}
               </div>
               
               <p className="text-neutral-400 mb-8 leading-relaxed font-sans">

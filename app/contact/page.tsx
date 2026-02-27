@@ -1,6 +1,11 @@
 import React from 'react';
 import { Mail, Github, Linkedin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
+export const metadata = {
+  title: 'Contact | Jabir Abdullah Haian',
+  description: 'Connect with Jabir Abdullah Haian via email, LinkedIn, GitHub, and other social platforms.',
+};
+
 const links = [
   { name: 'Email', url: 'mailto:jabirahaian@gmail.com', icon: Mail },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jabir-abdullah-haian/', icon: Linkedin },

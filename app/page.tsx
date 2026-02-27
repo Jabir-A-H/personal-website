@@ -1,9 +1,18 @@
+import { Metadata } from 'next';
+import ExperienceCard from '../components/ExperienceCard';
+import SectionHeader from '../components/SectionHeader';
+
+export const metadata: Metadata = {
+  title: 'Jabir Abdullah Haian | Portfolio',
+  description: 'BBA in Accounting & Information Systems at University of Dhaka. Exploring Forensic Accounting, Data Analytics & AI.',
+};
+
 export default function Home() {
   return (
     <div className="w-full max-w-7xl mx-auto py-12 md:py-24">
       {/* Hero */}
       <div className="mb-24 md:mb-32">
-        <h1 className="text-[12vw] md:text-[9vw] leading-[0.85] font-sans font-bold tracking-tighter text-neutral-900 uppercase mb-12">
+        <h1 className="text-[clamp(3rem,12vw,8rem)] md:text-[clamp(4rem,9vw,10rem)] leading-[0.85] font-sans font-bold tracking-tighter text-neutral-900 uppercase mb-12">
           Jabir Abdullah<br/>Haian
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
@@ -29,42 +38,32 @@ export default function Home() {
       {/* Experience Section */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
         <div className="md:col-span-4">
-          <h2 className="text-3xl md:text-4xl font-sans font-bold tracking-tighter uppercase sticky top-8">Leadership &<br/>Experience</h2>
+          <SectionHeader title={<>Leadership &<br/>Experience</>} />
         </div>
         <div className="md:col-span-8 space-y-16">
-          <div className="group">
-            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-              <h3 className="text-2xl md:text-3xl font-bold text-neutral-900">Al Hikmah Society</h3>
-              <span className="font-mono text-xs text-neutral-500 mt-2 md:mt-0">Jun 2024 — Present</span>
-            </div>
-            <p className="font-serif italic text-xl text-neutral-600 mb-4">Founding Member</p>
-            <p className="text-neutral-700">Islamic Finance and IT Management.</p>
-          </div>
-
-          <div className="group">
-            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-              <h3 className="text-2xl md:text-3xl font-bold text-neutral-900">Morning Riders</h3>
-              <span className="font-mono text-xs text-neutral-500 mt-2 md:mt-0">Apr 2024 — Sep 2025</span>
-            </div>
-            <p className="font-serif italic text-xl text-neutral-600 mb-4">President</p>
-            <p className="text-neutral-700">Inspiring and engaging the youth in our community through regular morning cycling sessions. &quot;Riding for Future&quot;.</p>
-          </div>
-
-          <div className="group">
-            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-              <h3 className="text-2xl md:text-3xl font-bold text-neutral-900">Team J</h3>
-              <span className="font-mono text-xs text-neutral-500 mt-2 md:mt-0">Jul 2021 — Present</span>
-            </div>
-            <p className="font-serif italic text-xl text-neutral-600">Founding President</p>
-          </div>
-
-          <div className="group">
-            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-              <h3 className="text-2xl md:text-3xl font-bold text-neutral-900">আলোকিত লাইব্রেরী</h3>
-              <span className="font-mono text-xs text-neutral-500 mt-2 md:mt-0">Dec 2018 — Present</span>
-            </div>
-            <p className="font-serif italic text-xl text-neutral-600">Secretariat Member</p>
-          </div>
+          <ExperienceCard 
+            title="Al Hikmah Society"
+            date="Jun 2024 — Present"
+            role="Founding Member"
+            description="Islamic Finance and IT Management."
+          />
+          <ExperienceCard 
+            title="Morning Riders"
+            date="Apr 2024 — Sep 2025"
+            role="President"
+            description="Inspired and engaged the youth in our community through regular morning cycling sessions. &quot;Riding for Future&quot;."
+          />
+          <ExperienceCard 
+            title="Team J"
+            date="Jul 2021 — Present"
+            role="Founding President"
+            description="A youth organization focused on skill development, community service, and fostering leadership among students."
+          />
+          <ExperienceCard 
+            title="আলোকিত লাইব্রেরী"
+            date="Dec 2018 — Present"
+            role="Secretariat Member"
+          />
         </div>
       </div>
 
@@ -73,34 +72,31 @@ export default function Home() {
       {/* Education Section */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
         <div className="md:col-span-4">
-          <h2 className="text-3xl md:text-4xl font-sans font-bold tracking-tighter uppercase sticky top-8">Education</h2>
+          <SectionHeader title="Education" />
         </div>
         <div className="md:col-span-8 space-y-16">
-          <div className="group">
-            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-              <h3 className="text-2xl md:text-3xl font-bold text-neutral-900">University of Dhaka</h3>
-              <span className="font-mono text-xs text-neutral-500 mt-2 md:mt-0">Sep 2022 — Present</span>
-            </div>
-            <p className="font-serif italic text-xl text-neutral-600 mb-4">BBA, Accounting & Information Systems</p>
-          </div>
-
-          <div className="group">
-            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-              <h3 className="text-2xl md:text-3xl font-bold text-neutral-900">Notre Dame College</h3>
-              <span className="font-mono text-xs text-neutral-500 mt-2 md:mt-0">Feb 2019 — Jun 2021</span>
-            </div>
-            <p className="font-serif italic text-xl text-neutral-600 mb-4">HSC, Business Studies</p>
-            <p className="text-neutral-700">Ranked 35th out of 750 Students. 100% attendance. Member of Business Club and IT Club.</p>
-          </div>
-
-          <div className="group">
-            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-              <h3 className="text-2xl md:text-3xl font-bold text-neutral-900">BNMPC</h3>
-              <span className="font-mono text-xs text-neutral-500 mt-2 md:mt-0">Jan 2017 — May 2019</span>
-            </div>
-            <p className="font-serif italic text-xl text-neutral-600 mb-4">SSC, Business Studies</p>
-            <p className="text-neutral-700">Board scholarship for outstanding performance. Member of Business Club and Chess Club.</p>
-          </div>
+          <ExperienceCard 
+            title="University of Dhaka"
+            date="Sep 2022 — Present"
+            role="BBA, Accounting & Information Systems"
+          />
+          <ExperienceCard 
+            title="Notre Dame College"
+            date="Feb 2019 — Jun 2021"
+            role="HSC, Business Studies"
+            description="Ranked 35th out of 750 Students. 100% attendance. Member of Business Club and IT Club."
+          />
+          <ExperienceCard 
+            title="Birshreshtha Noor Mohammad Public College"
+            date="Jan 2017 — May 2019"
+            role="SSC, Business Studies"
+            description="Board scholarship for outstanding performance. Member of Business Club and Chess Club."
+          />
+          <ExperienceCard 
+            title="Birshreshtha Munshi Abdur Rouf Public College"
+            date="Dec 2013 — Dec 2016"
+            role="JSC"
+          />
         </div>
       </div>
 
@@ -109,7 +105,7 @@ export default function Home() {
       {/* Certifications & Skills */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
-          <h2 className="text-3xl md:text-4xl font-sans font-bold tracking-tighter uppercase sticky top-8">Credentials</h2>
+          <SectionHeader title="Credentials" />
         </div>
         <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-12">
           <div>
@@ -133,11 +129,28 @@ export default function Home() {
           </div>
           <div>
             <h3 className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-8">Top Skills</h3>
-            <div className="flex flex-wrap gap-2">
-              {['Accounting', 'Financial Analysis', 'Data Analytics', 'IT Operations', 'Problem Solving', 'Microsoft Excel', 'Big Data', 'Communication'].map(skill => (
-                <span key={skill} className="text-xs font-mono bg-neutral-900 text-white px-3 py-2 rounded-sm">
-                  {skill}
-                </span>
+            <div className="space-y-4">
+              {[
+                { name: 'Accounting', level: 5 },
+                { name: 'Financial Analysis', level: 5 },
+                { name: 'Data Analytics', level: 4 },
+                { name: 'Problem Solving', level: 5 },
+                { name: 'Microsoft Excel', level: 5 },
+                { name: 'IT Operations', level: 4 },
+                { name: 'Big Data', level: 3 },
+                { name: 'Communication', level: 5 }
+              ].map(skill => (
+                <div key={skill.name} className="flex items-center justify-between group">
+                  <span className="text-sm font-mono text-neutral-800 group-hover:text-neutral-900 transition-colors">{skill.name}</span>
+                  <div className="flex gap-1" aria-label={`Proficiency: ${skill.level} out of 5`} title={`Proficiency: ${skill.level} out of 5`}>
+                    {[1, 2, 3, 4, 5].map(dot => (
+                      <div 
+                        key={dot} 
+                        className={`w-1.5 h-1.5 rounded-full ${dot <= skill.level ? 'bg-neutral-800' : 'bg-neutral-200'}`}
+                      />
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>

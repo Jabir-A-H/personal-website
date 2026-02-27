@@ -46,8 +46,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       transition={{ duration: 0.7, ease: 'easeInOut' }}
       className="min-h-screen w-full flex flex-col relative selection:bg-neutral-300 selection:text-black"
     >
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-neutral-900 text-white px-4 py-2 z-[100] font-mono text-xs uppercase tracking-widest rounded-sm">
+        Skip to content
+      </a>
       <Navigation />
       <main 
+        id="main-content"
         className="flex-1 w-full max-w-7xl mx-auto px-6 md:px-12 py-8 flex flex-col relative z-10"
         style={{ perspective: '1200px' }}
       >

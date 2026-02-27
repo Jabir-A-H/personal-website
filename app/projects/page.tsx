@@ -7,27 +7,69 @@ import { motion, AnimatePresence } from 'motion/react';
 const projects = [
   {
     id: '01',
-    title: 'Redefining the Role of Management Accountants',
-    status: 'research',
-    tech: ['MS Excel', 'Power BI', 'Python'],
-    description: 'A comprehensive research project exploring how data analytics is transforming management accounting in Bangladesh. Conducted mixed-method research using surveys and case studies.',
-    repo: 'https://www.linkedin.com/in/jabir-abdullah-haian/'
+    title: 'Entropy Clock',
+    status: 'live',
+    tech: ['JavaScript', 'Canvas', 'Visuals'],
+    description: 'An interactive clock and visual web project exploring the concept of entropy through time representation.',
+    repo: 'https://github.com/Jabir-A-H/entropy-clock',
+    live: 'https://jabir-a-h.github.io/entropy-clock/'
   },
   {
     id: '02',
-    title: 'Experimental System A',
-    status: 'learning',
-    tech: ['TypeScript', 'React'],
-    description: 'A sandbox for testing new frontend architectures and state management patterns.',
-    repo: 'https://github.com/Jabir-A-H/'
+    title: 'Library Management System',
+    status: 'active',
+    tech: ['FastAPI', 'Next.js', 'JWT'],
+    description: 'A complete library management system with authentication, backend API, and a modern frontend interface.',
+    repo: 'https://github.com/Jabir-A-H/library-management'
   },
   {
     id: '03',
-    title: 'Utility Scripts',
+    title: 'Academic Resort',
+    status: 'completed',
+    tech: ['HTML', 'CSS'],
+    description: 'A redesigned and improved academic resort website project focusing on layout structure, UI clarity, and clean presentation.',
+    repo: 'https://github.com/Jabir-A-H/academic-resort'
+  },
+  {
+    id: '04',
+    title: 'Soulbinders',
+    status: 'in-progress',
+    tech: ['Godot', 'GDScript'],
+    description: 'A monster-battling game concept combining strategic combat mechanics with character progression systems.',
+    repo: 'https://github.com/Jabir-A-H/soulbinders'
+  },
+  {
+    id: '05',
+    title: 'Report Submission System',
     status: 'active',
-    tech: ['Bash', 'Node.js'],
-    description: 'Collection of automation scripts for daily workflow optimization.',
-    repo: 'https://github.com/Jabir-A-H/'
+    tech: ['Web Stack', 'Backend'],
+    description: 'A structured report management system that processes and organizes user-submitted reports.',
+    repo: 'https://github.com/Jabir-A-H/report-submission'
+  },
+  {
+    id: '06',
+    title: 'Gallery',
+    status: 'live',
+    tech: ['React', 'Tailwind'],
+    description: 'A media gallery web project designed for clean and immersive media presentation.',
+    repo: 'https://github.com/Jabir-A-H/gallery',
+    live: 'https://jabir-a-h.github.io/gallery/'
+  },
+  {
+    id: '07',
+    title: 'Nightblade',
+    status: 'prototype',
+    tech: ['Godot', 'GDScript'],
+    description: 'A Godot-based game prototype exploring mechanics, movement systems, and gameplay experimentation.',
+    repo: 'https://github.com/Jabir-A-H/nightblade'
+  },
+  {
+    id: '08',
+    title: 'Sidescroller',
+    status: 'experimental',
+    tech: ['Go'],
+    description: 'A side-scrolling game project built to explore game mechanics and rendering logic using Go.',
+    repo: 'https://github.com/Jabir-A-H/Sidescroller'
   }
 ];
 
@@ -110,7 +152,18 @@ export default function ProjectsPage() {
                 ))}
               </div>
               
-              <div className="border-t border-neutral-800 pt-6 flex justify-end">
+              <div className="border-t border-neutral-800 pt-6 flex justify-end gap-4">
+                {selectedProject.live && (
+                  <a 
+                    href={selectedProject.live} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm border border-white text-white px-4 py-2 hover:bg-white hover:text-black transition-colors font-bold"
+                  >
+                    <span>Live Demo</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
                 <a 
                   href={selectedProject.repo} 
                   target="_blank" 
@@ -118,7 +171,7 @@ export default function ProjectsPage() {
                   className="flex items-center gap-2 text-sm bg-white text-black px-4 py-2 hover:bg-neutral-200 transition-colors font-bold"
                 >
                   <span>View Repository</span>
-                  <ExternalLink className="w-4 h-4" />
+                  <Github className="w-4 h-4" />
                 </a>
               </div>
             </motion.div>

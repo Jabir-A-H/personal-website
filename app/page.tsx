@@ -35,8 +35,8 @@ export default function Home() {
           <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-neutral-900 transition-colors transform group-hover:translate-x-1" />
         </Link>
 
-        <Link href="/notes" className="group block p-6 border border-dashed border-neutral-300 hover:border-neutral-900 transition-colors bg-white">
-          <h2 className="font-mono text-xs tracking-widest uppercase mb-4 text-neutral-500 group-hover:text-neutral-900 transition-colors">04. Notes</h2>
+        <Link href="/whispers" className="group block p-6 border border-dashed border-neutral-300 hover:border-neutral-900 transition-colors bg-white">
+          <h2 className="font-mono text-xs tracking-widest uppercase mb-4 text-neutral-500 group-hover:text-neutral-900 transition-colors">04. Whispers</h2>
           <p className="text-sm text-neutral-600 mb-6">Reflections, learning notes, and knowledge maps.</p>
           <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-neutral-900 transition-colors transform group-hover:translate-x-1" />
         </Link>

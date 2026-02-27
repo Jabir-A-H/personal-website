@@ -15,7 +15,7 @@ export default function AboutPage() {
             Assalamualaikum. I am a BBA student at the University of Dhaka, majoring in Accounting and Information Systems. This field perfectly aligns with my passion for data analysis, problem-solving, and innovation.
           </p>
           <p className="text-sm leading-relaxed mb-6">
-            My core interests include accounting, financial analysis, and my ambition to become a Chartered Accountant. I'm committed to collaboration, continuous learning, and teamwork.
+            My core interests include accounting, financial analysis, and my ambition to become a Chartered Accountant. I&apos;m committed to collaboration, continuous learning, and teamwork.
           </p>
           <div className="h-[1px] w-12 bg-neutral-300 mb-6"></div>
           <ul className="space-y-2 font-mono text-xs text-neutral-500">

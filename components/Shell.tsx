@@ -12,7 +12,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   if (pathname === '/projects') bgColor = '#0a0a0a'; // neutral-950
   if (pathname === '/visual') bgColor = '#000000'; // black
   if (pathname === '/about') bgColor = '#f5f5f0'; // paper
-  if (pathname === '/notes') bgColor = '#f8fafc'; // slate-50
+  if (pathname === '/whispers') bgColor = '#f8fafc'; // slate-50
   if (pathname === '/contact') bgColor = '#ffffff'; // white
 
   return (

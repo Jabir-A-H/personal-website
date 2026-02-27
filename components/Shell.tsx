@@ -3,15 +3,13 @@
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import Navigation from './Navigation';
-import Footer from './Footer';
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   let bgColor = '#fafafa'; // neutral-50
   if (pathname === '/projects') bgColor = '#0a0a0a'; // neutral-950
-  if (pathname === '/visual') bgColor = '#000000'; // black
-  if (pathname === '/about') bgColor = '#f5f5f0'; // paper
+  if (pathname === '/education') bgColor = '#f5f5f0'; // paper
   if (pathname === '/whispers') bgColor = '#f8fafc'; // slate-50
   if (pathname === '/contact') bgColor = '#ffffff'; // white
 
@@ -36,7 +34,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           </motion.div>
         </AnimatePresence>
       </main>
-      <Footer />
     </motion.div>
   );
 }

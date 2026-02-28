@@ -1,0 +1,197 @@
+{
+  "personal": {
+    "name": "Jabir Abdullah Haian",
+    "location": "Dhaka, Bangladesh",
+    "email": "jabirahaian@gmail.com",
+    "headline": "BBA in Accounting & Information Systems at University of Dhaka. Exploring Forensic Accounting, Data Analytics & AI.",
+    "bio": "I apply data-driven insights to enhance processes and solve problems. My core interests include accounting, financial analysis, and my ambition to become a Chartered Accountant. I am committed to collaboration, continuous learning, and teamwork.",
+    "shortTags": [
+      "CA, ICAB (5%)",
+      "Aspire 25 Alumni"
+    ]
+  },
+  "endpoints": [
+    { "name": "Email", "url": "mailto:jabirahaian@gmail.com", "handle": "jabirahaian@gmail.com" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/jabir-abdullah-haian/", "handle": "in/jabir-abdullah-haian" },
+    { "name": "GitHub", "url": "https://github.com/Jabir-A-H/", "handle": "@Jabir-A-H" },
+    { "name": "Telegram", "url": "https://t.me/jabirah", "handle": "@jabirah" },
+    { "name": "Twitter", "url": "https://twitter.com/JabirHaian", "handle": "@JabirHaian" },
+    { "name": "Instagram", "url": "https://www.instagram.com/jabir_a_haian", "handle": "@jabir_a_haian" },
+    { "name": "WordPress", "url": "https://jabirahn.wordpress.com", "handle": "jabirahn.wordpress.com" },
+    { "name": "YouTube", "url": "https://www.youtube.com/jabirabdullahhaian", "handle": "@jabirabdullahhaian" }
+  ],
+  "projects": [
+    {
+      "title": "Gallery",
+      "status": "live",
+      "tech": ["React", "Tailwind"],
+      "description": "A media gallery web project designed for clean and immersive media presentation.",
+      "live": "https://jabir-a-h.github.io/gallery/"
+    },
+    {
+      "title": "Entropy Clock",
+      "status": "live",
+      "tech": ["JavaScript", "Canvas", "Visuals"],
+      "description": "An interactive clock and visual web project exploring the concept of entropy through time representation.",
+      "live": "https://jabir-a-h.github.io/entropy-clock/"
+    },
+    {
+      "title": "Report Submission System",
+      "status": "live",
+      "tech": ["Python", "Flask", "PostgreSQL", "Tailwind"],
+      "description": "A comprehensive Bengali report submission and management system featuring role-based access control, zone-based organization, and analytics.",
+      "repo": "https://github.com/Jabir-A-H/report-submission",
+      "live": "https://jabir-a-h.github.io/report-submission/"
+    },
+    {
+      "title": "Academic Resort",
+      "status": "live",
+      "tech": ["Vanilla JS", "Google Drive API", "PWA"],
+      "description": "An advanced, highly optimized academic resource platform featuring multi-dimensional filtering, real-time search, and a template-based architecture.",
+      "repo": "https://github.com/Jabir-A-H/academic-resort",
+      "live": "https://jabir-a-h.github.io/academic-resort/"
+    },
+    {
+      "title": "Library Management System",
+      "status": "active",
+      "tech": ["FastAPI", "Next.js", "JWT"],
+      "description": "A complete library management system with authentication, backend API, and a modern frontend interface.",
+      "repo": "https://github.com/Jabir-A-H/library-management"
+    },
+    {
+      "title": "Soulbinders",
+      "status": "in-progress",
+      "tech": ["Godot", "GDScript"],
+      "description": "A monster-battling game concept combining strategic combat mechanics with character progression systems.",
+      "repo": "https://github.com/Jabir-A-H/soulbinders"
+    },
+    {
+      "title": "Nightblade",
+      "status": "prototype",
+      "tech": ["Godot", "GDScript"],
+      "description": "A Godot-based game prototype exploring mechanics, movement systems, and gameplay experimentation.",
+      "repo": "https://github.com/Jabir-A-H/nightblade"
+    },
+    {
+      "title": "Sidescroller",
+      "status": "experimental",
+      "tech": ["Go"],
+      "description": "A side-scrolling game project built to explore game mechanics and rendering logic using Go.",
+      "repo": "https://github.com/Jabir-A-H/Sidescroller"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Al Hikmah Society",
+      "date": "Jun 2024 — Present",
+      "role": "Founding Member",
+      "description": "Islamic Finance and IT Management."
+    },
+    {
+      "title": "Morning Riders",
+      "date": "Apr 2024 — Sep 2025",
+      "role": "President",
+      "description": "Inspired and engaged the youth in our community through regular morning cycling sessions. \"Riding for Future\"."
+    },
+    {
+      "title": "Team J",
+      "date": "Jul 2021 — Present",
+      "role": "Founding President",
+      "description": "A youth organization focused on skill development, community service, and fostering leadership among students."
+    },
+    {
+      "title": "আলোকিত লাইব্রেরী",
+      "date": "Dec 2018 — Present",
+      "role": "Secretariat Member"
+    }
+  ],
+  "education": [
+    {
+      "title": "University of Dhaka",
+      "date": "Sep 2022 - Present",
+      "role": "BBA, Accounting & Information Systems",
+      "description": "Exploring Forensic Accounting, Data Analytics, AI & Technology.",
+      "skills": ["Microsoft Products", "Online Research", "IT Management", "Technical Support", "Problem Solving", "Cycling", "IT Operations", "Microsoft Excel", "Accounting", "Teamwork", "Big Data", "Microsoft Office", "Communication", "Table Tennis"]
+    },
+    {
+      "title": "Notre Dame College",
+      "date": "Feb 2019 - Jun 2021",
+      "role": "HSC, Business Studies",
+      "description": "Activities and societies: Notre Dame Business Club, Notre Dame Information Technology Club. Attained perfect attendance certificate for 100% attendance. Ranked 35th out of 750 Students.",
+      "skills": ["Microsoft Products", "IT Management", "Technical Support", "Problem Solving", "IT Operations", "Accounting", "HTML", "C (Programming Language)", "Microsoft Office"]
+    },
+    {
+      "title": "Birshreshtha Noor Mohammad Public College",
+      "date": "Jan 2017 - May 2019",
+      "role": "SSC, Business Studies",
+      "description": "Activities and societies: Business Club, Chess Club. Got board scholarship for outstanding performance.",
+      "skills": ["Microsoft Products", "Problem Solving", "Cycling", "IT Operations", "Microsoft Excel", "Accounting", "Microsoft Office"]
+    },
+    {
+      "title": "Birshreshtha Munshi Abdur Rouf Public College",
+      "date": "Dec 2013 - Dec 2016",
+      "role": "JSC",
+      "skills": ["Microsoft Products", "Problem Solving", "IT Operations", "Microsoft Office"]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Aspire Leaders Program",
+      "issuer": "Aspire Institute",
+      "date": "Oct 2025"
+    },
+    {
+      "title": "Fundamentals of Digital Marketing",
+      "issuer": "Google",
+      "date": "May 2024"
+    },
+    {
+      "title": "Big Data Foundations - Level 1"
+    },
+    {
+      "title": "Microsoft Excel - Beginner to Expert"
+    }
+  ],
+  "skills": [
+    { "name": "Accounting", "level": 5 },
+    { "name": "Financial Analysis", "level": 5 },
+    { "name": "Data Analytics", "level": 4 },
+    { "name": "Problem Solving", "level": 5 },
+    { "name": "Microsoft Excel", "level": 5 },
+    { "name": "IT Operations", "level": 4 },
+    { "name": "Big Data", "level": 3 },
+    { "name": "Communication", "level": 5 }
+  ],
+  "whispers": [
+    {
+      "date": "2026.02.27",
+      "title": "The Entropy of Time",
+      "content": "Time doesn't just pass; it disperses. My Entropy Clock project was an attempt to visualize this—how order slowly yields to chaos, yet remains measurable.",
+      "tags": ["reflection", "physics", "code"]
+    },
+    {
+      "date": "2026.02.15",
+      "title": "Accounting as a Language",
+      "content": "We often think of accounting as math, but it's actually a grammar for value. It defines the relationships between entities through a strict, logical syntax.",
+      "tags": ["accounting", "theory"]
+    },
+    {
+      "date": "2026.01.20",
+      "title": "The Silent Gallery",
+      "content": "Photography is about what you leave out of the frame. The most powerful images are often the ones that whisper rather than shout.",
+      "tags": ["photography", "art"]
+    },
+    {
+      "date": "2025.12.10",
+      "title": "Systems vs. Goals",
+      "content": "Building a library management system taught me that the goal (organizing books) is secondary to the system (managing state). If the system is robust, the goal is inevitable.",
+      "tags": ["tech", "systems"]
+    },
+    {
+      "date": "2025.11.05",
+      "title": "Learning in Public",
+      "content": "My GitHub is a messy record of my curiosity. Not everything is a \"project,\" but everything is a step. The \"Nightblade\" prototype was a failure in mechanics but a triumph in learning Godot.",
+      "tags": ["meta", "learning"]
+    }
+  ]
+}

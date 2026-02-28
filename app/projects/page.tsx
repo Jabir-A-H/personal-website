@@ -3,69 +3,10 @@
 import React from 'react';
 import { Github, ExternalLink, ArrowUpRight, Terminal } from 'lucide-react';
 import { motion } from 'motion/react';
-
-const projects = [
-  {
-    title: 'Gallery',
-    status: 'live',
-    tech: ['React', 'Tailwind'],
-    description: 'A media gallery web project designed for clean and immersive media presentation.',
-    live: 'https://jabir-a-h.github.io/gallery/'
-  },
-  {
-    title: 'Entropy Clock',
-    status: 'live',
-    tech: ['JavaScript', 'Canvas', 'Visuals'],
-    description: 'An interactive clock and visual web project exploring the concept of entropy through time representation.',
-    live: 'https://jabir-a-h.github.io/entropy-clock/'
-  },
-  {
-    title: 'Report Submission System',
-    status: 'live',
-    tech: ['Python', 'Flask', 'PostgreSQL', 'Tailwind'],
-    description: 'A comprehensive Bengali report submission and management system featuring role-based access control, zone-based organization, and analytics.',
-    repo: 'https://github.com/Jabir-A-H/report-submission',
-    live: 'https://jabir-a-h.github.io/report-submission/'
-  },
-  {
-    title: 'Academic Resort',
-    status: 'live',
-    tech: ['Vanilla JS', 'Google Drive API', 'PWA'],
-    description: 'An advanced, highly optimized academic resource platform featuring multi-dimensional filtering, real-time search, and a template-based architecture.',
-    repo: 'https://github.com/Jabir-A-H/academic-resort',
-    live: 'https://jabir-a-h.github.io/academic-resort/'
-  },
-  {
-    title: 'Library Management System',
-    status: 'active',
-    tech: ['FastAPI', 'Next.js', 'JWT'],
-    description: 'A complete library management system with authentication, backend API, and a modern frontend interface.',
-    repo: 'https://github.com/Jabir-A-H/library-management'
-  },
-  {
-    title: 'Soulbinders',
-    status: 'in-progress',
-    tech: ['Godot', 'GDScript'],
-    description: 'A monster-battling game concept combining strategic combat mechanics with character progression systems.',
-    repo: 'https://github.com/Jabir-A-H/soulbinders'
-  },
-  {
-    title: 'Nightblade',
-    status: 'prototype',
-    tech: ['Godot', 'GDScript'],
-    description: 'A Godot-based game prototype exploring mechanics, movement systems, and gameplay experimentation.',
-    repo: 'https://github.com/Jabir-A-H/nightblade'
-  },
-  {
-    title: 'Sidescroller',
-    status: 'experimental',
-    tech: ['Go'],
-    description: 'A side-scrolling game project built to explore game mechanics and rendering logic using Go.',
-    repo: 'https://github.com/Jabir-A-H/Sidescroller'
-  }
-];
+import data from '../../data.json';
 
 export default function ProjectsPage() {
+  const { projects } = data;
   const liveProjects = projects.filter(p => p.live);
   const repoProjects = projects.filter(p => !p.live);
 

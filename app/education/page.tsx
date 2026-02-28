@@ -1,5 +1,6 @@
 import React from 'react';
 import TimelineCard from '../../components/TimelineCard';
+import data from '../../data.json';
 
 export const metadata = {
   title: 'Education & Career | Jabir Abdullah Haian',
@@ -7,6 +8,8 @@ export const metadata = {
 };
 
 export default function AboutPage() {
+  const { education } = data;
+
   return (
     <div className="grid grid-cols-12 gap-x-6 gap-y-12 w-full text-neutral-800 py-8">
       <header className="col-span-12 border-b border-neutral-300 pb-8">
@@ -37,36 +40,16 @@ export default function AboutPage() {
           
           <div className="space-y-8 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-neutral-300 before:to-transparent">
             
-            <TimelineCard 
-              title="University of Dhaka"
-              date="Sep 2022 - Present"
-              role="BBA, Accounting & Information Systems"
-              description="Exploring Forensic Accounting, Data Analytics, AI & Technology."
-              skills={['Microsoft Products', 'Online Research', 'IT Management', 'Technical Support', 'Problem Solving', 'Cycling', 'IT Operations', 'Microsoft Excel', 'Accounting', 'Teamwork', 'Big Data', 'Microsoft Office', 'Communication', 'Table Tennis']}
-            />
-
-            <TimelineCard 
-              title="Notre Dame College"
-              date="Feb 2019 - Jun 2021"
-              role="HSC, Business Studies"
-              description="Activities and societies: Notre Dame Business Club, Notre Dame Information Technology Club. Attained perfect attendance certificate for 100% attendance. Ranked 35th out of 750 Students."
-              skills={['Microsoft Products', 'IT Management', 'Technical Support', 'Problem Solving', 'IT Operations', 'Accounting', 'HTML', 'C (Programming Language)', 'Microsoft Office']}
-            />
-
-            <TimelineCard 
-              title="Birshreshtha Noor Mohammad Public College"
-              date="Jan 2017 - May 2019"
-              role="SSC, Business Studies"
-              description="Activities and societies: Business Club, Chess Club. Got board scholarship for outstanding performance."
-              skills={['Microsoft Products', 'Problem Solving', 'Cycling', 'IT Operations', 'Microsoft Excel', 'Accounting', 'Microsoft Office']}
-            />
-
-            <TimelineCard 
-              title="Birshreshtha Munshi Abdur Rouf Public College"
-              date="Dec 2013 - Dec 2016"
-              role="JSC"
-              skills={['Microsoft Products', 'Problem Solving', 'IT Operations', 'Microsoft Office']}
-            />
+            {education.map((edu, idx) => (
+              <TimelineCard 
+                key={idx}
+                title={edu.title}
+                date={edu.date}
+                role={edu.role}
+                description={edu.description}
+                skills={edu.skills}
+              />
+            ))}
 
           </div>
         </section>

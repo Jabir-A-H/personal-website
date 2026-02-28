@@ -2,41 +2,11 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-
-const whispers = [
-  {
-    date: '2026.02.27',
-    title: 'The Entropy of Time',
-    content: 'Time doesn\'t just pass; it disperses. My Entropy Clock project was an attempt to visualize this—how order slowly yields to chaos, yet remains measurable.',
-    tags: ['reflection', 'physics', 'code']
-  },
-  {
-    date: '2026.02.15',
-    title: 'Accounting as a Language',
-    content: 'We often think of accounting as math, but it\'s actually a grammar for value. It defines the relationships between entities through a strict, logical syntax.',
-    tags: ['accounting', 'theory']
-  },
-  {
-    date: '2026.01.20',
-    title: 'The Silent Gallery',
-    content: 'Photography is about what you leave out of the frame. The most powerful images are often the ones that whisper rather than shout.',
-    tags: ['photography', 'art']
-  },
-  {
-    date: '2025.12.10',
-    title: 'Systems vs. Goals',
-    content: 'Building a library management system taught me that the goal (organizing books) is secondary to the system (managing state). If the system is robust, the goal is inevitable.',
-    tags: ['tech', 'systems']
-  },
-  {
-    date: '2025.11.05',
-    title: 'Learning in Public',
-    content: 'My GitHub is a messy record of my curiosity. Not everything is a "project," but everything is a step. The "Nightblade" prototype was a failure in mechanics but a triumph in learning Godot.',
-    tags: ['meta', 'learning']
-  }
-];
+import data from '../../data.json';
 
 export default function WhispersPage() {
+  const { whispers } = data;
+
   return (
     <div className="col-span-12 w-full py-12 max-w-3xl mx-auto">
       <header className="mb-24 text-center">

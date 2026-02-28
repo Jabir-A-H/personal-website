@@ -1,23 +1,15 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import data from '../../data.json';
 
 export const metadata = {
   title: 'Contact | Jabir Abdullah Haian',
   description: 'Digital coordinates and communication channels.',
 };
 
-const endpoints = [
-  { name: 'Email', url: 'mailto:jabirahaian@gmail.com', handle: 'jabirahaian@gmail.com' },
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jabir-abdullah-haian/', handle: 'in/jabir-abdullah-haian' },
-  { name: 'GitHub', url: 'https://github.com/Jabir-A-H/', handle: '@Jabir-A-H' },
-  { name: 'Telegram', url: 'https://t.me/jabirah', handle: '@jabirah' },
-  { name: 'Twitter', url: 'https://twitter.com/JabirHaian', handle: '@JabirHaian' },
-  { name: 'Instagram', url: 'https://www.instagram.com/jabir_a_haian', handle: '@jabir_a_haian' },
-  { name: 'WordPress', url: 'https://jabirahn.wordpress.com', handle: 'jabirahn.wordpress.com' },
-  { name: 'YouTube', url: 'https://www.youtube.com/jabirabdullahhaian', handle: '@jabirabdullahhaian' },
-];
-
 export default function ContactPage() {
+  const { endpoints } = data;
+
   return (
     <div className="w-full max-w-7xl mx-auto py-12 md:py-24">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">

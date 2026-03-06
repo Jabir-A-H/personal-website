@@ -22,6 +22,13 @@
   ],
   "projects": [
     {
+      "title": "LazyLedger",
+      "status": "live",
+      "tech": ["Next.js", "Firebase", "Tailwind", "Gemini AI"],
+      "description": "An AI-powered personal finance tracker that parses natural language into structured transactions. Features smart categorization, manual entry, and real-time sync.",
+      "live": "http://lazyledger-jabir.vercel.app/"
+    },
+    {
       "title": "Gallery",
       "status": "live",
       "tech": ["React", "Tailwind"],

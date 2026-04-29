@@ -1,16 +1,9 @@
 import type {NextConfig} from 'next';
 
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
-let repo = '';
-if (isGithubActions && process.env.GITHUB_REPOSITORY) {
-  const repoName = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '');
-  if (!repoName.endsWith('.github.io')) {
-    repo = `/${repoName}`;
-  }
-}
+const basePath = process.env.BASE_PATH?.trim() || '';
 
 const nextConfig: NextConfig = {
-  ...(repo ? { basePath: repo } : {}),
+  ...(basePath ? { basePath } : {}),
   reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: false,

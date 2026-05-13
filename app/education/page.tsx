@@ -3,7 +3,7 @@ import TimelineCard from '../../components/TimelineCard';
 import data from '../../data.json';
 
 export const metadata = {
-  title: 'Education & Career | Jabir Abdullah Haian',
+  title: 'Education & Career',
   description: 'Academic background, timeline, and professional direction of Jabir Abdullah Haian.',
 };
 
@@ -26,10 +26,10 @@ export default function AboutPage() {
           <p className="text-sm leading-relaxed mb-6">
             My core interests include accounting, financial analysis, and my ambition to become a Chartered Accountant. I&apos;m committed to collaboration, continuous learning, and teamwork.
           </p>
-          <div className="h-[1px] w-12 bg-neutral-300 mb-6"></div>
+          <div className="h-[1px] w-12 bg-accent mb-6"></div>
           <ul className="space-y-2 font-mono text-xs text-neutral-500">
-            <li><a href="https://www.linkedin.com/in/jabir-abdullah-haian/" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-900 underline underline-offset-4">LinkedIn Profile &#8599;</a></li>
-            <li><a href="https://facebook.com/jabir.abdullah.haian" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-900 underline underline-offset-4">Facebook Profile &#8599;</a></li>
+            <li><a href="https://www.linkedin.com/in/jabir-abdullah-haian/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-dark underline underline-offset-4 transition-colors">LinkedIn Profile &#8599;</a></li>
+            <li><a href="https://facebook.com/jabir.abdullah.haian" target="_blank" rel="noopener noreferrer" className="hover:text-accent-dark underline underline-offset-4 transition-colors">Facebook Profile &#8599;</a></li>
           </ul>
         </div>
       </div>
@@ -55,7 +55,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h3 className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-6">Footnotes & Certifications</h3>
+          <h3 className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-6">Footnotes &amp; Certifications</h3>
           <div className="text-xs text-neutral-500 space-y-2 border-t border-neutral-200 pt-4">
             <p>[1] <strong>Aspire 25 Alumni</strong>: Aspire Leaders Program (Aspire Institute, Oct 2025).</p>
             <p>[2] <strong>CA, ICAB (5%)</strong>: Pursuing Chartered Accountancy.</p>

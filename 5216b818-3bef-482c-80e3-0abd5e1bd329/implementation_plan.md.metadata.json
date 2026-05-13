@@ -1,0 +1,7 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Updated design document per user feedback: (1) Logo section expanded with 3 design directions + specifications, (2) Photo placement defined for the hero left column at 160px with composition guidance, (3) ShortTags removed from hero metadata, (4) 'Explore more' footer replaced with a contact sign-off CTA. All wireframes, component specs, and change lists updated accordingly.",
+  "updatedAt":  "2026-05-13T05:42:19.690215400Z",
+  "version":  "4",
+  "requestFeedback":  true
+}

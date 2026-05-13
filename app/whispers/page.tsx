@@ -11,7 +11,7 @@ export default function WhispersPage() {
     <div className="col-span-12 w-full py-12 max-w-3xl mx-auto">
       <header className="mb-24 text-center">
         <h1 className="text-5xl md:text-7xl font-serif italic tracking-tighter text-neutral-900 mb-6">Whispers</h1>
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-neutral-400">Fragments of thought & reflection</p>
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-neutral-400">Fragments of thought &amp; reflection</p>
       </header>
 
       <div className="space-y-32">
@@ -25,7 +25,7 @@ export default function WhispersPage() {
             className="group relative"
           >
             <div className="absolute -left-12 md:-left-24 top-0 h-full w-[1px] bg-neutral-200 hidden md:block">
-              <div className="sticky top-1/2 w-2 h-2 -ml-[4px] rounded-full bg-neutral-300 group-hover:bg-neutral-900 transition-colors duration-500" />
+              <div className="sticky top-1/2 w-2 h-2 -ml-[4px] rounded-full bg-neutral-300 group-hover:bg-accent transition-colors duration-500" />
             </div>
 
             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-6">
@@ -42,7 +42,7 @@ export default function WhispersPage() {
               
               <div className="flex flex-wrap gap-3">
                 {whisper.tags.map(tag => (
-                  <span key={tag} className="text-[10px] font-mono uppercase tracking-widest text-neutral-400 border border-neutral-200 px-2 py-1 rounded-full">
+                  <span key={tag} className="text-[10px] font-mono uppercase tracking-widest text-neutral-400 border border-neutral-200 px-2 py-1 rounded-full hover:border-accent hover:text-accent-dark transition-colors cursor-default">
                     #{tag}
                   </span>
                 ))}

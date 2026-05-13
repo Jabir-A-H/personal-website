@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: '404 - Not Found | Jabir Abdullah Haian',
+  title: '404 - Not Found',
   description: 'The page you are looking for does not exist.',
 };
 
@@ -14,7 +14,7 @@ export default function NotFound() {
       </p>
       <Link 
         href="/" 
-        className="px-6 py-3 bg-neutral-900 text-white font-mono text-xs uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+        className="px-6 py-3 bg-accent text-white font-mono text-xs uppercase tracking-widest hover:bg-accent-dark transition-colors"
       >
         Return Home
       </Link>

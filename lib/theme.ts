@@ -1,0 +1,61 @@
+import type { Transition } from 'motion/react';
+
+export const ACCENT = {
+  DEFAULT: '#e8915a',
+  LIGHT: '#f4b88a',
+  DARK: '#c97040',
+  GLOW: 'rgba(232, 145, 90, 0.125)',
+} as const;
+
+export const PAGE_THEMES: Record<string, { bg: string }> = {
+  '/': { bg: '#fafafa' },
+  '/projects': { bg: '#0a0a0a' },
+  '/education': { bg: '#f5f5f0' },
+  '/whispers': { bg: '#f8fafc' },
+  '/contact': { bg: '#ffffff' },
+  '/experience': { bg: '#faf8f5' },
+};
+
+export interface AnimationProps {
+  initial: Record<string, string | number>;
+  animate: Record<string, string | number>;
+  exit: Record<string, string | number>;
+  transition: Transition;
+}
+
+const ANIMATION_PRESETS: Record<string, AnimationProps> = {
+  default: {
+    initial: { opacity: 0, y: 10 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -10 },
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+  '/projects': {
+    initial: { opacity: 0, clipPath: 'inset(50% 0 50% 0)', scale: 0.95 },
+    animate: { opacity: 1, clipPath: 'inset(0% 0 0% 0)', scale: 1 },
+    exit: { opacity: 0, clipPath: 'inset(50% 0 50% 0)', scale: 0.95 },
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
+  },
+  '/education': {
+    initial: { opacity: 0, rotateX: 15, y: 40, filter: 'blur(10px)' },
+    animate: { opacity: 1, rotateX: 0, y: 0, filter: 'blur(0px)' },
+    exit: { opacity: 0, rotateX: -15, y: -40, filter: 'blur(10px)' },
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
+};
+
+const REDUCED_MOTION_PRESET: AnimationProps = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+  transition: { duration: 0.15, ease: 'easeOut' },
+};
+
+export function getThemeForRoute(pathname: string) {
+  return PAGE_THEMES[pathname] || PAGE_THEMES['/'];
+}
+
+export function getAnimationForRoute(pathname: string, reducedMotion = false): AnimationProps {
+  if (reducedMotion) return REDUCED_MOTION_PRESET;
+  return ANIMATION_PRESETS[pathname] || ANIMATION_PRESETS['default'];
+}

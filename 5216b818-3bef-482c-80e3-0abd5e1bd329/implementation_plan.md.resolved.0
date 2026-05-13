@@ -1,0 +1,309 @@
+# Personal Website Redesign — Implementation Plan
+
+---
+
+## First: The Resume Question
+
+You asked a great question — *"I wanted the site to replace a CV, so isn't the resume-style home page the right move?"*
+
+**Short answer:** Yes, resume-style CAN be world-class. The issue isn't the structure — it's the execution. Here's the full comparison:
+
+### Resume-Style vs. Creative vs. Hybrid
+
+| Aspect | Pure Resume-Style | Pure Creative | **Hybrid (Recommended)** |
+|---|---|---|---|
+| **Goal** | Replace PDF resume | Express personality | Replace resume AND express personality |
+| **Home page** | All sections dumped in order | Abstract/artistic intro | **Curated** highlights with personality |
+| **Who uses it** | Corporate/finance/tech | Designers/artists | Brittany Chiang, Lee Robinson, most successful dev portfolios |
+| **Recruiter-friendly** | ✅ Easy to scan | ❌ Hard to find info | ✅ Easy to scan with better engagement |
+| **Memorable** | ❌ Forgettable | ✅ Memorable | ✅ Memorable AND useful |
+| **"Shows the me"** | ❌ Shows the resume | ✅ Shows the person | ✅ Shows BOTH |
+
+### What's Wrong With Your CURRENT Resume Layout
+
+It's not that it's resume-style — it's that it's a **data dump**, not a **curated resume**:
+
+| Problem | Your Home Page Now | A Good Resume-Style Home Page |
+|---|---|---|
+| **Content volume** | Everything: experience, education, certifications, skills | Curated: hero + 2-3 featured things + key credentials |
+| **Duplication** | Education appears here AND on `/education` | Education details only on `/education`, summary on home |
+| **Prioritization** | Leads with "Leadership & Experience" (community orgs) | Leads with strongest signal (featured projects or key credential) |
+| **Visual hierarchy** | Thin lines between text blocks | Clear visual breaks, accent colors, maybe a featured card |
+| **Personality** | Zero — reads identical to any BBA student's site | Opening line, writing voice, or visual choice that's uniquely yours |
+
+### The Hybrid Approach: Resume Structure WITH Soul
+
+**Keep the resume structure. Fix the curation.** Here's what changes:
+
+```
+CURRENT HOME PAGE:                    PROPOSED HOME PAGE:
+┌──────────────────────┐              ┌──────────────────────┐
+│ Name (Hero)          │              │ Name (Hero)          │
+│ LinkedIn headline    │              │ Personal philosophy  │ ← placeholder for now
+│ Bio paragraph        │              │ (you write later)    │
+├──────────────────────┤              ├──────────────────────┤
+│ Experience (4 items) │              │ Featured Work (2-3)  │ ← your best projects
+│ Education (4 items)  │              │ with screenshots     │   with actual visuals
+│ Certifications       │              ├──────────────────────┤
+│ Skills dots          │              │ Experience (4 items) │ ← same as now
+└──────────────────────┘              ├──────────────────────┤
+                                      │ Credentials          │ ← certifications + 
+                                      │ (compact)            │   skills combined
+                                      ├──────────────────────┤
+                                      │ Latest Whisper       │ ← shows you're a thinker
+                                      └──────────────────────┘
+```
+
+**What moves out:**
+- Full education details → stay on `/education` page only (no duplication)
+
+**What moves in:**
+- 2-3 featured projects (with screenshot placeholders)
+- Latest whisper entry
+
+**What stays but improves:**
+- Experience section → same content, same position
+- Credentials → certifications + skills merged into one compact section
+
+> [!IMPORTANT]
+> This isn't "removing resume content." It's **promoting your best work** and **removing duplication** with the education page.
+
+---
+
+## URL Recommendation
+
+| URL | Pros | Cons | Verdict |
+|---|---|---|---|
+| `jabirah.pages.dev` | Short, clean, personal, memorable | `.pages.dev` is less recognized | **🏆 Best choice** |
+| `jabirah.vercel.app` | Clean | `.vercel.app` screams "developer side project" | Runner-up |
+| `jabir-a-h.github.io/personal-website/` | Shows GitHub presence | Long, has subpath, looks unfinished | Worst for sharing |
+
+**Recommendation:** Use `jabirah.pages.dev` as primary. Set the others as redirects. All OG meta tags, sitemap, and canonical URLs should point to `jabirah.pages.dev`.
+
+---
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Placeholder Strategy:** Per your feedback, the following will use placeholders that you'll fill in later:
+> - Hero philosophy/tagline → placeholder text with `{/* TODO */}` marker
+> - Profile photo → geometric avatar placeholder
+> - Project descriptions → current descriptions kept, marked for expansion
+> - Whispers content → placeholder entries marked as drafts
+> - Project screenshots → styled placeholder cards with project colors
+
+## Open Questions
+
+> [!IMPORTANT]
+> **1. Signature Color — what feels like YOU?**
+> Your projects page already uses `emerald/green` accents. Options:
+> - **Emerald** `#34d399` — techy, fresh, growth (matches your existing projects page)
+> - **Teal/Cyan** `#22d3ee` — modern, sharp, digital
+> - **Amber** `#f59e0b` — warm, confident, distinctive
+> - **Your pick** — any color that resonates with you personally?
+> 
+> I'll go with **emerald** by default since it's already in your DNA, but tell me if another color speaks to you.
+
+> [!IMPORTANT]
+> **2. Home page section order — which feels right?**
+> - **Option A:** Hero → Featured Projects → Experience → Credentials → Latest Whisper
+> - **Option B:** Hero → Experience → Featured Projects → Credentials → Latest Whisper
+> - **Option C:** Hero → Featured Projects → Experience → Credentials (no whisper on home)
+>
+> I'll go with **Option A** by default (lead with work, not titles).
+
+> [!IMPORTANT]
+> **3. Photo placeholder style:**
+> - **Option A:** Geometric/abstract avatar (colored shape with your initials)
+> - **Option B:** Empty frame with "Photo coming soon" text
+> - **Option C:** No photo placeholder at all, add it later
+>
+> I'll go with **Option A** by default.
+
+---
+
+## Proposed Changes
+
+### Overview of All Changes
+
+```
+Phase 1: Foundation & Identity     (globals.css, layout.tsx, Shell.tsx)
+Phase 2: Home Page Restructure     (app/page.tsx, new FeaturedProject component)
+Phase 3: SEO & Public Assets       (public/*, metadata, JSON-LD)
+Phase 4: Page Polish               (projects, whispers, contact, education, 404)
+```
+
+---
+
+### Phase 1 — Foundation & Identity
+
+#### [MODIFY] [globals.css](file:///f:/WebDev/personal-website/app/globals.css)
+Currently just `@import "tailwindcss"`. Will add:
+- **Signature color CSS custom properties** (emerald accent threaded site-wide)
+- **Custom scrollbar** styling (thin, matches theme)
+- **Smooth scroll** behavior
+- **Custom selection colors** using the signature color
+- **Subtle body texture** (optional grain/noise overlay via CSS)
+- **Custom font-size scale** via CSS variables
+- **Focus-visible** refinements
+- **Reduced-motion** media query support
+
+#### [MODIFY] [layout.tsx](file:///f:/WebDev/personal-website/app/layout.tsx)
+- Add **OG/Twitter meta tags** with `jabirah.pages.dev` as canonical
+- Add **JSON-LD Person schema** 
+- Update metadata description
+- Add `metadataBase` URL
+
+#### [MODIFY] [Shell.tsx](file:///f:/WebDev/personal-website/components/Shell.tsx)
+- Fix the `any` type → proper `AnimationProps` interface
+- Add `prefers-reduced-motion` support (disable/reduce animations)
+- Thread signature accent color through selection styles per-page
+- Refactor hardcoded theme values into a `PAGE_THEMES` constant
+
+#### [NEW] [lib/theme.ts](file:///f:/WebDev/personal-website/lib/theme.ts)
+- Centralized page theme configuration
+- Signature color constants
+- Animation presets extracted from Shell.tsx
+
+---
+
+### Phase 2 — Home Page Restructure
+
+#### [MODIFY] [page.tsx](file:///f:/WebDev/personal-website/app/page.tsx) (Home)
+**Restructure layout (keeping resume style, fixing curation):**
+
+1. **Hero Section** — Keep name display. Replace LinkedIn headline with a placeholder philosophy line + keep the bio. Add a small geometric avatar placeholder in the left column.
+
+2. **NEW: Featured Work Section** — Show 2-3 top projects (LazyLedger, Academic Resort, Gallery) with:
+   - Project name + tech stack pills
+   - Screenshot placeholder (styled colored card with project initials)
+   - "View Project →" link
+   - Brief description (existing)
+
+3. **Experience Section** — Keep exactly as-is (Leadership & Experience with ExperienceCards)
+
+4. **Credentials Section** — Merge certifications + skills into one compact section (remove the full education listing since `/education` already covers it)
+
+5. **NEW: Latest Whisper** — Small section showing most recent whisper entry with link to `/whispers`
+
+#### [NEW] [components/FeaturedProject.tsx](file:///f:/WebDev/personal-website/components/FeaturedProject.tsx)
+- Reusable card for featured projects on home page
+- Screenshot placeholder (colored rectangle with project initial)
+- Tech stack pills
+- Status badge
+- Link to live site
+
+#### [NEW] [components/AvatarPlaceholder.tsx](file:///f:/WebDev/personal-website/components/AvatarPlaceholder.tsx)
+- Geometric placeholder for a future photo
+- Uses signature color
+- Shows initials "JAH"
+
+---
+
+### Phase 3 — SEO & Public Assets
+
+#### [NEW] public/robots.txt
+```
+User-agent: *
+Allow: /
+Sitemap: https://jabirah.pages.dev/sitemap.xml
+```
+
+#### [NEW] public/sitemap.xml
+- All routes: `/`, `/education`, `/projects`, `/whispers`, `/contact`
+
+#### [NEW] public/favicon.svg
+- Simple geometric favicon using signature color + initials
+
+#### [NEW] public/og-image.png
+- Generated placeholder OG image (1200×630) with name + tagline
+
+#### [NEW] [components/JsonLd.tsx](file:///f:/WebDev/personal-website/components/JsonLd.tsx)
+- Person schema structured data
+- Linked social profiles
+- Education + job title
+
+---
+
+### Phase 4 — Page Polish
+
+#### [MODIFY] [projects/page.tsx](file:///f:/WebDev/personal-website/app/projects/page.tsx)
+- Keep the dark sci-fi theme (it's one of the strongest pages)
+- Add screenshot placeholders for live projects (colored cards)
+- Minor: update "SYSTEM ONLINE" coordinates display
+- Add a subtle description tooltip or expandable area for repo projects
+
+#### [MODIFY] [whispers/page.tsx](file:///f:/WebDev/personal-website/app/whispers/page.tsx)
+- Replace AI-generated content with placeholder entries marked as drafts
+- Add reading time estimate per entry
+- Add subtle tag filtering (clickable tags)
+- Improve the timeline dots interaction
+
+#### [MODIFY] [contact/page.tsx](file:///f:/WebDev/personal-website/app/contact/page.tsx)
+- Add signature color accent on hover states (currently all neutral)
+- Add a small personal touch — a one-liner above the endpoints list (placeholder)
+- Consider: add a "Download CV" link (placeholder PDF link)
+
+#### [MODIFY] [education/page.tsx](file:///f:/WebDev/personal-website/app/education/page.tsx)
+- Since this is now the ONLY place for full education details, make it richer
+- Add signature color to timeline dots
+- Keep structure as-is (it's well-done)
+
+#### [MODIFY] [not-found.tsx](file:///f:/WebDev/personal-website/app/not-found.tsx)
+- Add more personality — the "vanished into the whispers" line is good, expand on it
+- Use signature color accent
+- Maybe a small animation
+
+#### [MODIFY] [global-error.tsx](file:///f:/WebDev/personal-website/app/global-error.tsx)
+- Style it to match the site design (currently uses raw inline styles)
+- Add the signature color
+
+---
+
+## File Change Summary
+
+| File | Action | Phase |
+|---|---|---|
+| `app/globals.css` | MODIFY — full custom CSS layer | 1 |
+| `lib/theme.ts` | NEW — centralized theme config | 1 |
+| `app/layout.tsx` | MODIFY — OG tags, JSON-LD, meta | 1 + 3 |
+| `components/Shell.tsx` | MODIFY — type safety, reduced-motion, theme | 1 |
+| `app/page.tsx` | MODIFY — restructure home page | 2 |
+| `components/FeaturedProject.tsx` | NEW — featured project card | 2 |
+| `components/AvatarPlaceholder.tsx` | NEW — geometric photo placeholder | 2 |
+| `components/JsonLd.tsx` | NEW — structured data | 3 |
+| `public/robots.txt` | NEW | 3 |
+| `public/sitemap.xml` | NEW | 3 |
+| `public/favicon.svg` | NEW | 3 |
+| `public/og-image.png` | NEW (generated) | 3 |
+| `app/projects/page.tsx` | MODIFY — screenshot placeholders | 4 |
+| `app/whispers/page.tsx` | MODIFY — placeholder content, tags | 4 |
+| `app/contact/page.tsx` | MODIFY — accent colors, personal touch | 4 |
+| `app/education/page.tsx` | MODIFY — accent color, minor polish | 4 |
+| `app/not-found.tsx` | MODIFY — personality + accent | 4 |
+| `app/global-error.tsx` | MODIFY — proper styling | 4 |
+
+---
+
+## Verification Plan
+
+### Automated Tests
+```bash
+npm run lint          # ESLint passes
+npm run build         # Static export succeeds without errors
+```
+
+### Browser Verification
+- Launch dev server and visually verify each page
+- Check all 5 routes render correctly
+- Verify signature color appears consistently across pages
+- Confirm placeholder components display properly
+- Test mobile responsiveness (nav, hero, featured projects)
+- Test keyboard navigation still works
+- Verify OG meta tags render in page source
+
+### SEO Verification
+- Confirm `robots.txt` accessible at `/robots.txt`
+- Confirm `sitemap.xml` accessible at `/sitemap.xml`
+- Confirm favicon displays in browser tab
+- Check page source for JSON-LD structured data

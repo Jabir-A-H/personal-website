@@ -1,0 +1,543 @@
+# Design Document — "One Shell, Multiple Faces"
+
+*A personal portfolio where every page is a different room in the same house*
+
+---
+
+## The Philosophy
+
+This site is not a template. It's a **curated space** — like a house where the living room, study, workshop, and library each have their own character, but you always know you're in the same home. The walls change, the furniture changes, the lighting changes. The floor plan and the smell of coffee don't.
+
+**The Shell** = everything that stays constant (navigation, fonts, accent color, container width, transitions)
+**The Faces** = everything that changes per page (background, typography emphasis, layout pattern, animations, decorative elements, mood)
+
+```mermaid
+graph TD
+    A["🐚 THE SHELL"] --> B["Navigation · Fonts · Accent · Container · Transitions"]
+    B --> C["/ HOME"]
+    B --> D["/education"]
+    B --> E["/experience"]
+    B --> F["/projects"]
+    B --> G["/whispers"]
+    B --> H["/contact"]
+    
+    C --- C1["☀️ The Foyer · Editorial Warmth"]
+    D --- D1["📜 The Archive · Academic Manuscript"]
+    E --- E1["📐 The Ledger · Swiss Precision"]
+    F --- F1["🖥️ The Terminal · Amber CRT"]
+    G --- G1["📓 The Notebook · Literary Journal"]
+    H --- H1["📡 The Signal · Clean Transmission"]
+```
+
+---
+
+## Part I: The Shell (Shared DNA)
+
+These elements are **identical** on every page. They are the glue that makes 6 different designs feel like one site.
+
+### 1.1 Navigation Bar
+
+| Property | Value |
+|---|---|
+| Layout | `flex justify-between`, left logo + right nav links |
+| Logo | See **Logo Design** section below |
+| Nav links | JetBrains Mono, text-xs, tracking-widest, uppercase |
+| Active state | Warm solaris underline (2px, offset-4) |
+| Text color | Adapts per route: white on dark pages, neutral-900 on light pages |
+| Padding | `px-6 md:px-12 py-6` |
+| Position | Static (scrolls with page) |
+| Max width | `max-w-7xl mx-auto` |
+
+### 1.1a Logo Design
+
+The current `JABIR A. HAIAN` text is a placeholder. The logo should be a simple, scalable mark that works at nav size (~20px height) and as a favicon.
+
+#### Three Directions
+
+| Direction | What It Looks Like | Pros | Cons |
+|---|---|---|---|
+| **A. "J." Minimal** | The letter **J** in Inter Bold + a warm solaris accent dot. `J·` | Dead simple, works at any size, can be coded in CSS today | Very common pattern |
+| **B. "JAH" Monogram** | Three initials arranged in a tight geometric block, Inter Black or custom weights | Distinctive, matches the avatar concept, professional | Needs careful kerning |
+| **C. Wordmark** | `JABIR` in Inter with the **I** replaced by a warm accent vertical bar | Modern, editorial, unique | Only works at larger sizes |
+
+#### Recommendation
+**Start with Direction A (`J·`)** as a CSS-only logo today — it's clean, professional, and takes 2 minutes. The accent dot makes it distinctly *yours*. Then commission or design a proper monogram later when you have time.
+
+#### Logo Specifications
+```
+Font:        Inter, font-weight: 800 (ExtraBold)
+Size:        text-lg (nav context)
+Color:       Inherits from page (white on dark, neutral-900 on light)
+Accent dot:  #e8915a (warm solaris), rendered as a period or a small circle
+Favicon:     The same "J" or "JAH" on a warm solaris background
+Min size:    Must be legible at 16x16px (favicon)
+```
+
+### 1.2 Typography Stack
+
+| Font | Variable | Role | Loaded Subsets |
+|---|---|---|---|
+| **Inter** | `--font-sans` | Headlines, body text, UI elements | Latin |
+| **Playfair Display** | `--font-serif` | Accent text, editorial quotes, page titles on select pages | Latin |
+| **JetBrains Mono** | `--font-mono` | Labels, metadata, dates, technical text, navigation | Latin |
+
+### 1.3 Color System
+
+#### Signature Accent — Warm Solaris
+```
+Primary:   #e8915a  (copper-amber)     → Active states, dividers, CTA hover
+Light:     #f4b88a  (warm peach)        → Subtle tints, scrollbar, glow
+Dark:      #c97040  (deep amber)        → Text accents, link hover
+Glow:      rgba(232, 145, 90, 0.125)    → Subtle background highlights
+```
+
+#### Neutral Scale
+```
+900: #171717  → Primary text on light backgrounds
+800: #262626  → Secondary text
+700: #404040  → Body text
+600: #525252  → Muted body
+500: #737373  → Metadata, labels
+400: #a3a3a3  → Disabled, placeholder
+300: #d4d4d4  → Borders, dividers
+200: #e5e5e5  → Subtle borders
+100: #f5f5f5  → Background tints, skill pills
+ 50: #fafafa  → Page backgrounds
+```
+
+### 1.4 Shared Behaviors
+
+| Behavior | Specification |
+|---|---|
+| Scrollbar | Custom: 6px wide, accent-light thumb, transparent track |
+| Text selection | Accent background, white text |
+| Focus rings | `ring-2 ring-accent` |
+| Reduced motion | All animations → 0.15s simple fade |
+| Container | `max-w-7xl mx-auto px-6 md:px-12` |
+| Page transitions | `AnimatePresence mode="wait"` on route change |
+
+---
+
+## Part II: The Six Faces
+
+Each face has:
+- A **name** and **mood metaphor**
+- A **background color**
+- A **dominant typography** emphasis
+- A **unique entrance animation**
+- A **page-specific decorative element** (the thing that makes it unmistakably different)
+- A **layout structure**
+
+---
+
+### Face 1: The Foyer — `HOME /`
+
+> *"A warm, well-lit entryway where you get oriented before exploring the house."*
+
+**Mood:** Confident, editorial, warm. Like the cover of Monocle magazine.
+
+| Property | Value |
+|---|---|
+| Background | `#fafafa` (warm neutral-50) |
+| Dominant font | **Inter** (massive headline) + **Playfair** (italic tagline) |
+| Layout | 4-column / 8-column editorial grid |
+| Animation | Gentle fade + slide-up (0.4s, easeOut) |
+
+#### Structure
+
+```
+┌──────────────────────────────────────────────────────────┐
+│  JABIR ABDULLAH                                          │
+│  HAIAN              (massive Inter, tracking-tighter)    │
+│                                                          │
+│  "BBA in Accounting & Information          ┌───────────┐ │
+│   Systems at University of Dhaka.          │           │ │
+│   Exploring Forensic Accounting,           │   PHOTO   │ │
+│   Data Analytics & AI."                    │  280-360px│ │
+│  (Playfair, italic, text-2xl-4xl)          │  rounded  │ │
+│                                            │           │ │
+│  Dhaka, Bangladesh                         └───────────┘ │
+│  jabirahaian@gmail.com                                   │
+│                                                          │
+│  Bio paragraph (Inter, text-lg)                          │
+├──────────── ████████ warm accent divider ─────────────────┤
+│  Education          University of Dhaka                  │
+│  ── accent          BBA, Accounting & Information Systems│
+│                     [4 curated skills] → Full timeline →  │
+├────────────────────── thin rule ──────────────────────────┤
+│  Leadership &       Morning Riders · President           │
+│  Experience         আলোকিত লাইব্রেরী · Secretariat      │
+│  ── accent          → All experience & credentials →     │
+├────────────────────── thin rule ──────────────────────────┤
+│  Credentials        Cert names (compact) + skill pills   │
+│  ── accent          → Full credentials →                 │
+├──────────── ████████ warm accent divider ─────────────────┤
+│  "Still learning. Always building."                      │
+│  jabirahaian@gmail.com                                   │
+└──────────────────────────────────────────────────────────┘
+```
+
+#### Photo Placement
+
+The photo is **bold and prominent** — placed in the **right side of the hero**, acting as a visual counterweight to the headline and tagline on the left. This creates a classic editorial "portrait + intro" layout.
+
+| Property | Value |
+|---|---|
+| Size | 280–360px (responsive: `w-[280px] md:w-[360px]`) |
+| Shape | `rounded-2xl` (16px radius) |
+| Position | Right side of the hero area, 7/5 grid split |
+| Object fit | `object-cover` — fills the container, crops edges naturally |
+| Fallback | `AvatarPlaceholder` component (scaled up) until real photo is added |
+
+**Layout:** The hero sub-grid shifts to place the **left side** (tagline + metadata + bio) on `col-span-7` and the **right side** (photo) on `col-span-5`.
+
+**Photo composition guidance:**
+- Shoulders-up or waist-up headshot, straight-on or slight angle
+- Clean/simple background — plain wall, outdoor blur, or solid color
+- Natural light preferred (window light, golden hour outdoor)
+- Neutral expression or slight smile
+- Professional but not stiff — clean shirt works
+- Minimum resolution: 720×720px (serves at 2× for retina at 360px display)
+
+#### Unique Element
+The **hero headline scale** — `clamp(3rem, 12vw, 8rem)`. No other page uses text this large. The home page OWNS the massive typography. This is its signature.
+
+#### Home Page Footer — Personal Sign-Off
+Replaces the old "I also build things / Fragments of thought" links with a **single personal line** — a quiet, human closing thought.
+
+```
+── warm accent divider ──
+"Still learning. Always building."
+jabirahaian@gmail.com
+```
+
+> [!NOTE]
+> The sign-off line is a placeholder — write your own. It should capture your current mindset. Examples:
+> - *"Still learning. Always building."*
+> - *"Curious by nature, precise by training."*
+> - *"An accountant who writes code."*
+
+#### Design Changes Needed
+- [ ] **Section labels**: Change `SectionHeader` from bold uppercase sans to **quiet mono labels** — `font-mono text-xs uppercase tracking-[0.2em] text-neutral-400` with accent underline.
+- [ ] **Section spacing**: Reduce from `mb-24` (96px) to `mb-16` (64px).
+- [ ] **Photo**: Replace small `AvatarPlaceholder` (80px, left column) with a **bold, large photo** (280-360px) in the right side of the hero. Use a 7/5 grid split.
+- [ ] **Remove shortTags** from the hero metadata.
+- [ ] **Replace "explore more" footer** with a personal sign-off line + email.
+- [ ] **Skill pills on education**: Show only 4 curated, relevant skills. Remove "Cycling."
+- [ ] **Add scroll-triggered entrance animations** on each section using `motion.div whileInView`.
+
+---
+
+### Face 2: The Archive — `EDUCATION /education`
+
+> *"An old university reading room. Warm paper, serif titles, handwritten margin notes."*
+
+**Mood:** Academic, warm, contemplative. Like a beautiful thesis bound in leather.
+
+| Property | Value |
+|---|---|
+| Background | `#f5f0e8` (warm parchment — warmer than current #f5f5f0) |
+| Dominant font | **Playfair Display** (page header, institution names, direction text) |
+| Layout | 4/8 editorial grid (same as home — NOT centered timeline) |
+| Animation | Page unfold: `rotateX: 15 → 0` with blur (current — keep) |
+
+#### Structure
+
+```
+┌──────────────────────────────────────────────────────────┐
+│  Education          (Playfair, serif, text-7xl, italic,  │
+│                      font-light, tracking-tight)         │
+│  CORE PROFESSIONAL IDENTITY                              │
+├────────────── thin warm rule ────────────────────────────┤
+│                                                          │
+│  Direction          TIMELINE                             │
+│  (sticky sidebar)   ┌─────────────────────────────────┐  │
+│                     │ ● University of Dhaka            │  │
+│  "Assalamualaikum.  │   Sep 2022 - Present             │  │
+│   I am a BBA..."    │   BBA, Accounting & IS           │  │
+│                     │   [curated skill tags]            │  │
+│  ── accent line     │                                   │  │
+│                     │ ● Notre Dame College             │  │
+│  LinkedIn ↗         │   Feb 2019 - Jun 2021            │  │
+│  Facebook ↗         │   HSC, Business Studies          │  │
+│                     │   Ranked 35th out of 750         │  │
+│                     │                                   │  │
+│                     │ ● Birshreshtha Noor Mohammad...  │  │
+│                     │ ● Birshreshtha Munshi Abdur...   │  │
+│                     └─────────────────────────────────┘  │
+│                                                          │
+│  FOOTNOTES          [1] Aspire 25 Alumni...              │
+│                     [2] CA, ICAB (5%)...                 │
+└──────────────────────────────────────────────────────────┘
+```
+
+#### Unique Element
+The **manuscript aesthetic** — warm parchment background + Playfair Display as the dominant headline font + academic footnotes at the bottom. No other page uses Playfair as the PRIMARY heading font. The footnotes section (`[1] [2] [3]`) is unique to this page and gives it a scholarly identity.
+
+#### Design Changes Needed
+- [ ] **Background color**: Change from `#f5f5f0` to `#f5f0e8` (warmer, more distinctly "parchment" — currently too close to home)
+- [ ] **Timeline cards**: Remove white `bg-white shadow-sm border` styling. Replace with flat, borderless entries that flow with the page's warm parchment background. Cards with shadows feel like a different design system. Use a simple left border or accent dot instead of the current floating card.
+- [ ] **Centered timeline → Left-aligned timeline**: The centered alternating layout with `odd:flex-row-reverse` is a generic template pattern. Change to a simple left-aligned vertical timeline: accent dot on the left, content flowing right. This matches the 4/8 grid better.
+- [ ] **Institution names**: Use **Playfair Display** (serif) for institution names instead of Inter. This makes the page FEEL like an academic document rather than a resume.
+- [ ] **Skill tags**: Use a very faint warm tint (`bg-accent/5 text-accent-dark`) instead of neutral gray pills. This grounds them in the warm parchment palette.
+
+---
+
+### Face 3: The Ledger — `EXPERIENCE /experience`
+
+> *"A well-organized professional folio. Clean Swiss precision, no decoration."*
+
+**Mood:** Structured, precise, authoritative. Like a Müller-Brockmann poster — pure information design.
+
+| Property | Value |
+|---|---|
+| Background | `#faf8f5` (warm ivory) |
+| Dominant font | **Inter** for everything. No serif. Pure structure. |
+| Layout | 4/8 editorial grid (same grid as home) |
+| Animation | Clean slide from right: `x: 20 → 0` (0.5s, professional) |
+
+#### Structure
+
+```
+┌──────────────────────────────────────────────────────────┐
+│  EXPERIENCE &       (Inter, sans, text-7xl, bold,        │
+│  CREDENTIALS         uppercase, tracking-tighter)        │
+│  LEADERSHIP · COMMUNITY · QUALIFICATIONS                 │
+│                                                          │
+├──────────────────────────────────────────────────────────┤
+│  LEADERSHIP &       Al Hikmah Society                    │
+│  COMMUNITY          Founding Member                      │
+│  ── accent line     Jun 2024 — Present                   │
+│                                                          │
+│                     Morning Riders                        │
+│                     President                             │
+│                     Apr 2024 — Sep 2025                   │
+│                     ...                                   │
+├────────────────────── thin rule ─────────────────────────┤
+│  CERTIFICATIONS     Aspire Leaders Program    [Verify →] │
+│  ── accent line     Aspire Institute · Oct 2025          │
+│                     ─────────────────────────             │
+│                     Fundamentals of Digital   [Verify →] │
+│                     Marketing                             │
+│                     Google · May 2024                     │
+│                     ...                                   │
+├────────────────────── thin rule ─────────────────────────┤
+│  SKILLS             Accounting ●●●●●                     │
+│  ── accent line     Financial Analysis ●●●●●             │
+│                     Data Analytics ●●●●○                 │
+│                     ...                                   │
+└──────────────────────────────────────────────────────────┘
+```
+
+#### Unique Element
+**Zero decoration.** This is the one page that's ALL content, NO ornament. No serif font, no illustrations, no cards with shadows. Just structured data in a grid with clean dividers. The proficiency dots are the only visual element beyond text. This IS the design — restraint as identity.
+
+#### Design Changes Needed
+- [ ] **Add entrance animation**: Currently this page has no custom animation in `theme.ts`. Add a clean horizontal slide: `initial: { opacity: 0, x: 20 }, animate: { opacity: 1, x: 0 }` with `duration: 0.5`.
+- [ ] The current design is actually solid. Minor tweaks: add a subtle `border-b border-neutral-200` between each experience entry for better visual separation.
+
+---
+
+### Face 4: The Terminal — `PROJECTS /projects`
+
+> *"A hacker's cockpit. Dark. Amber on black. Vintage CRT meets modern dev."*
+
+**Mood:** Technical, precise, cinematic. Like Blade Runner's UI crossed with a 1980s amber monitor.
+
+| Property | Value |
+|---|---|
+| Background | `#0a0a0a` (near-black) |
+| Dominant font | **JetBrains Mono** for labels + **Inter Bold** for project titles |
+| Layout | Full-width, card-based, technical grid overlay |
+| Animation | Cinematic clip-path reveal: `inset(50% 0 50% 0) → inset(0)` (0.8s) |
+
+#### Unique Elements (Already Implemented ✅)
+- **Grid overlay**: 32px background grid pattern at 5% opacity
+- **"SYSTEM ONLINE"** status indicator with pulsing dot
+- **Coordinate display**: `LAT: 23.8103° N / LNG: 90.4125° E`
+- **Corner accent dots** on project cards that change color on hover
+- **Terminal-style labels**: `Live_Deployments`, `Repository_Archive`, `Access_GitHub`
+- **Table-header row** for the repository archive section
+- **Full-row hover**: Entire archive row turns accent color on hover
+
+#### Design Changes Needed
+This is the site's **strongest page**. Minimal changes:
+- [ ] Add a subtle **scanline overlay** (horizontal lines at very low opacity) for extra CRT authenticity
+- [ ] Consider a **blinking terminal cursor** (`▌`) next to the "SYSTEM ONLINE" text
+
+---
+
+### Face 5: The Notebook — `WHISPERS /whispers`
+
+> *"A private journal left open on a desk. Quiet. Literary. Serif-heavy."*
+
+**Mood:** Introspective, poetic, unhurried. Like The Paris Review or a Muji notebook.
+
+| Property | Value |
+|---|---|
+| Background | `#f8f6f2` (warm cream — warmer than current #f8fafc which is cool/blue-tinted) |
+| Dominant font | **Playfair Display** for the page title AND entry titles |
+| Layout | Single centered column, max-w-3xl (narrow, literary) |
+| Animation | Slow fade with blur: `opacity: 0, filter: blur(8px) → 1, blur(0)` (1s) |
+
+#### Structure
+
+```
+┌──────────────────────────────────────────────────┐
+│              Whispers                             │
+│              (Playfair, italic, text-7xl)         │
+│      FRAGMENTS OF THOUGHT & REFLECTION            │
+│                                                   │
+│  ●─┐                                              │
+│    │  2026.02.27                                  │
+│    │  The Entropy of Time                         │
+│    │                                              │
+│    │  Time doesn't just pass; it disperses...     │
+│    │                                              │
+│    │  #reflection  #physics  #code                │
+│    │                                              │
+│  ●─┤                                              │
+│    │  2026.02.15                                  │
+│    │  Accounting as a Language                    │
+│    │                                              │
+│    │  We often think of accounting as math...     │
+│    │                                              │
+│    │  #accounting  #theory                        │
+│    │                                              │
+│  ●─┤                                              │
+│    │  ...                                         │
+│    │                                              │
+│  ──┘                                              │
+│                                                   │
+│           More thoughts to come...                │
+└──────────────────────────────────────────────────┘
+```
+
+#### Unique Elements
+- **Narrow column** (max-w-3xl) — no other page constrains width this much. This creates an intimate, book-page reading experience.
+- **Serif-dominant entry titles** — Playfair Display for whisper titles. The only page besides Education that uses serif for content headings.
+- **Vertical timeline with hover dots** — the left-side line with accent-colored dots on hover.
+- **Large inter-entry spacing** (`space-y-32`) — each whisper is a breath, not a list item.
+
+#### Design Changes Needed
+- [ ] **Background color**: Change from `#f8fafc` (blue-cool-tinted slate-50) to `#f8f6f2` (warm cream). The current background has a *cool* tint that clashes with the warm solaris accent. A warm cream makes it feel like old paper.
+- [ ] **Add a drop cap** to the first letter of each whisper's content — `first-letter:text-4xl first-letter:font-serif first-letter:float-left first-letter:mr-2 first-letter:leading-none`. This is the single most "literary journal" thing you can do.
+- [ ] **Add entrance animation** to theme.ts: `initial: { opacity: 0, filter: 'blur(8px)' }, animate: { opacity: 1, filter: 'blur(0px)' }` at `duration: 1.0`. Slow, dreamlike, meditative — matching the page's mood.
+- [ ] **Make the first/latest whisper visually larger**: bigger title (text-4xl), slightly different treatment. This breaks the monotony and signals "start here."
+
+---
+
+### Face 6: The Signal — `CONTACT /contact`
+
+> *"A clean switchboard. No decoration, just working connections."*
+
+**Mood:** Direct, functional, authoritative. Like a beautifully designed business card.
+
+| Property | Value |
+|---|---|
+| Background | `#ffffff` (pure white) |
+| Dominant font | **Inter** (large light-weight endpoint names) + **JetBrains Mono** (handles) |
+| Layout | 4/8 editorial grid (matches home) |
+| Animation | Default: `fade + slide-up` (0.4s) |
+
+#### Unique Elements (Already Implemented ✅)
+- **Giant light-weight endpoint names** (`text-3xl md:text-5xl font-light`) — no other page renders text this large at font-light.
+- **Arrow circle hover** — border circle → fills with accent color, arrow rotates 45°.
+- **Full-row hover** — background shifts to neutral-100.
+- **Text shift** — endpoint name `translate-x-4` on hover, creating a "push" effect.
+
+#### Design Changes Needed
+- [ ] This page is solid. Consider adding a subtle **"preferred" badge** on Email and LinkedIn (your primary channels) to guide the user.
+
+---
+
+## Part III: Animation Personality Table
+
+Each face has a distinct entrance animation that matches its mood:
+
+| Face | Animation | Duration | Easing | Mood |
+|---|---|---|---|---|
+| **Foyer** (Home) | `opacity + y: 10→0` | 0.4s | easeOut | Welcoming, gentle |
+| **Archive** (Education) | `rotateX: 15→0 + blur` | 0.7s | easeOut | Like opening a book |
+| **Ledger** (Experience) | `opacity + x: 20→0` | 0.5s | easeOut | Professional, sliding in |
+| **Terminal** (Projects) | `clip-path inset + scale` | 0.8s | cubic-bezier(.22,1,.36,1) | Cinematic, dramatic |
+| **Notebook** (Whispers) | `opacity + blur: 8px→0` | 1.0s | easeOut | Dreamlike, meditative |
+| **Signal** (Contact) | `opacity + y: 10→0` | 0.4s | easeOut | Quick, functional |
+
+---
+
+## Part IV: Component Inventory
+
+### Shared Components (used across multiple faces)
+| Component | Used On | Purpose |
+|---|---|---|
+| `Shell.tsx` | All | Route-level background color + page transition wrapper |
+| `Navigation.tsx` | All | Header with logo + nav links |
+| `ExperienceCard.tsx` | Home, Experience | Title + date + role + description entry |
+
+### Face-Specific Components
+| Component | Face | Purpose |
+|---|---|---|
+| `SectionHeader.tsx` | Home | Quiet mono label + accent underline for home sections |
+| `AvatarPlaceholder.tsx` | Home | Geometric avatar placeholder (160px, replaced with `<Image>` when photo ready) |
+| `TimelineCard.tsx` | Education | Timeline entry with left-aligned accent dot |
+| `JsonLd.tsx` | Layout | SEO structured data injection |
+| `ContactSignOff.tsx` | Home | Minimal footer with location + email + LinkedIn |
+
+### Components Needed
+| Component | Face | Purpose |
+|---|---|---|
+| `DropCap.tsx` (or CSS) | Whispers | First-letter styling for literary journal feel |
+| `SkillBar.tsx` (optional) | Experience | If you want horizontal bars instead of dots |
+
+---
+
+## Part V: Summary of ALL Design Changes
+
+### High Priority (Consistency & Identity)
+| # | Change | File(s) | Impact |
+|---|---|---|---|
+| 1 | Redesign `SectionHeader` to quiet mono style | `SectionHeader.tsx`, `page.tsx` | Fixes hierarchy |
+| 2 | Redesign `TimelineCard` to flat, left-aligned | `TimelineCard.tsx`, `education/page.tsx` | Fixes education page |
+| 3 | Change education bg to warm parchment `#f5f0e8` | `lib/theme.ts` | Distinct identity |
+| 4 | Change whispers bg to warm cream `#f8f6f2` | `lib/theme.ts` | Removes cool tint clash |
+| 5 | Add experience animation preset | `lib/theme.ts` | Missing route animation |
+| 6 | Add whispers animation preset | `lib/theme.ts` | Dreamlike entrance |
+
+### Medium Priority (Polish & Delight)
+| # | Change | File(s) | Impact |
+|---|---|---|---|
+| 7 | Reduce home section spacing `mb-24 → mb-16` | `page.tsx` | Less scroll fatigue |
+| 8 | Add drop cap to whispers entries | `whispers/page.tsx` or CSS | Literary identity |
+| 9 | Add scroll-triggered entrance to home sections | `page.tsx` (needs 'use client') | Premium feel |
+| 10 | Curate education skill pills (4 max, warm tint) | `page.tsx`, `education/page.tsx` | Cleaner hierarchy |
+| 11 | Make first whisper entry visually larger | `whispers/page.tsx` | Breaks monotony |
+
+### High Priority (User-Requested Changes)
+| # | Change | File(s) | Impact |
+|---|---|---|---|
+| 12 | Replace "explore more" footer with contact sign-off | `page.tsx` | Cleaner home page ending |
+| 13 | Remove `shortTags` from hero metadata | `page.tsx` | Declutters hero |
+| 14 | Enlarge avatar placeholder to 160px (photo-ready) | `AvatarPlaceholder.tsx`, `page.tsx` | Hero visual weight |
+| 15 | Implement `J·` logo in nav (replaces plain text) | `Navigation.tsx` | Brand identity |
+
+### Low Priority (Nice-to-Have)
+| # | Change | File(s) | Impact |
+|---|---|---|---|
+| 16 | Add subtle scanline to projects page | `projects/page.tsx` | CRT authenticity |
+| 17 | Add "preferred" badge to Email/LinkedIn | `contact/page.tsx` | Guides user |
+
+---
+
+## The North Star
+
+When this design document is fully implemented, a user navigating the site should feel like they're walking through a home:
+
+- **The Foyer** (Home): "Welcome. Here's who I am, in brief."
+- **The Archive** (Education): "My academic history, documented like a manuscript."
+- **The Ledger** (Experience): "My professional credentials, precise and structured."
+- **The Terminal** (Projects): "My workshop. Dark, technical, where things get built."
+- **The Notebook** (Whispers): "My private journal. Quiet, literary, reflective."
+- **The Signal** (Contact): "My coordinates. Clean, direct, no decoration."
+
+Each room has its own atmosphere. But the warm amber light — the solaris accent — glows in every single one.

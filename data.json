@@ -5,20 +5,45 @@
     "email": "jabirahaian@gmail.com",
     "headline": "BBA in Accounting & Information Systems at University of Dhaka. Exploring Forensic Accounting, Data Analytics & AI.",
     "bio": "I apply data-driven insights to enhance processes and solve problems. My core interests include accounting, financial analysis, and my ambition to become a Chartered Accountant. I am committed to collaboration, continuous learning, and teamwork.",
-    "shortTags": [
-      "CA, ICAB (5%)",
-      "Aspire 25 Alumni"
-    ]
+    "shortTags": ["CA, ICAB (5%)", "Aspire 25 Alumni"]
   },
   "endpoints": [
-    { "name": "Email", "url": "mailto:jabirahaian@gmail.com", "handle": "jabirahaian@gmail.com" },
-    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/jabir-abdullah-haian/", "handle": "in/jabir-abdullah-haian" },
-    { "name": "GitHub", "url": "https://github.com/Jabir-A-H/", "handle": "@Jabir-A-H" },
+    {
+      "name": "Email",
+      "url": "mailto:jabirahaian@gmail.com",
+      "handle": "jabirahaian@gmail.com"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/jabir-abdullah-haian/",
+      "handle": "in/jabir-abdullah-haian"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/Jabir-A-H/",
+      "handle": "@Jabir-A-H"
+    },
     { "name": "Telegram", "url": "https://t.me/jabirah", "handle": "@jabirah" },
-    { "name": "Twitter", "url": "https://twitter.com/JabirHaian", "handle": "@JabirHaian" },
-    { "name": "Instagram", "url": "https://www.instagram.com/jabir_a_haian", "handle": "@jabir_a_haian" },
-    { "name": "WordPress", "url": "https://jabirahn.wordpress.com", "handle": "jabirahn.wordpress.com" },
-    { "name": "YouTube", "url": "https://www.youtube.com/jabirabdullahhaian", "handle": "@jabirabdullahhaian" }
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/JabirHaian",
+      "handle": "@JabirHaian"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/jabir_a_haian",
+      "handle": "@jabir_a_haian"
+    },
+    {
+      "name": "WordPress",
+      "url": "https://jabirahn.wordpress.com",
+      "handle": "jabirahn.wordpress.com"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/@jabirah",
+      "handle": "@jabirah"
+    }
   ],
   "projects": [
     {
@@ -118,45 +143,87 @@
       "date": "Sep 2022 - Present",
       "role": "BBA, Accounting & Information Systems",
       "description": "Exploring Forensic Accounting, Data Analytics, AI & Technology.",
-      "skills": ["Microsoft Products", "Online Research", "IT Management", "Technical Support", "Problem Solving", "Cycling", "IT Operations", "Microsoft Excel", "Accounting", "Teamwork", "Big Data", "Microsoft Office", "Communication", "Table Tennis"]
+      "skills": [
+        "Microsoft Products",
+        "Online Research",
+        "IT Management",
+        "Technical Support",
+        "Problem Solving",
+        "Cycling",
+        "IT Operations",
+        "Microsoft Excel",
+        "Accounting",
+        "Teamwork",
+        "Big Data",
+        "Microsoft Office",
+        "Communication",
+        "Table Tennis"
+      ]
     },
     {
       "title": "Notre Dame College",
       "date": "Feb 2019 - Jun 2021",
       "role": "HSC, Business Studies",
       "description": "Activities and societies: Notre Dame Business Club, Notre Dame Information Technology Club. Attained perfect attendance certificate for 100% attendance. Ranked 35th out of 750 Students.",
-      "skills": ["Microsoft Products", "IT Management", "Technical Support", "Problem Solving", "IT Operations", "Accounting", "HTML", "C (Programming Language)", "Microsoft Office"]
+      "skills": [
+        "Microsoft Products",
+        "IT Management",
+        "Technical Support",
+        "Problem Solving",
+        "IT Operations",
+        "Accounting",
+        "HTML",
+        "C (Programming Language)",
+        "Microsoft Office"
+      ]
     },
     {
       "title": "Birshreshtha Noor Mohammad Public College",
       "date": "Jan 2017 - May 2019",
       "role": "SSC, Business Studies",
       "description": "Activities and societies: Business Club, Chess Club. Got board scholarship for outstanding performance.",
-      "skills": ["Microsoft Products", "Problem Solving", "Cycling", "IT Operations", "Microsoft Excel", "Accounting", "Microsoft Office"]
+      "skills": [
+        "Microsoft Products",
+        "Problem Solving",
+        "Cycling",
+        "IT Operations",
+        "Microsoft Excel",
+        "Accounting",
+        "Microsoft Office"
+      ]
     },
     {
       "title": "Birshreshtha Munshi Abdur Rouf Public College",
       "date": "Dec 2013 - Dec 2016",
       "role": "JSC",
-      "skills": ["Microsoft Products", "Problem Solving", "IT Operations", "Microsoft Office"]
+      "skills": [
+        "Microsoft Products",
+        "Problem Solving",
+        "IT Operations",
+        "Microsoft Office"
+      ]
     }
   ],
   "certifications": [
     {
       "title": "Aspire Leaders Program",
       "issuer": "Aspire Institute",
-      "date": "Oct 2025"
+      "date": "Oct 2025",
+      "verifyUrl": ""
     },
     {
       "title": "Fundamentals of Digital Marketing",
       "issuer": "Google",
-      "date": "May 2024"
+      "date": "May 2024",
+      "verifyUrl": ""
     },
     {
-      "title": "Big Data Foundations - Level 1"
+      "title": "Big Data Foundations - Level 1",
+      "verifyUrl": ""
     },
     {
-      "title": "Microsoft Excel - Beginner to Expert"
+      "title": "Microsoft Excel - Beginner to Expert",
+      "verifyUrl": ""
     }
   ],
   "skills": [

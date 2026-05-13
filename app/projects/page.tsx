@@ -20,8 +20,8 @@ export default function ProjectsPage() {
           <div className="absolute top-0 right-0 p-4 border border-neutral-800 font-mono text-[10px] text-neutral-500 hidden md:block bg-neutral-950/50 backdrop-blur-sm">
             <div>LAT: 23.8103° N</div>
             <div>LNG: 90.4125° E</div>
-            <div className="text-emerald-500 mt-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+            <div className="text-accent-light mt-2 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-accent-light rounded-full animate-pulse"></span>
               SYSTEM ONLINE
             </div>
           </div>
@@ -36,9 +36,9 @@ export default function ProjectsPage() {
           
           <div className="flex flex-col md:flex-row justify-between w-full items-start md:items-end gap-6">
             <p className="text-sm font-mono text-neutral-400 uppercase tracking-[0.2em] max-w-md leading-relaxed">
-              Technical experiments & live deployments
+              Technical experiments &amp; live deployments
             </p>
-            <a href="https://github.com/Jabir-A-H/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-xs font-mono text-white border border-neutral-700 bg-neutral-900/50 backdrop-blur-sm px-6 py-3 hover:bg-white hover:text-black transition-all duration-300">
+            <a href="https://github.com/Jabir-A-H/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-xs font-mono text-white border border-neutral-700 bg-neutral-900/50 backdrop-blur-sm px-6 py-3 hover:bg-accent hover:text-white hover:border-accent transition-all duration-300">
               <Terminal className="w-4 h-4" />
               <span className="uppercase tracking-widest font-bold">Access_GitHub</span>
             </a>
@@ -57,7 +57,7 @@ export default function ProjectsPage() {
           </div>
 
           <div className="flex flex-col gap-16">
-            {liveProjects.map((project, idx) => (
+            {liveProjects.map((project) => (
               <motion.div 
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -67,15 +67,15 @@ export default function ProjectsPage() {
                 className="group flex flex-col lg:flex-row border border-neutral-800 bg-neutral-950/50 backdrop-blur-sm relative"
               >
                 {/* Corner Accents */}
-                <div className="absolute -top-1 -left-1 w-2 h-2 bg-neutral-500 group-hover:bg-emerald-400 transition-colors z-20"></div>
-                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-neutral-500 group-hover:bg-emerald-400 transition-colors z-20"></div>
+                <div className="absolute -top-1 -left-1 w-2 h-2 bg-neutral-500 group-hover:bg-accent transition-colors z-20"></div>
+                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-neutral-500 group-hover:bg-accent transition-colors z-20"></div>
 
                 {/* Content Side */}
                 <div className="w-full p-8 md:p-12 flex flex-col justify-between relative z-10">
                   <div>
                     <div className="flex justify-between items-start mb-8">
-                      <span className="font-mono text-[10px] text-emerald-400 border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 uppercase tracking-widest flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+                      <span className="font-mono text-[10px] text-accent-light border border-accent/30 bg-accent/10 px-3 py-1 uppercase tracking-widest flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-accent-light rounded-full animate-pulse"></span>
                         Active
                       </span>
                     </div>
@@ -103,7 +103,7 @@ export default function ProjectsPage() {
                         href={project.live} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 font-mono text-xs bg-white text-black px-6 py-4 hover:bg-emerald-400 transition-colors font-bold uppercase tracking-widest"
+                        className="flex-1 flex items-center justify-center gap-2 font-mono text-xs bg-white text-black px-6 py-4 hover:bg-accent hover:text-white transition-colors font-bold uppercase tracking-widest"
                       >
                         <span>Launch</span>
                         <ExternalLink className="w-4 h-4" />
@@ -158,20 +158,20 @@ export default function ProjectsPage() {
                 href={project.repo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-neutral-800 hover:bg-white hover:text-black transition-all duration-300 px-6 items-center cursor-pointer relative overflow-hidden"
+                className="group grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-neutral-800 hover:bg-accent hover:text-white transition-all duration-300 px-6 items-center cursor-pointer relative overflow-hidden"
               >
                 <div className="col-span-5">
-                  <h3 className="text-lg font-sans font-bold text-neutral-200 group-hover:text-black transition-colors">
+                  <h3 className="text-lg font-sans font-bold text-neutral-200 group-hover:text-white transition-colors">
                     {project.title}
                   </h3>
-                  <p className="md:hidden text-sm text-neutral-500 group-hover:text-neutral-700 mt-1 font-serif italic transition-colors">
+                  <p className="md:hidden text-sm text-neutral-500 group-hover:text-white/70 mt-1 font-serif italic transition-colors">
                     {project.description}
                   </p>
                 </div>
                 
                 <div className="col-span-4 flex flex-wrap gap-2 mt-3 md:mt-0">
                   {project.tech.map(t => (
-                    <span key={t} className="font-mono text-[10px] text-neutral-400 border border-neutral-700 group-hover:border-black group-hover:text-black px-2 py-1 transition-colors uppercase tracking-wider">
+                    <span key={t} className="font-mono text-[10px] text-neutral-400 border border-neutral-700 group-hover:border-white/30 group-hover:text-white/80 px-2 py-1 transition-colors uppercase tracking-wider">
                       {t}
                     </span>
                   ))}
@@ -179,17 +179,17 @@ export default function ProjectsPage() {
                 
                 <div className="col-span-2 mt-4 md:mt-0">
                   <span className={`font-mono text-[10px] uppercase tracking-widest ${
-                    project.status === 'active' ? 'text-emerald-500 group-hover:text-emerald-700' :
-                    project.status === 'in-progress' ? 'text-blue-500 group-hover:text-blue-700' :
-                    project.status === 'completed' ? 'text-purple-500 group-hover:text-purple-700' :
-                    'text-amber-500 group-hover:text-amber-700'
+                    project.status === 'active' ? 'text-accent-light group-hover:text-white' :
+                    project.status === 'in-progress' ? 'text-blue-400 group-hover:text-white' :
+                    project.status === 'completed' ? 'text-purple-400 group-hover:text-white' :
+                    'text-amber-400 group-hover:text-white'
                   } transition-colors`}>
                     {project.status}
                   </span>
                 </div>
                 
                 <div className="col-span-1 flex justify-start md:justify-end mt-4 md:mt-0">
-                  <div className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300 transform group-hover:rotate-45">
+                  <div className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center group-hover:bg-white group-hover:text-accent transition-all duration-300 transform group-hover:rotate-45">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>

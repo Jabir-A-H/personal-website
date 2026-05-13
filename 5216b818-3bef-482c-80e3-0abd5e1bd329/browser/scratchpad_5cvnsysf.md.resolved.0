@@ -1,0 +1,13 @@
+# Personal Website Audit Task
+
+## Checklist
+- [ ] Capture Home Page screenshots (Hero, Education, Experience, Credentials, Footer)
+- [ ] Capture Experience Page screenshots
+- [ ] Capture Projects Page screenshots
+- [ ] Capture Whispers Page screenshots (optional but good for completeness)
+- [ ] Summarize visual findings
+
+## Notes
+- Base URL: http://localhost:3000
+- Accent Color: Warm solaris (#e8915a)
+- Pages to audit: Home, Experience, Projects, Whispers, Contact, Education, Not-Found, Global-Error

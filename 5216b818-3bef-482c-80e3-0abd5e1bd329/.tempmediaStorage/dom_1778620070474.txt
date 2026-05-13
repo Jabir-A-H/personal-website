@@ -1,0 +1,38 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Skip to content
+[0] (142,51)<a class='font-mono font-bold text-sm tracking-tighter uppercase mb-6 md:mb-0 focus:outline-none focus:ring-2 focus:ring-accent rounded-sm' href='/'>Jabir A. Haian />
+[1] (564,51)<a class='relative py-1 hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-accent rounded-sm opacity-60' href='/'>HOME />
+[2] (616,51)<a class='relative py-1 hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-accent rounded-sm opacity-60' href='/education'>EDUCATION />
+[3] (684,51)<a class='relative py-1 hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-accent rounded-sm opacity-60' href='/experience'>EXPERIENCE />
+[4] (750,51)<a class='relative py-1 hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-accent rounded-sm opacity-60' href='/projects'>PROJECTS />
+[5] (810,51)<a class='relative py-1 hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-accent rounded-sm opacity-60' href='/whispers'>WHISPERS />
+[6] (867,51)<a class='relative py-1 hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-accent rounded-sm opacity-100 font-bold' href='/contact'>CONTACT />
+	[7] (867,67)<span  />
+Endpoints
+Dhaka, Bangladesh
+Digital coordinates and communication channels.
+[8] (632,373)<a class='group flex flex-col sm:flex-row sm:items-center justify-between py-8 md:py-10 border-b border-neutral-300 hover:bg-neutral-100 transition-colors px-4 -mx-4 focus:outline-none focus:ring-2 focus:ring-accent' href='mailto:jabirahaian@gmail.com' />
+	[9] (414,372)<span >Email />
+	[10] (801,372)<div  />
+		[11] (782,372)<span >jabirahaian@gmail.com />
+		[12] (874,372)<div  />
+[13] (632,554)<a class='group flex flex-col sm:flex-row sm:items-center justify-between py-8 md:py-10 border-b border-neutral-300 hover:bg-neutral-100 transition-colors px-4 -mx-4 focus:outline-none focus:ring-2 focus:ring-accent' href='https://www.linkedin.com/in/jabir-abdullah-haian/' />
+	[14] (436,554)<span >LinkedIn />
+	[15] (794,554)<div  />
+		[16] (776,554)<span >in/jabir-abdullah-haian />
+		[17] (874,554)<div  />
+[18] (632,736)<a class='group flex flex-col sm:flex-row sm:items-center justify-between py-8 md:py-10 border-b border-neutral-300 hover:bg-neutral-100 transition-colors px-4 -mx-4 focus:outline-none focus:ring-2 focus:ring-accent' href='https://github.com/Jabir-A-H/' />
+	[19] (425,735)<span >GitHub />
+	[20] (836,735)<div  />
+		[21] (818,735)<span >@Jabir-A-H />
+		[22] (874,735)<div  />
+[23] (632,917)<a class='group flex flex-col sm:flex-row sm:items-center justify-between py-8 md:py-10 border-b border-neutral-300 hover:bg-neutral-100 transition-colors px-4 -mx-4 focus:outline-none focus:ring-2 focus:ring-accent' href='https://t.me/jabirah' />
+	[24] (442,916)<span >Telegram />
+	[25] (843,916)<div  />
+		[26] (824,916)<span >@jabirah />
+		[27] (874,916)<div  />
+
+</current_dom>

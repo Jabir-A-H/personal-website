@@ -1,50 +1,22 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import Navigation from './Navigation';
+import { getThemeForRoute, getAnimationForRoute } from '@/lib/theme';
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const prefersReducedMotion = useReducedMotion() ?? false;
 
-  let bgColor = '#fafafa'; // neutral-50
-  if (pathname === '/projects') bgColor = '#0a0a0a'; // neutral-950
-  if (pathname === '/education') bgColor = '#f5f5f0'; // paper
-  if (pathname === '/whispers') bgColor = '#f8fafc'; // slate-50
-  if (pathname === '/contact') bgColor = '#ffffff'; // white
-
-  // Default animation
-  let animProps: any = {
-    initial: { opacity: 0, y: 10 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -10 },
-    transition: { duration: 0.4, ease: 'easeOut' }
-  };
-
-  // Custom animations based on route
-  if (pathname === '/projects') {
-    // Mechanical door opening effect (Sci-fi blast door)
-    animProps = {
-      initial: { opacity: 0, clipPath: 'inset(50% 0 50% 0)', scale: 0.95 },
-      animate: { opacity: 1, clipPath: 'inset(0% 0 0% 0)', scale: 1 },
-      exit: { opacity: 0, clipPath: 'inset(50% 0 50% 0)', scale: 0.95 },
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } // Snappy mechanical ease
-    };
-  } else if (pathname === '/education') {
-    // Academic unfold / Book opening effect
-    animProps = {
-      initial: { opacity: 0, rotateX: 15, y: 40, filter: 'blur(10px)' },
-      animate: { opacity: 1, rotateX: 0, y: 0, filter: 'blur(0px)' },
-      exit: { opacity: 0, rotateX: -15, y: -40, filter: 'blur(10px)' },
-      transition: { duration: 0.7, ease: 'easeOut' }
-    };
-  }
+  const { bg } = getThemeForRoute(pathname);
+  const animProps = getAnimationForRoute(pathname, prefersReducedMotion);
 
   return (
     <motion.div
-      animate={{ backgroundColor: bgColor }}
-      transition={{ duration: 0.7, ease: 'easeInOut' }}
-      className="min-h-screen w-full flex flex-col relative selection:bg-neutral-300 selection:text-black"
+      animate={{ backgroundColor: bg }}
+      transition={{ duration: prefersReducedMotion ? 0 : 0.7, ease: 'easeInOut' }}
+      className="min-h-screen w-full flex flex-col relative"
     >
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-neutral-900 text-white px-4 py-2 z-[100] font-mono text-xs uppercase tracking-widest rounded-sm">
         Skip to content

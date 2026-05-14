@@ -12,10 +12,6 @@ export const metadata: Metadata = {
   description: data.personal.headline,
 };
 
-import Image from 'next/image';
-
-// ... (Metadata and imports handled correctly below)
-
 export default function Home() {
   const { personal, experience, certifications, skills } = data;
   const currentEducation = data.education[0]; // University of Dhaka
@@ -26,45 +22,34 @@ export default function Home() {
   );
 
   return (
-    <main className="w-full overflow-hidden">
-      {/* Immersive Hero */}
-      <FadeIn className="relative w-full h-[90vh] md:h-screen flex flex-col items-center justify-end md:justify-center mb-16 md:mb-24 px-4 overflow-hidden">
-        
-        {/* Full Width Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="/profile.jpg" 
-            alt="Jabir Abdullah Haian" 
-            fill
-            className="object-cover object-top"
-            priority
-          />
-          {/* Cinematic Overlay */}
-          <div className="absolute inset-0 bg-neutral-900/30 bg-gradient-to-t from-neutral-900/80 via-neutral-900/20 to-transparent"></div>
-        </div>
-
-        {/* Foreground Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center justify-end pb-12 md:pb-0 h-full">
-          <div className="text-center w-full">
-            <h1 className="text-[clamp(3rem,12vw,9rem)] leading-[0.85] font-sans font-black tracking-tighter text-white uppercase mb-6 drop-shadow-2xl">
-              {personal.name.split(' ').slice(0, 2).join(' ')}<br/>{personal.name.split(' ').slice(2).join(' ')}
-            </h1>
-            
-            <p className="text-xl md:text-3xl font-serif italic text-neutral-200 mb-8 leading-relaxed max-w-2xl mx-auto px-4 drop-shadow-md">
+    <div className="w-full max-w-7xl mx-auto py-12 md:py-24">
+      {/* Hero */}
+      <FadeIn className="mb-16 md:mb-24">
+        <h1 className="text-[clamp(3rem,12vw,8rem)] md:text-[clamp(4rem,9vw,10rem)] leading-[0.85] font-sans font-bold tracking-tighter text-neutral-900 uppercase mb-12">
+          {personal.name.split(' ').slice(0, 2).join(' ')}<br/>{personal.name.split(' ').slice(2).join(' ')}
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+          <div className="md:col-span-7 order-2 md:order-1">
+            <p className="text-2xl md:text-4xl font-serif italic text-neutral-700 leading-snug mb-8">
               {personal.headline}
             </p>
-            
-            <div className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-300 flex items-center justify-center gap-4">
-              <span>{personal.location}</span>
-              <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
-              <span>{personal.email}</span>
+            <div className="font-mono text-xs uppercase tracking-widest text-neutral-500 space-y-1 mb-8">
+              <p>{personal.location}</p>
+              <p>{personal.email}</p>
+            </div>
+            <p className="text-lg text-neutral-600 max-w-2xl leading-relaxed">
+              {personal.bio}
+            </p>
+          </div>
+          <div className="md:col-span-5 order-1 md:order-2 flex justify-start md:justify-end">
+            <div className="w-[280px] md:w-full max-w-[360px] aspect-square">
+              <AvatarPlaceholder className="w-full h-full" />
             </div>
           </div>
         </div>
       </FadeIn>
 
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
-        <div className="w-full h-1 bg-accent mb-16"></div>
+      <div className="w-full h-1 bg-accent mb-16"></div>
 
       {/* Education Section — Current Institution Summary */}
       <FadeIn className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
@@ -181,6 +166,5 @@ export default function Home() {
         </div>
       </FadeIn>
     </div>
-    </main>
   );
 }

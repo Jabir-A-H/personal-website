@@ -38,7 +38,7 @@ export default function AboutPage() {
         <section>
           <h3 className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-6">Timeline</h3>
           
-          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-neutral-300 before:to-transparent">
+          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-1 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-neutral-200 before:to-transparent">
             
             {education.map((edu, idx) => (
               <TimelineCard 
@@ -47,7 +47,7 @@ export default function AboutPage() {
                 date={edu.date}
                 role={edu.role}
                 description={edu.description}
-                skills={edu.skills}
+                skills={edu.skills ? edu.skills.slice(0, 4) : []}
               />
             ))}
 

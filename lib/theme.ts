@@ -10,8 +10,8 @@ export const ACCENT = {
 export const PAGE_THEMES: Record<string, { bg: string }> = {
   '/': { bg: '#fafafa' },
   '/projects': { bg: '#0a0a0a' },
-  '/education': { bg: '#f5f5f0' },
-  '/whispers': { bg: '#f8fafc' },
+  '/education': { bg: '#f5f0e8' },
+  '/whispers': { bg: '#f8f6f2' },
   '/contact': { bg: '#ffffff' },
   '/experience': { bg: '#faf8f5' },
 };
@@ -41,6 +41,18 @@ const ANIMATION_PRESETS: Record<string, AnimationProps> = {
     animate: { opacity: 1, rotateX: 0, y: 0, filter: 'blur(0px)' },
     exit: { opacity: 0, rotateX: -15, y: -40, filter: 'blur(10px)' },
     transition: { duration: 0.7, ease: 'easeOut' },
+  },
+  '/experience': {
+    initial: { opacity: 0, x: 20 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -20 },
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
+  '/whispers': {
+    initial: { opacity: 0, filter: 'blur(8px)' },
+    animate: { opacity: 1, filter: 'blur(0px)' },
+    exit: { opacity: 0, filter: 'blur(8px)' },
+    transition: { duration: 1.0, ease: 'easeOut' },
   },
 };
 

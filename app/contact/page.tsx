@@ -40,9 +40,16 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="group flex flex-col sm:flex-row sm:items-center justify-between py-8 md:py-10 border-b border-neutral-300 hover:bg-neutral-100 transition-colors px-4 -mx-4 focus:outline-none focus:ring-2 focus:ring-accent"
               >
-                <span className="text-3xl md:text-5xl font-light tracking-tight text-neutral-900 group-hover:translate-x-4 transition-transform duration-500 ease-out">
-                  {endpoint.name}
-                </span>
+                <div className="flex items-center gap-6">
+                  <span className="text-3xl md:text-5xl font-light tracking-tight text-neutral-900 group-hover:translate-x-4 transition-transform duration-500 ease-out">
+                    {endpoint.name}
+                  </span>
+                  {(endpoint.name === 'Email' || endpoint.name === 'LinkedIn') && (
+                    <span className="font-mono text-[10px] uppercase tracking-widest bg-accent/5 text-accent-dark px-2 py-1 rounded-sm border border-accent/10 transition-opacity opacity-70 group-hover:opacity-100 hidden sm:block">
+                      Preferred
+                    </span>
+                  )}
+                </div>
                 
                 <div className="flex items-center gap-4 mt-4 sm:mt-0 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="font-mono text-xs md:text-sm tracking-widest text-neutral-500">

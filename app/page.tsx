@@ -4,12 +4,17 @@ import { ArrowRight } from 'lucide-react';
 import ExperienceCard from '../components/ExperienceCard';
 import SectionHeader from '../components/SectionHeader';
 import AvatarPlaceholder from '../components/AvatarPlaceholder';
+import FadeIn from '../components/FadeIn';
 import data from '../data.json';
 
 export const metadata: Metadata = {
   title: `${data.personal.name} | Portfolio`,
   description: data.personal.headline,
 };
+
+import Image from 'next/image';
+
+// ... (Metadata and imports handled correctly below)
 
 export default function Home() {
   const { personal, experience, certifications, skills } = data;
@@ -21,39 +26,48 @@ export default function Home() {
   );
 
   return (
-    <div className="w-full max-w-7xl mx-auto py-12 md:py-24">
-      {/* Hero */}
-      <div className="mb-24 md:mb-32">
-        <h1 className="text-[clamp(3rem,12vw,8rem)] md:text-[clamp(4rem,9vw,10rem)] leading-[0.85] font-sans font-bold tracking-tighter text-neutral-900 uppercase mb-12">
-          {personal.name.split(' ').slice(0, 2).join(' ')}<br/>{personal.name.split(' ').slice(2).join(' ')}
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <div className="md:col-span-4 font-mono text-xs uppercase tracking-widest text-neutral-500 space-y-2">
-            <div className="mb-4">
-              <AvatarPlaceholder size={80} />
-            </div>
-            <p>{personal.location}</p>
-            <p>{personal.email}</p>
-            {personal.shortTags.map((tag, idx) => (
-              <p key={idx}>{tag}</p>
-            ))}
-          </div>
-          <div className="md:col-span-8">
-            {/* TODO: Write your personal philosophy or tagline */}
-            <p className="text-2xl md:text-4xl font-serif italic text-neutral-700 leading-snug mb-8">
+    <main className="w-full overflow-hidden">
+      {/* Immersive Hero */}
+      <FadeIn className="relative w-full h-[90vh] md:h-screen flex flex-col items-center justify-end md:justify-center mb-16 md:mb-24 px-4 overflow-hidden">
+        
+        {/* Full Width Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/profile.jpg" 
+            alt="Jabir Abdullah Haian" 
+            fill
+            className="object-cover object-top"
+            priority
+          />
+          {/* Cinematic Overlay */}
+          <div className="absolute inset-0 bg-neutral-900/30 bg-gradient-to-t from-neutral-900/80 via-neutral-900/20 to-transparent"></div>
+        </div>
+
+        {/* Foreground Content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center justify-end pb-12 md:pb-0 h-full">
+          <div className="text-center w-full">
+            <h1 className="text-[clamp(3rem,12vw,9rem)] leading-[0.85] font-sans font-black tracking-tighter text-white uppercase mb-6 drop-shadow-2xl">
+              {personal.name.split(' ').slice(0, 2).join(' ')}<br/>{personal.name.split(' ').slice(2).join(' ')}
+            </h1>
+            
+            <p className="text-xl md:text-3xl font-serif italic text-neutral-200 mb-8 leading-relaxed max-w-2xl mx-auto px-4 drop-shadow-md">
               {personal.headline}
             </p>
-            <p className="text-lg text-neutral-600 max-w-3xl leading-relaxed">
-              {personal.bio}
-            </p>
+            
+            <div className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-300 flex items-center justify-center gap-4">
+              <span>{personal.location}</span>
+              <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+              <span>{personal.email}</span>
+            </div>
           </div>
         </div>
-      </div>
+      </FadeIn>
 
-      <div className="w-full h-1 bg-accent mb-24"></div>
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
+        <div className="w-full h-1 bg-accent mb-16"></div>
 
       {/* Education Section — Current Institution Summary */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
+      <FadeIn className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
         <div className="md:col-span-4">
           <SectionHeader title="Education" />
         </div>
@@ -69,16 +83,11 @@ export default function Home() {
             )}
             {currentEducation.skills && currentEducation.skills.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-6">
-                {currentEducation.skills.slice(0, 6).map(skill => (
-                  <span key={skill} className="text-[10px] uppercase tracking-wider font-mono bg-neutral-100 text-neutral-500 px-2 py-1 rounded-sm">
+                {currentEducation.skills.slice(0, 4).map(skill => (
+                  <span key={skill} className="text-[10px] uppercase tracking-wider font-mono bg-accent/5 text-accent-dark px-2 py-1 rounded-sm border border-accent/10">
                     {skill}
                   </span>
                 ))}
-                {currentEducation.skills.length > 6 && (
-                  <span className="text-[10px] uppercase tracking-wider font-mono text-neutral-400 px-2 py-1">
-                    +{currentEducation.skills.length - 6} more
-                  </span>
-                )}
               </div>
             )}
           </div>
@@ -90,12 +99,12 @@ export default function Home() {
             <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
           </Link>
         </div>
-      </div>
+      </FadeIn>
 
-      <div className="w-full h-px bg-neutral-300 mb-24"></div>
+      <div className="w-full h-px bg-neutral-300 mb-16"></div>
 
       {/* Leadership & Experience — Curated */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
+      <FadeIn className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
         <div className="md:col-span-4">
           <SectionHeader title={<>Leadership &<br/>Experience</>} />
         </div>
@@ -117,12 +126,12 @@ export default function Home() {
             <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
           </Link>
         </div>
-      </div>
+      </FadeIn>
 
-      <div className="w-full h-px bg-neutral-300 mb-24"></div>
+      <div className="w-full h-px bg-neutral-300 mb-16"></div>
 
       {/* Credentials — Compact Summary */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
+      <FadeIn className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
         <div className="md:col-span-4">
           <SectionHeader title="Credentials" />
         </div>
@@ -139,12 +148,12 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-3 mb-8">
             {skills.slice(0, 5).map(skill => (
-              <span key={skill.name} className="text-xs font-mono uppercase tracking-wider bg-neutral-100 text-neutral-600 px-3 py-1.5 rounded-sm">
+              <span key={skill.name} className="text-[10px] uppercase tracking-wider font-mono bg-accent/5 text-accent-dark px-2 py-1 rounded-sm border border-accent/10">
                 {skill.name}
               </span>
             ))}
             {skills.length > 5 && (
-              <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 px-3 py-1.5">
+              <span className="text-[10px] uppercase tracking-wider font-mono text-neutral-400 px-2 py-1">
                 +{skills.length - 5} more
               </span>
             )}
@@ -157,28 +166,21 @@ export default function Home() {
             <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
           </Link>
         </div>
-      </div>
+      </FadeIn>
 
-      {/* Explore More — Subtle Footer */}
-      <div className="w-full h-1 bg-accent mb-16"></div>
-      <div className="flex flex-col sm:flex-row gap-6 sm:gap-12">
-        <Link
-          href="/projects"
-          className="group flex items-center gap-3 font-mono text-sm text-neutral-500 hover:text-accent-dark transition-colors"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
-          I also build things
-          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-        </Link>
-        <Link
-          href="/whispers"
-          className="group flex items-center gap-3 font-mono text-sm text-neutral-500 hover:text-accent-dark transition-colors"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
-          Fragments of thought
-          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </div>
+      {/* Footer — Personal Sign-Off */}
+      <FadeIn className="mt-24">
+        <div className="w-full h-1 bg-accent mb-8"></div>
+        <div>
+          <p className="font-serif italic text-2xl text-neutral-800 mb-2">
+            &quot;Still learning. Always building.&quot;
+          </p>
+          <a href={`mailto:${personal.email}`} className="font-mono text-sm text-neutral-500 hover:text-accent-dark transition-colors">
+            {personal.email}
+          </a>
+        </div>
+      </FadeIn>
     </div>
+    </main>
   );
 }

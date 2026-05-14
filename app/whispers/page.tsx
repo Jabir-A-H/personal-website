@@ -30,13 +30,16 @@ export default function WhispersPage() {
 
             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-6">
               <time className="font-mono text-[10px] tracking-widest text-neutral-400 uppercase">{whisper.date}</time>
-              <h2 className="text-2xl md:text-3xl font-serif font-light text-neutral-800 group-hover:text-neutral-900 transition-colors">
+              <h2 className={`font-serif font-light text-neutral-800 group-hover:text-neutral-900 transition-colors ${index === 0 ? 'text-3xl md:text-5xl' : 'text-2xl md:text-3xl'}`}>
                 {whisper.title}
               </h2>
             </div>
 
             <div className="pl-0 md:pl-4 border-l-2 border-neutral-100 md:border-l-0">
-              <p className="text-neutral-600 leading-relaxed text-lg font-light mb-8 max-w-2xl">
+              <p className={`text-neutral-600 leading-relaxed font-light mb-8 max-w-2xl
+                ${index === 0 ? 'text-xl md:text-2xl' : 'text-lg'}
+                first-letter:float-left first-letter:text-6xl first-letter:pr-3 first-letter:font-serif first-letter:text-accent first-letter:leading-[0.8] first-letter:mt-1
+              `}>
                 {whisper.content}
               </p>
               

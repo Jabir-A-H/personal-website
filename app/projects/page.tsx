@@ -12,8 +12,9 @@ export default function ProjectsPage() {
 
   return (
     <div className="w-full flex flex-col text-neutral-300 py-8 min-h-screen relative">
-      {/* Decorative Background Grid */}
+      {/* Decorative Background Grid & Scanline */}
       <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] z-0"></div>
+      <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.25)_51%)] bg-[length:100%_4px] z-50 opacity-10 mix-blend-overlay"></div>
 
       <div className="relative z-10">
         <header className="mb-20 flex flex-col items-start border-b border-neutral-800 pb-12 relative">

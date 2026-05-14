@@ -19,8 +19,8 @@ export default function Navigation() {
 
   return (
     <header className={`w-full max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between items-start md:items-center z-50 relative ${textColor}`}>
-      <Link href="/" className="font-mono font-bold text-sm tracking-tighter uppercase mb-6 md:mb-0 focus:outline-none focus:ring-2 focus:ring-accent rounded-sm">
-        Jabir A. Haian
+      <Link href="/" className="flex items-center text-xl font-sans font-extrabold tracking-tight mb-6 md:mb-0 focus:outline-none focus:ring-2 focus:ring-accent rounded-sm hover:opacity-80 transition-opacity">
+        J<span className="text-accent ml-[1px] leading-none">.</span>
       </Link>
       
       <nav className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-mono tracking-widest" aria-label="Main Navigation">

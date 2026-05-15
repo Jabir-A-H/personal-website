@@ -16,7 +16,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
     <motion.div
       animate={{ backgroundColor: bg }}
       transition={{ duration: prefersReducedMotion ? 0 : 0.7, ease: 'easeInOut' }}
-      className="min-h-screen w-full flex flex-col relative"
+      className="min-h-screen w-full flex flex-col relative overflow-x-hidden"
     >
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-neutral-900 text-white px-4 py-2 z-[100] font-mono text-xs uppercase tracking-widest rounded-sm">
         Skip to content

@@ -23,22 +23,19 @@ export default function Home() {
   return (
     <div className="w-full max-w-7xl mx-auto py-12 md:py-24">
       {/* Full Bleed Hero */}
-      <FadeIn className="w-screen relative left-1/2 -translate-x-1/2 mb-24 md:mb-32 min-h-[80vh] flex flex-col justify-center py-32 md:py-48 mt-[-32px]">
+      <FadeIn className="w-screen relative left-1/2 -translate-x-1/2 mb-16 md:mb-24 min-h-[70vh] flex flex-col justify-center pt-16 md:pt-24 pb-24 md:pb-32 mt-[-3rem] md:mt-[-6rem]">
         {/* Background Image Wrapper */}
-        <div className="absolute inset-0 z-0 bg-[#fafafa] pointer-events-none">
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <img 
-            src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=2000&auto=format&fit=crop" 
-            alt="Hero Background" 
-            className="w-full h-full object-cover object-[70%_30%] opacity-90"
-            style={{ 
-              WebkitMaskImage: 'radial-gradient(ellipse at 70% 50%, black 20%, transparent 80%)',
-              maskImage: 'radial-gradient(ellipse at 70% 50%, black 20%, transparent 80%)' 
-            }}
+            src="/images/hero-bg.jpg" 
+            alt="Jabir Abdullah Haian" 
+            className="w-full h-full object-cover object-[80%_90%] opacity-90"
           />
-          {/* Linear gradient overlay for left side text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fafafa] via-[#fafafa]/80 to-transparent w-full md:w-2/3"></div>
-          {/* Bottom fade into the page */}
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#fafafa] to-transparent"></div>
+          {/* Seamless Edge Fades */}
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#fafafa] via-[#fafafa]/80 to-transparent"></div>
+          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#fafafa] via-[#fafafa]/80 to-transparent"></div>
+          <div className="absolute inset-y-0 left-0 w-full md:w-2/3 bg-gradient-to-r from-[#fafafa] via-[#fafafa]/90 to-transparent"></div>
+          <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#fafafa] to-transparent"></div>
         </div>
 
         {/* Content */}

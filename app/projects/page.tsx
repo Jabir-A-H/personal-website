@@ -7,8 +7,8 @@ import data from '../../data.json';
 
 export default function ProjectsPage() {
   const { projects } = data;
-  const liveProjects = projects.filter(p => p.live);
-  const repoProjects = projects.filter(p => !p.live);
+  const liveProjects = projects.filter(p => p.status === 'featured');
+  const repoProjects = projects.filter(p => p.status !== 'featured');
 
   return (
     <div className="w-full flex flex-col text-neutral-300 py-8 min-h-screen relative">
@@ -77,7 +77,7 @@ export default function ProjectsPage() {
                     <div className="flex justify-between items-start mb-8">
                       <span className="font-mono text-[10px] text-accent-light border border-accent/30 bg-accent/10 px-3 py-1 uppercase tracking-widest flex items-center gap-2">
                         <span className="w-1.5 h-1.5 bg-accent-light rounded-full animate-pulse"></span>
-                        Active
+                        {project.status === 'featured' ? 'Featured' : project.status}
                       </span>
                     </div>
                     
@@ -180,10 +180,9 @@ export default function ProjectsPage() {
                 
                 <div className="col-span-2 mt-4 md:mt-0">
                   <span className={`font-mono text-[10px] uppercase tracking-widest ${
-                    project.status === 'active' ? 'text-accent-light group-hover:text-white' :
-                    project.status === 'in-progress' ? 'text-blue-400 group-hover:text-white' :
-                    project.status === 'completed' ? 'text-purple-400 group-hover:text-white' :
-                    'text-amber-400 group-hover:text-white'
+                    project.status === 'development' ? 'text-accent-light group-hover:text-white' :
+                    project.status === 'legacy' ? 'text-amber-400 group-hover:text-white' :
+                    'text-neutral-400 group-hover:text-white'
                   } transition-colors`}>
                     {project.status}
                   </span>

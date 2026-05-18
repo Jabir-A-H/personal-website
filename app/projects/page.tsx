@@ -19,8 +19,7 @@ export default function ProjectsPage() {
       <div className="relative z-10">
         <header className="mb-20 flex flex-col items-start border-b border-neutral-800 pb-12 relative">
           <div className="absolute top-0 right-0 p-4 border border-neutral-800 font-mono text-[10px] text-neutral-500 hidden md:block bg-neutral-950/50 backdrop-blur-sm">
-            <div>LAT: 23.8103° N</div>
-            <div>LNG: 90.4125° E</div>
+            <div>{data.personal.location}</div>
             <div className="text-accent-light mt-2 flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-accent-light rounded-full animate-pulse"></span>
               SYSTEM ONLINE
@@ -37,7 +36,7 @@ export default function ProjectsPage() {
           
           <div className="flex flex-col md:flex-row justify-between w-full items-start md:items-end gap-6">
             <p className="text-sm font-mono text-neutral-400 uppercase tracking-[0.2em] max-w-md leading-relaxed">
-              Technical experiments &amp; live deployments
+              Featured projects & development work
             </p>
             <a href="https://github.com/Jabir-A-H/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-xs font-mono text-white border border-neutral-700 bg-neutral-900/50 backdrop-blur-sm px-6 py-3 hover:bg-accent hover:text-white hover:border-accent transition-all duration-300">
               <Terminal className="w-4 h-4" />
@@ -46,12 +45,12 @@ export default function ProjectsPage() {
           </div>
         </header>
 
-        {/* LIVE PROJECTS */}
+        {/* FEATURED PROJECTS */}
         <section className="mb-32">
           <div className="flex items-center gap-6 mb-12">
             <h2 className="text-sm font-mono text-white uppercase tracking-[0.3em] flex items-center gap-3">
               <span className="w-2 h-2 bg-white"></span>
-              Live_Deployments
+              Featured_Projects
             </h2>
             <div className="h-px bg-neutral-800 flex-1"></div>
             <span className="font-mono text-xs text-neutral-600">[{liveProjects.length}]</span>
@@ -100,15 +99,17 @@ export default function ProjectsPage() {
                     </div>
                     
                     <div className="flex flex-col sm:flex-row gap-4 max-w-md">
-                      <a 
-                        href={project.live} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 font-mono text-xs bg-white text-black px-6 py-4 hover:bg-accent hover:text-white transition-colors font-bold uppercase tracking-widest"
-                      >
-                        <span>Launch</span>
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
+                      {project.live && (
+                        <a 
+                          href={project.live} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 font-mono text-xs bg-white text-black px-6 py-4 hover:bg-accent hover:text-white transition-colors font-bold uppercase tracking-widest"
+                        >
+                          <span>Launch</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
                       {project.repo && (
                         <a 
                           href={project.repo} 
@@ -128,12 +129,12 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* REPOSITORY ARCHIVE */}
+        {/* OTHER PROJECTS */}
         <section>
           <div className="flex items-center gap-6 mb-8">
             <h2 className="text-sm font-mono text-white uppercase tracking-[0.3em] flex items-center gap-3">
               <span className="w-2 h-2 bg-neutral-600"></span>
-              Repository_Archive
+              Other_Projects
             </h2>
             <div className="h-px bg-neutral-800 flex-1"></div>
             <span className="font-mono text-xs text-neutral-600">[{repoProjects.length}]</span>
@@ -142,9 +143,10 @@ export default function ProjectsPage() {
           <div className="flex flex-col border-t-2 border-neutral-800">
             {/* Header Row */}
             <div className="hidden md:grid grid-cols-12 gap-4 py-4 border-b-2 border-neutral-800 font-mono text-[10px] text-neutral-500 uppercase tracking-widest px-6">
-              <div className="col-span-5">Designation</div>
-              <div className="col-span-4">Tech_Stack</div>
+              <div className="col-span-4">Designation</div>
+              <div className="col-span-3">Tech_Stack</div>
               <div className="col-span-2">Status</div>
+              <div className="col-span-2">Last_Updated</div>
               <div className="col-span-1 text-right">Link</div>
             </div>
 
@@ -156,12 +158,12 @@ export default function ProjectsPage() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05, duration: 0.4 }}
                 key={project.title}
-                href={project.repo}
+                href={project.live || project.repo}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-neutral-800 hover:bg-accent hover:text-white transition-all duration-300 px-6 items-center cursor-pointer relative overflow-hidden"
               >
-                <div className="col-span-5">
+                <div className="col-span-4">
                   <h3 className="text-lg font-sans font-bold text-neutral-200 group-hover:text-white transition-colors">
                     {project.title}
                   </h3>
@@ -170,7 +172,7 @@ export default function ProjectsPage() {
                   </p>
                 </div>
                 
-                <div className="col-span-4 flex flex-wrap gap-2 mt-3 md:mt-0">
+                <div className="col-span-3 flex flex-wrap gap-2 mt-3 md:mt-0">
                   {project.tech.map(t => (
                     <span key={t} className="font-mono text-[10px] text-neutral-400 border border-neutral-700 group-hover:border-white/30 group-hover:text-white/80 px-2 py-1 transition-colors uppercase tracking-wider">
                       {t}
@@ -185,6 +187,12 @@ export default function ProjectsPage() {
                     'text-neutral-400 group-hover:text-white'
                   } transition-colors`}>
                     {project.status}
+                  </span>
+                </div>
+
+                <div className="col-span-2 mt-2 md:mt-0">
+                  <span className="font-mono text-[10px] text-neutral-500 group-hover:text-white/70 transition-colors">
+                    {project.pushedAt ? new Date(project.pushedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '—'}
                   </span>
                 </div>
                 

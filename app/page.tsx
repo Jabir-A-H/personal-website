@@ -13,11 +13,13 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const { personal, experience, certifications, skills } = data;
-  const currentEducation = data.education[0]; // University of Dhaka
-
+  const currentEducations = data.education.filter(e => e.title.includes('ICAB') || e.title.includes('University of Dhaka'));
   // Curated: show only profession-relevant experiences on home
   const featuredExperience = experience.filter(
-    exp => exp.title === 'Morning Riders' || exp.title === 'আলোকিত লাইব্রেরী'
+    exp => exp.title === 'International Education Expo 2026' || 
+           exp.title === 'Bangladesh Skills Summit 2026' ||
+           exp.title === 'Alokito Library' ||
+           exp.title === 'Morning Riders'
   );
 
   return (
@@ -27,7 +29,7 @@ export default function Home() {
         {/* Background Image Wrapper */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img 
-            src="/images/hero-bg.jpg" 
+            src="/images/hero-bg.webp" 
             alt="Jabir Abdullah Haian" 
             className="w-full h-full object-cover object-[80%_90%] opacity-90"
           />
@@ -69,25 +71,27 @@ export default function Home() {
           <SectionHeader title="Education" />
         </div>
         <div className="md:col-span-8">
-          <div className="group mb-8">
-            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-              <h3 className="text-2xl md:text-3xl font-bold text-neutral-900">{currentEducation.title}</h3>
-              <span className="font-mono text-xs text-neutral-500 mt-2 md:mt-0">{currentEducation.date}</span>
-            </div>
-            <p className="font-serif italic text-xl text-neutral-600 mb-4">{currentEducation.role}</p>
-            {currentEducation.description && (
-              <p className="text-neutral-700 mb-6">{currentEducation.description}</p>
-            )}
-            {currentEducation.skills && currentEducation.skills.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-6">
-                {currentEducation.skills.slice(0, 4).map(skill => (
-                  <span key={skill} className="text-[10px] uppercase tracking-wider font-mono bg-accent/5 text-accent-dark px-2 py-1 rounded-sm border border-accent/10">
-                    {skill}
-                  </span>
-                ))}
+          {currentEducations.map((edu, idx) => (
+            <div key={idx} className="group mb-12 last:mb-8">
+              <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                <h3 className="text-2xl md:text-3xl font-bold text-neutral-900">{edu.title}</h3>
+                <span className="font-mono text-xs text-neutral-500 mt-2 md:mt-0">{edu.date}</span>
               </div>
-            )}
-          </div>
+              <p className="font-serif italic text-xl text-neutral-600 mb-4">{edu.role}</p>
+              {edu.description && (
+                <p className="text-neutral-700 mb-6">{edu.description}</p>
+              )}
+              {edu.skills && edu.skills.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {edu.skills.slice(0, 4).map(skill => (
+                    <span key={skill} className="text-[10px] uppercase tracking-wider font-mono bg-accent/5 text-accent-dark px-2 py-1 rounded-sm border border-accent/10">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
           <Link
             href="/education"
             className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark hover:text-accent transition-colors group/link"

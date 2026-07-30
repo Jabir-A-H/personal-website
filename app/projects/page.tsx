@@ -1,9 +1,8 @@
-'use client';
-
-import React from 'react';
 import { Github, ExternalLink, ArrowUpRight, Terminal } from 'lucide-react';
-import { motion } from 'motion/react';
 import data from '../../data.json';
+import AnimatedHeading from '../../components/AnimatedHeading';
+import AnimatedProjectCard from '../../components/AnimatedProjectCard';
+import AnimatedProjectRow from '../../components/AnimatedProjectRow';
 
 export default function ProjectsPage() {
   const { projects } = data;
@@ -26,13 +25,11 @@ export default function ProjectsPage() {
             </div>
           </div>
 
-          <motion.h1 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+          <AnimatedHeading 
             className="text-6xl md:text-8xl lg:text-[9rem] font-sans font-black tracking-tighter text-white mb-6 uppercase leading-none"
           >
             Projects
-          </motion.h1>
+          </AnimatedHeading>
           
           <div className="flex flex-col md:flex-row justify-between w-full items-start md:items-end gap-6">
             <p className="text-sm font-mono text-neutral-400 uppercase tracking-[0.2em] max-w-md leading-relaxed">
@@ -58,11 +55,7 @@ export default function ProjectsPage() {
 
           <div className="flex flex-col gap-16">
             {liveProjects.map((project) => (
-              <motion.div 
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              <AnimatedProjectCard 
                 key={project.title}
                 className="group flex flex-col lg:flex-row border border-neutral-800 bg-neutral-950/50 backdrop-blur-sm relative"
               >
@@ -124,7 +117,7 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </AnimatedProjectCard>
             ))}
           </div>
         </section>
@@ -152,11 +145,8 @@ export default function ProjectsPage() {
 
             {/* Data Rows */}
             {repoProjects.map((project, idx) => (
-              <motion.a 
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.05, duration: 0.4 }}
+              <AnimatedProjectRow 
+                idx={idx}
                 key={project.title}
                 href={project.live || project.repo}
                 target="_blank"
@@ -201,7 +191,7 @@ export default function ProjectsPage() {
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>
-              </motion.a>
+              </AnimatedProjectRow>
             ))}
           </div>
         </section>

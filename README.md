@@ -15,4 +15,4 @@ npm run dev
 ```
 
 ## Deployment
-This project is configured for static export (`output: 'export'`) and automatically deploys to GitHub Pages via GitHub Actions on every push to the `main` branch.
+This project is configured for static export (`output: 'export'`) and automatically deploys to Cloudflare Pages via GitHub integration on every push to the `main` branch.

@@ -1,15 +1,29 @@
 import React from 'react';
 import { ArrowUpRight, ExternalLink } from 'lucide-react';
+import { Metadata } from 'next';
 import ExperienceCard from '../../components/ExperienceCard';
 import data from '../../data.json';
 
-export const metadata = {
-  title: 'Experience & Credentials',
-  description: 'Leadership, community involvement, certifications, and professional skills.',
+export const metadata: Metadata = {
+  title: 'Experience | Jabir Abdullah Haian',
+  description: 'Professional experience, certifications, and skills progression.',
+  openGraph: {
+    images: [{ url: '/og-experience.png' }]
+  }
 };
 
 export default function ExperiencePage() {
-  const { experience, certifications, skills } = data;
+  const { experience, certifications, skills, achievements, references } = data;
+
+  // Group skills by category
+  const skillsByCategory = skills.reduce((acc, skill) => {
+    const category = skill.category || 'Other';
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(skill);
+    return acc;
+  }, {} as Record<string, typeof skills>);
 
   return (
     <div className="w-full max-w-7xl mx-auto py-12 md:py-24">
@@ -85,32 +99,93 @@ export default function ExperiencePage() {
 
       <div className="w-full h-px bg-neutral-300 mb-24"></div>
 
+      {/* Achievements */}
+      {achievements && achievements.length > 0 && (
+        <>
+          <section className="mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+              <div className="md:col-span-4">
+                <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-400 mb-2">Achievements &amp;<br/>Competitions</h2>
+                <div className="w-8 h-[2px] bg-accent"></div>
+              </div>
+              <div className="md:col-span-8">
+                <div className="space-y-8">
+                  {achievements.map((ach, idx) => (
+                    <div key={idx} className="pb-8 border-b border-neutral-200 last:border-0">
+                      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
+                        <h3 className="text-xl font-bold text-neutral-900">{ach.title}</h3>
+                        <span className="font-mono text-xs text-neutral-500 mt-2 sm:mt-0">{ach.year}</span>
+                      </div>
+                      <p className="font-serif italic text-lg text-neutral-600 mb-1">{ach.role}</p>
+                      <p className="text-sm text-neutral-500 font-mono">{ach.organization}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div className="w-full h-px bg-neutral-300 mb-24"></div>
+        </>
+      )}
+
       {/* Skills */}
-      <section>
+      <section className="mb-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-400 mb-2">Skills</h2>
             <div className="w-8 h-[2px] bg-accent"></div>
           </div>
-          <div className="md:col-span-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {skills.map(skill => (
-                <div key={skill.name} className="flex items-center justify-between group py-2">
-                  <span className="text-sm font-mono text-neutral-800 group-hover:text-neutral-900 transition-colors">{skill.name}</span>
-                  <div className="flex gap-1" aria-label={`Proficiency: ${skill.level} out of 5`} title={`Proficiency: ${skill.level} out of 5`}>
-                    {[1, 2, 3, 4, 5].map(dot => (
-                      <div
-                        key={dot}
-                        className={`w-2 h-2 rounded-full transition-colors ${dot <= skill.level ? 'bg-accent' : 'bg-neutral-200 group-hover:bg-neutral-300'}`}
-                      />
-                    ))}
-                  </div>
+          <div className="md:col-span-8 space-y-12">
+            {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
+              <div key={category}>
+                <h3 className="text-lg font-bold text-neutral-900 mb-4">{category}</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+                  {categorySkills.map(skill => (
+                    <div key={skill.name} className="flex items-center justify-between group py-2">
+                      <span className="text-sm font-mono text-neutral-800 group-hover:text-neutral-900 transition-colors">{skill.name}</span>
+                      <div className="flex gap-1" aria-label={`Proficiency: ${skill.level} out of 5`} title={`Proficiency: ${skill.level} out of 5`}>
+                        {[1, 2, 3, 4, 5].map(dot => (
+                          <div
+                            key={dot}
+                            className={`w-2 h-2 rounded-full transition-colors ${dot <= skill.level ? 'bg-accent' : 'bg-neutral-200 group-hover:bg-neutral-300'}`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+      
+      {/* References */}
+      {references && references.length > 0 && (
+        <>
+          <div className="w-full h-px bg-neutral-300 mb-24"></div>
+          <section className="mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+              <div className="md:col-span-4">
+                <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-400 mb-2">References</h2>
+                <div className="w-8 h-[2px] bg-accent"></div>
+              </div>
+              <div className="md:col-span-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  {references.map((ref, idx) => (
+                    <div key={idx} className="bg-neutral-50 p-6 rounded-lg border border-neutral-100">
+                      <h3 className="text-lg font-bold text-neutral-900 mb-1">{ref.name}</h3>
+                      <p className="font-serif italic text-neutral-600 mb-2">{ref.title}</p>
+                      <p className="text-sm text-neutral-500">{ref.organization}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
     </div>
   );
 }

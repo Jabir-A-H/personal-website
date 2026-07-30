@@ -1,10 +1,14 @@
 import React from 'react';
 import TimelineCard from '../../components/TimelineCard';
 import data from '../../data.json';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Education & Career',
-  description: 'Academic background, timeline, and professional direction of Jabir Abdullah Haian.',
+export const metadata: Metadata = {
+  title: 'Education | Jabir Abdullah Haian',
+  description: 'Academic background and continuous learning journey.',
+  openGraph: {
+    images: [{ url: '/og-education.png' }]
+  }
 };
 
 export default function AboutPage() {
@@ -24,7 +28,7 @@ export default function AboutPage() {
             Assalamualaikum. I am a BBA student at the University of Dhaka, majoring in Accounting and Information Systems. This field perfectly aligns with my passion for data analysis, problem-solving, and innovation.
           </p>
           <p className="text-sm leading-relaxed mb-6">
-            My core interests include accounting, financial analysis, and my ambition to become a Chartered Accountant. I&apos;m committed to collaboration, continuous learning, and teamwork.
+            As an aspiring Chartered Accountant, I am driven to integrate robust financial management, audit standards, and cost accounting with modern technological solutions.
           </p>
           <div className="h-[1px] w-12 bg-accent mb-6"></div>
           <ul className="space-y-2 font-mono text-xs text-neutral-500">
@@ -58,9 +62,9 @@ export default function AboutPage() {
           <h3 className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-6">Footnotes &amp; Certifications</h3>
           <div className="text-xs text-neutral-500 space-y-2 border-t border-neutral-200 pt-4">
             <p>[1] <strong>Aspire 25 Alumni</strong>: Aspire Leaders Program (Aspire Institute, Oct 2025).</p>
-            <p>[2] <strong>CA, ICAB (5%)</strong>: Pursuing Chartered Accountancy.</p>
-            <p>[3] <strong>Certifications</strong>: Fundamentals of Digital Marketing (Google), Big Data Foundations, Excel Beginner to Expert.</p>
-            <p>[4] <strong>Leadership</strong>: Founding President of Team J (Jul 2021 - Present), President of Morning Riders (Apr 2024 - Sep 2025).</p>
+            <p>[2] <strong>CA, ICAB</strong>: Pursuing Chartered Accountancy (Certificate Level: Passed 2 Papers).</p>
+            <p>[3] <strong>Certifications</strong>: Audit Procedures (Hasan Mohin CA), Generative AI Mastermind, Digital Literacy (ICT Div), Digital Marketing (Google), Big Data Foundations, Excel Beginner to Expert.</p>
+            <p>[4] <strong>Leadership</strong>: President of Alokito Library (Jan 2026 - Present), Coordinator for International Edu Expo & Skills Summit 2026.</p>
           </div>
         </section>
       </div>

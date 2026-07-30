@@ -2,7 +2,11 @@ node_modules/
 .next/
 coverage/
 .DS_Store
+Thumbs.db
+desktop.ini
 *.log
+*.tmp
+*.bak
 .env*
 !.env.example
 out/*

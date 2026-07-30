@@ -1,8 +1,5 @@
-'use client';
-
-import React from 'react';
-import { motion } from 'motion/react';
 import data from '../../data.json';
+import AnimatedWhisperCard from '../../components/AnimatedWhisperCard';
 
 export default function WhispersPage() {
   const { whispers } = data;
@@ -16,12 +13,8 @@ export default function WhispersPage() {
 
       <div className="space-y-32">
         {whispers.map((whisper, index) => (
-          <motion.article 
+          <AnimatedWhisperCard 
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
             className="group relative"
           >
             <div className="absolute -left-12 md:-left-24 top-0 h-full w-[1px] bg-neutral-200 hidden md:block">
@@ -51,7 +44,7 @@ export default function WhispersPage() {
                 ))}
               </div>
             </div>
-          </motion.article>
+          </AnimatedWhisperCard>
         ))}
       </div>
 

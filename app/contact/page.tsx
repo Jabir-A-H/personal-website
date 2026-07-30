@@ -67,12 +67,6 @@ export default function ContactPage() {
         {/* Right Column: Typographic List */}
         <div className="md:col-span-8">
           <div className="flex flex-col border-t border-neutral-300">
-            <ContactLink
-              name="Resume"
-              href="/Jabir_Abdullah_Haian_Resume.pdf"
-              handle="PDF Download"
-              download
-            />
             {endpoints.map((endpoint) => (
               <ContactLink
                 key={endpoint.name}

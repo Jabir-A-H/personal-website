@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
 import ExperienceCard from '../components/ExperienceCard';
 import SectionHeader from '../components/SectionHeader';
 import FadeIn from '../components/FadeIn';
@@ -172,12 +172,23 @@ export default function Home() {
       {/* Footer — Personal Sign-Off */}
       <FadeIn className="mt-24">
         <div className="w-full h-1 bg-accent mb-8"></div>
-        <div>
-          <p className="font-serif italic text-2xl text-neutral-800 mb-2">
-            &quot;Still learning. Always building.&quot;
-          </p>
-          <a href={`mailto:${personal.email}`} className="font-mono text-sm text-neutral-500 hover:text-accent-dark transition-colors">
-            {personal.email}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+          <div>
+            <p className="font-serif italic text-2xl text-neutral-800 mb-2">
+              &quot;Still learning. Always building.&quot;
+            </p>
+            <a href={`mailto:${personal.email}`} className="font-mono text-sm text-neutral-500 hover:text-accent-dark transition-colors">
+              {personal.email}
+            </a>
+          </div>
+          
+          <a
+            href="/Jabir_Abdullah_Haian_Resume.pdf"
+            download
+            className="group flex items-center gap-3 px-6 py-4 bg-neutral-900 text-white hover:bg-accent transition-colors"
+          >
+            <span className="font-mono text-xs uppercase tracking-widest">Download Resume</span>
+            <FileText className="w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
       </FadeIn>

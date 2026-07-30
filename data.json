@@ -3,9 +3,12 @@
     "name": "Jabir Abdullah Haian",
     "location": "Dhaka, Bangladesh",
     "email": "jabirahaian@gmail.com",
-    "headline": "BBA in Accounting & Information Systems at University of Dhaka. Exploring Forensic Accounting, Data Analytics & AI.",
-    "bio": "I apply data-driven insights to enhance processes and solve problems. My core interests include accounting, financial analysis, and my ambition to become a Chartered Accountant. I am committed to collaboration, continuous learning, and teamwork.",
-    "shortTags": ["CA, ICAB (5%)", "Aspire 25 Alumni"]
+    "headline": "Aspiring Chartered Accountant | BBA in Accounting & Information Systems, University of Dhaka",
+    "bio": "Aspiring Chartered Accountant and BBA (Accounting & Information Systems) student at the University of Dhaka. Driven to integrate robust financial management, audit standards, and cost accounting with modern technological solutions and data analytics.",
+    "shortTags": [
+      "CA, ICAB (5%)",
+      "Aspire 25 Alumni"
+    ]
   },
   "endpoints": [
     {
@@ -23,7 +26,11 @@
       "url": "https://github.com/Jabir-A-H/",
       "handle": "@Jabir-A-H"
     },
-    { "name": "Telegram", "url": "https://t.me/jabirah", "handle": "@jabirah" },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/jabirah",
+      "handle": "@jabirah"
+    },
     {
       "name": "Twitter",
       "url": "https://twitter.com/JabirHaian",
@@ -49,15 +56,28 @@
     {
       "title": "jabirah.pages.dev",
       "status": "featured",
-      "description": "My personal website? ",
-      "tech": ["Next.js", "TypeScript", "Tailwind"],
+      "description": "My personal website.",
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind"
+      ],
       "repo": "https://github.com/Jabir-A-H/personal-website",
       "live": "https://jabirah.pages.dev",
       "primaryLanguage": "TypeScript",
       "languages": [
-        { "name": "TypeScript", "size": 36284 },
-        { "name": "CSS", "size": 23 },
-        { "name": "JavaScript", "size": 482 }
+        {
+          "name": "TypeScript",
+          "size": 36284
+        },
+        {
+          "name": "CSS",
+          "size": 23
+        },
+        {
+          "name": "JavaScript",
+          "size": 482
+        }
       ],
       "stargazerCount": 1,
       "forkCount": 0,
@@ -70,18 +90,44 @@
       "title": "Report Submission System",
       "status": "featured",
       "description": "Report-Submission automates report management. Users submit Excel-like forms, stored in a database. Authorized users compile a master report based on custom conditions, exportable in various formats. Role-based access ensures secure viewing, boosting efficiency and accuracy.",
-      "tech": ["Python", "Flask", "PostgreSQL", "Tailwind"],
+      "tech": [
+        "Python",
+        "Flask",
+        "PostgreSQL",
+        "Tailwind"
+      ],
       "repo": "https://github.com/Jabir-A-H/report-submission",
       "live": "https://jabir-a-h.github.io/report-submission/",
       "primaryLanguage": "HTML",
       "languages": [
-        { "name": "HTML", "size": 204180 },
-        { "name": "Python", "size": 181024 },
-        { "name": "CSS", "size": 24647 },
-        { "name": "JavaScript", "size": 11744 },
-        { "name": "Batchfile", "size": 917 },
-        { "name": "Shell", "size": 839 },
-        { "name": "Procfile", "size": 48 }
+        {
+          "name": "HTML",
+          "size": 204180
+        },
+        {
+          "name": "Python",
+          "size": 181024
+        },
+        {
+          "name": "CSS",
+          "size": 24647
+        },
+        {
+          "name": "JavaScript",
+          "size": 11744
+        },
+        {
+          "name": "Batchfile",
+          "size": 917
+        },
+        {
+          "name": "Shell",
+          "size": 839
+        },
+        {
+          "name": "Procfile",
+          "size": 48
+        }
       ],
       "stargazerCount": 1,
       "forkCount": 0,
@@ -94,16 +140,35 @@
       "title": "Gallery",
       "status": "featured",
       "description": "A personal photography portfolio website.",
-      "tech": ["TypeScript", "React", "Tailwind"],
+      "tech": [
+        "TypeScript",
+        "React",
+        "Tailwind"
+      ],
       "repo": "https://github.com/Jabir-A-H/photography-website",
       "live": "https://jabir-a-h.github.io/gallery/",
       "primaryLanguage": "TypeScript",
       "languages": [
-        { "name": "TypeScript", "size": 312661 },
-        { "name": "JavaScript", "size": 114416 },
-        { "name": "CSS", "size": 10616 },
-        { "name": "HTML", "size": 3311 },
-        { "name": "PowerShell", "size": 566 }
+        {
+          "name": "TypeScript",
+          "size": 312661
+        },
+        {
+          "name": "JavaScript",
+          "size": 114416
+        },
+        {
+          "name": "CSS",
+          "size": 10616
+        },
+        {
+          "name": "HTML",
+          "size": 3311
+        },
+        {
+          "name": "PowerShell",
+          "size": 566
+        }
       ],
       "stargazerCount": 1,
       "forkCount": 0,
@@ -116,14 +181,27 @@
       "title": "Academic Resort",
       "status": "development",
       "description": "A take on making a better version of https://sites.google.com/ais.du.ac.bd/academic-resort",
-      "tech": ["TypeScript", "Google Drive API", "PWA"],
+      "tech": [
+        "TypeScript",
+        "Google Drive API",
+        "PWA"
+      ],
       "repo": "https://github.com/Jabir-A-H/academic-resort",
       "live": "https://jabir-a-h.github.io/academic-resort/",
       "primaryLanguage": "TypeScript",
       "languages": [
-        { "name": "TypeScript", "size": 221932 },
-        { "name": "CSS", "size": 2697 },
-        { "name": "JavaScript", "size": 2450 }
+        {
+          "name": "TypeScript",
+          "size": 221932
+        },
+        {
+          "name": "CSS",
+          "size": 2697
+        },
+        {
+          "name": "JavaScript",
+          "size": 2450
+        }
       ],
       "stargazerCount": 1,
       "forkCount": 0,
@@ -136,14 +214,28 @@
       "title": "LazyLedger",
       "status": "featured",
       "description": "Finance tracking for the delightfully lazy. Let AI do the data entry.",
-      "tech": ["Next.js", "Firebase", "Tailwind", "Gemini AI"],
+      "tech": [
+        "Next.js",
+        "Firebase",
+        "Tailwind",
+        "Gemini AI"
+      ],
       "repo": "https://github.com/Jabir-A-H/LazyLedger",
       "live": "https://jabir-a-h.github.io/LazyLedger/",
       "primaryLanguage": "TypeScript",
       "languages": [
-        { "name": "TypeScript", "size": 118359 },
-        { "name": "JavaScript", "size": 482 },
-        { "name": "CSS", "size": 62 }
+        {
+          "name": "TypeScript",
+          "size": 118359
+        },
+        {
+          "name": "JavaScript",
+          "size": 482
+        },
+        {
+          "name": "CSS",
+          "size": 62
+        }
       ],
       "stargazerCount": 1,
       "forkCount": 0,
@@ -156,14 +248,27 @@
       "title": "Entropy Clock",
       "status": "featured",
       "description": "This clock is a frozen timeline. It only moves forward when someone ticks it to.",
-      "tech": ["TypeScript", "HTML", "CSS"],
+      "tech": [
+        "TypeScript",
+        "HTML",
+        "CSS"
+      ],
       "repo": "https://github.com/Jabir-A-H/entropy-clock",
       "live": "https://jabir-a-h.github.io/entropy-clock/",
       "primaryLanguage": "TypeScript",
       "languages": [
-        { "name": "TypeScript", "size": 14862 },
-        { "name": "HTML", "size": 8927 },
-        { "name": "CSS", "size": 408 }
+        {
+          "name": "TypeScript",
+          "size": 14862
+        },
+        {
+          "name": "HTML",
+          "size": 8927
+        },
+        {
+          "name": "CSS",
+          "size": 408
+        }
       ],
       "stargazerCount": 0,
       "forkCount": 0,
@@ -176,17 +281,43 @@
       "title": "Library Management System",
       "status": "development",
       "description": "A modern, full-stack library management application with FastAPI backend and Next.js frontend, featuring JWT authentication, async operations, and comprehensive book tracking.",
-      "tech": ["FastAPI", "Next.js", "TypeScript", "JWT"],
+      "tech": [
+        "FastAPI",
+        "Next.js",
+        "TypeScript",
+        "JWT"
+      ],
       "repo": "https://github.com/Jabir-A-H/library-management",
       "primaryLanguage": "TypeScript",
       "languages": [
-        { "name": "TypeScript", "size": 534947 },
-        { "name": "Python", "size": 220340 },
-        { "name": "PowerShell", "size": 8983 },
-        { "name": "JavaScript", "size": 7899 },
-        { "name": "CSS", "size": 1666 },
-        { "name": "Batchfile", "size": 1630 },
-        { "name": "Mako", "size": 635 }
+        {
+          "name": "TypeScript",
+          "size": 534947
+        },
+        {
+          "name": "Python",
+          "size": 220340
+        },
+        {
+          "name": "PowerShell",
+          "size": 8983
+        },
+        {
+          "name": "JavaScript",
+          "size": 7899
+        },
+        {
+          "name": "CSS",
+          "size": 1666
+        },
+        {
+          "name": "Batchfile",
+          "size": 1630
+        },
+        {
+          "name": "Mako",
+          "size": 635
+        }
       ],
       "stargazerCount": 1,
       "forkCount": 0,
@@ -199,11 +330,17 @@
       "title": "Gamepacks",
       "status": "legacy",
       "description": "Gonna make a game out of this tutorial project. Learning and using Godot.",
-      "tech": ["Godot", "GDScript"],
+      "tech": [
+        "Godot",
+        "GDScript"
+      ],
       "repo": "https://github.com/Jabir-A-H/gamepacks",
       "primaryLanguage": "GDScript",
       "languages": [
-        { "name": "GDScript", "size": 11202 }
+        {
+          "name": "GDScript",
+          "size": 11202
+        }
       ],
       "stargazerCount": 1,
       "forkCount": 0,
@@ -216,11 +353,16 @@
       "title": "Sidescroller",
       "status": "legacy",
       "description": "A side-scrolling game project built to explore game mechanics and rendering logic using Go.",
-      "tech": ["Go"],
+      "tech": [
+        "Go"
+      ],
       "repo": "https://github.com/Jabir-A-H/Sidescroller",
       "primaryLanguage": "Go",
       "languages": [
-        { "name": "Go", "size": 10670 }
+        {
+          "name": "Go",
+          "size": 10670
+        }
       ],
       "stargazerCount": 1,
       "forkCount": 0,
@@ -232,35 +374,48 @@
   ],
   "experience": [
     {
-      "title": "Al Hikmah Society",
-      "date": "Jun 2024 — Present",
-      "role": "Founding Member",
-      "description": "Islamic Finance and IT Management."
+      "title": "International Education Expo 2026",
+      "date": "Jun 2026",
+      "role": "Seminar & Volunteer Coordinator",
+      "description": "Coordinated a volunteer team managing behind-the-scenes setup, hall logistics, and attendee flow for the \"Study in UK\" international seminar. Welcomed distinguished international speakers and guest panelists from the Markfield Institute of Higher Education (UK)."
+    },
+    {
+      "title": "Bangladesh Skills Summit 2026",
+      "date": "Jan 2026",
+      "role": "Guest Relations Coordinator",
+      "description": "Received and hosted arriving guests including university leadership, government officials, and corporate executives. Maintained regular contact with guest speakers and panelists throughout the summit, serving as a dedicated point of contact."
     },
     {
       "title": "Morning Riders",
       "date": "Apr 2024 — Sep 2025",
       "role": "President",
-      "description": "Inspired and engaged the youth in our community through regular morning cycling sessions. \"Riding for Future\"."
+      "description": "Organized community cycling initiatives (30+ participants), leading group rides and ensuring team safety. Coordinated university-wide football tournaments among teams from all halls in University of Dhaka."
     },
     {
-      "title": "Team J",
-      "date": "Jul 2021 — Present",
-      "role": "Founding President",
-      "description": "A youth organization focused on skill development, community service, and fostering leadership among students."
-    },
-    {
-      "title": "আলোকিত লাইব্রেরী",
+      "title": "Alokito Library",
       "date": "Dec 2018 — Present",
-      "role": "Secretariat Member"
+      "role": "President (Jan 2026 – Present) | Secretary (2025) | Secretariat Member (2018–2024)",
+      "description": "Organized Iftar mahfils (60+ participants), managed annual badminton tournaments for 2 consecutive years (40+ participants), and led regular programs on spiritual and value-based youth development."
     }
   ],
   "education": [
     {
+      "title": "Institute of Chartered Accountants of Bangladesh (ICAB)",
+      "date": "2024 - Present",
+      "role": "Certificate Level: Passed 2 Papers (PL Ongoing)",
+      "description": "Pursuing the Chartered Accountancy professional qualification alongside undergraduate studies.",
+      "skills": [
+        "Accounting",
+        "Audit & Assurance",
+        "Financial Accounting",
+        "Cost Accounting"
+      ]
+    },
+    {
       "title": "University of Dhaka",
       "date": "Sep 2022 - Present",
       "role": "BBA, Accounting & Information Systems",
-      "description": "Exploring Forensic Accounting, Data Analytics, AI & Technology.",
+      "description": "CGPA: 3.35/4.00 (up to 7th semester). Exploring Forensic Accounting, Data Analytics, AI & Technology.",
       "skills": [
         "Microsoft Products",
         "Online Research",
@@ -282,7 +437,7 @@
       "title": "Notre Dame College",
       "date": "Feb 2019 - Jun 2021",
       "role": "HSC, Business Studies",
-      "description": "Activities and societies: Notre Dame Business Club, Notre Dame Information Technology Club. Attained perfect attendance certificate for 100% attendance. Ranked 35th out of 750 Students.",
+      "description": "GPA: 5.00/5.00 | Ranked 35th out of 750 (Perfect Attendance). Activities and societies: Notre Dame Business Club, Notre Dame Information Technology Club.",
       "skills": [
         "Microsoft Products",
         "IT Management",
@@ -299,7 +454,7 @@
       "title": "Birshreshtha Noor Mohammad Public College",
       "date": "Jan 2017 - May 2019",
       "role": "SSC, Business Studies",
-      "description": "Activities and societies: Business Club, Chess Club. Got board scholarship for outstanding performance.",
+      "description": "GPA: 4.94/5.00 | Government Board Scholarship Recipient. Activities and societies: Business Club, Chess Club.",
       "skills": [
         "Microsoft Products",
         "Problem Solving",
@@ -324,9 +479,21 @@
   ],
   "certifications": [
     {
+      "title": "Generative AI Mastermind",
+      "issuer": "Outskill",
+      "date": "May 2026",
+      "verifyUrl": ""
+    },
+    {
       "title": "Aspire Leaders Program",
       "issuer": "Aspire Institute",
       "date": "Oct 2025",
+      "verifyUrl": ""
+    },
+    {
+      "title": "Hands-On Training on Audit Procedures",
+      "issuer": "Hasan Mohin Chartered Accountants",
+      "date": "Nov 2025",
       "verifyUrl": ""
     },
     {
@@ -336,54 +503,217 @@
       "verifyUrl": ""
     },
     {
-      "title": "Big Data Foundations - Level 1",
+      "title": "Digital Literacy Course for Youth",
+      "issuer": "ICT Division",
+      "date": "Oct 2023",
       "verifyUrl": ""
     },
     {
+      "title": "Big Data Foundations - Level 1",
+      "verifyUrl": "",
+      "issuer": "IBM",
+      "date": "Oct 2022"
+    },
+    {
       "title": "Microsoft Excel - Beginner to Expert",
-      "verifyUrl": ""
+      "verifyUrl": "",
+      "issuer": "Udemy",
+      "date": "Nov 2022"
     }
   ],
   "skills": [
-    { "name": "Accounting", "level": 5 },
-    { "name": "Financial Analysis", "level": 5 },
-    { "name": "Data Analytics", "level": 4 },
-    { "name": "Problem Solving", "level": 5 },
-    { "name": "Microsoft Excel", "level": 5 },
-    { "name": "IT Operations", "level": 4 },
-    { "name": "Big Data", "level": 3 },
-    { "name": "Communication", "level": 5 }
+    {
+      "name": "Financial Accounting",
+      "level": 5,
+      "category": "Technical Expertise"
+    },
+    {
+      "name": "Cost Accounting",
+      "level": 4,
+      "category": "Technical Expertise"
+    },
+    {
+      "name": "Tax Accounting & VAT",
+      "level": 4,
+      "category": "Technical Expertise"
+    },
+    {
+      "name": "Audit & Assurance",
+      "level": 4,
+      "category": "Technical Expertise"
+    },
+    {
+      "name": "Accounting Information Systems",
+      "level": 5,
+      "category": "Technical Expertise"
+    },
+    {
+      "name": "Database Management",
+      "level": 4,
+      "category": "Technical Expertise"
+    },
+    {
+      "name": "Data Analysis",
+      "level": 4,
+      "category": "Technical Expertise"
+    },
+    {
+      "name": "Microsoft Excel (Advanced)",
+      "level": 5,
+      "category": "Technical Expertise"
+    },
+    {
+      "name": "Power BI",
+      "level": 4,
+      "category": "Technical Expertise"
+    },
+    {
+      "name": "Python",
+      "level": 3,
+      "category": "Technical Expertise"
+    },
+    {
+      "name": "Tally Prime",
+      "level": 4,
+      "category": "Technical Expertise"
+    },
+    {
+      "name": "Communication",
+      "level": 5,
+      "category": "Core & Soft Skills"
+    },
+    {
+      "name": "Leadership",
+      "level": 5,
+      "category": "Core & Soft Skills"
+    },
+    {
+      "name": "Event Management",
+      "level": 5,
+      "category": "Core & Soft Skills"
+    },
+    {
+      "name": "Budgeting & Procurement",
+      "level": 4,
+      "category": "Core & Soft Skills"
+    },
+    {
+      "name": "Strategic Planning",
+      "level": 4,
+      "category": "Core & Soft Skills"
+    },
+    {
+      "name": "Critical Thinking",
+      "level": 5,
+      "category": "Core & Soft Skills"
+    },
+    {
+      "name": "Team Management",
+      "level": 5,
+      "category": "Core & Soft Skills"
+    },
+    {
+      "name": "Bengali",
+      "level": 5,
+      "category": "Languages"
+    },
+    {
+      "name": "English",
+      "level": 5,
+      "category": "Languages"
+    }
   ],
   "whispers": [
     {
       "date": "2026.02.27",
       "title": "The Entropy of Time",
       "content": "Time doesn't just pass; it disperses. My Entropy Clock project was an attempt to visualize this—how order slowly yields to chaos, yet remains measurable.",
-      "tags": ["reflection", "physics", "code"]
+      "tags": [
+        "reflection",
+        "physics",
+        "code"
+      ]
     },
     {
       "date": "2026.02.15",
       "title": "Accounting as a Language",
       "content": "We often think of accounting as math, but it's actually a grammar for value. It defines the relationships between entities through a strict, logical syntax.",
-      "tags": ["accounting", "theory"]
+      "tags": [
+        "accounting",
+        "theory"
+      ]
     },
     {
       "date": "2026.01.20",
       "title": "The Silent Gallery",
       "content": "Photography is about what you leave out of the frame. The most powerful images are often the ones that whisper rather than shout.",
-      "tags": ["photography", "art"]
+      "tags": [
+        "photography",
+        "art"
+      ]
     },
     {
       "date": "2025.12.10",
       "title": "Systems vs. Goals",
       "content": "Building a library management system taught me that the goal (organizing books) is secondary to the system (managing state). If the system is robust, the goal is inevitable.",
-      "tags": ["tech", "systems"]
+      "tags": [
+        "tech",
+        "systems"
+      ]
     },
     {
       "date": "2025.11.05",
       "title": "Learning in Public",
       "content": "My GitHub is a messy record of my curiosity. Not everything is a \"project,\" but everything is a step. The \"Nightblade\" prototype was a failure in mechanics but a triumph in learning Godot.",
-      "tags": ["meta", "learning"]
+      "tags": [
+        "meta",
+        "learning"
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Capitalizer '25",
+      "organization": "BUP Finance Club",
+      "year": "2025",
+      "role": "Participant"
+    },
+    {
+      "title": "Mindlogue 1.0",
+      "organization": "University of Dhaka Accounting Forum",
+      "year": "2023",
+      "role": "2nd Round"
+    },
+    {
+      "title": "Sellsation 2023",
+      "organization": "Spartans' Communication Club",
+      "year": "2023",
+      "role": "Participant"
+    },
+    {
+      "title": "Perfect Attendance Certificate",
+      "organization": "Notre Dame College",
+      "year": "2021",
+      "role": "Ranked 35th out of 750 students"
+    },
+    {
+      "title": "Intrabiz Olympiad-2019",
+      "organization": "Notre Dame Business Club",
+      "year": "2019",
+      "role": "3rd Place"
+    },
+    {
+      "title": "Government Board Scholarship",
+      "organization": "Dhaka Education Board",
+      "year": "2019",
+      "role": "Recipient (S.S.C)"
+    }
+  ],
+  "references": [
+    {
+      "name": "Amirus Salat",
+      "title": "Professor",
+      "organization": "Department of Accounting & Information Systems, University of Dhaka"
     }
   ]
 }

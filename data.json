@@ -10,6 +10,38 @@
       "Aspire 25 Alumni"
     ]
   },
+  "now": {
+    "lastUpdated": "2026-08-01",
+    "status": "In the middle of final exams — head down, fully locked in.",
+    "items": [
+      {
+        "label": "Studying",
+        "title": "Final Examinations",
+        "description": "Currently sitting for final exams at the University of Dhaka. Everything else is on pause until these are done.",
+        "icon": "book"
+      },
+      {
+        "label": "Next Up",
+        "title": "Internship",
+        "description": "Planning to start an internship after exams wrap up. Exploring opportunities in audit firms and corporate finance.",
+        "icon": "briefcase"
+      },
+      {
+        "label": "Building",
+        "title": "This Website",
+        "description": "Continuously refining jabirah.pages.dev — improving performance, accessibility, and adding new sections.",
+        "link": "/projects",
+        "icon": "globe"
+      },
+      {
+        "label": "Building",
+        "title": "Report Submission System",
+        "description": "Iterating on the report automation tool — users submit Excel-like forms, authorized users compile master reports with custom conditions.",
+        "link": "https://jabir-a-h.github.io/report-submission/",
+        "icon": "code"
+      }
+    ]
+  },
   "endpoints": [
     {
       "name": "Email",

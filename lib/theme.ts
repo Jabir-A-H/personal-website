@@ -13,6 +13,7 @@ export const PAGE_THEMES: Record<string, { bg: string }> = {
   '/education': { bg: '#f5f0e8' },
   '/whispers': { bg: '#f8f6f2' },
   '/contact': { bg: '#ffffff' },
+  '/now': { bg: '#f4f7f5' },
   '/experience': { bg: '#faf8f5' },
 };
 
@@ -53,6 +54,12 @@ const ANIMATION_PRESETS: Record<string, AnimationProps> = {
     animate: { opacity: 1, filter: 'blur(0px)' },
     exit: { opacity: 0, filter: 'blur(8px)' },
     transition: { duration: 1.0, ease: 'easeOut' },
+  },
+  '/now': {
+    initial: { opacity: 0, scale: 0.98, y: 15 },
+    animate: { opacity: 1, scale: 1, y: 0 },
+    exit: { opacity: 0, scale: 0.98, y: -15 },
+    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
   },
 };
 

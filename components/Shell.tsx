@@ -24,7 +24,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       <Navigation />
       <main 
         id="main-content"
-        className="flex-1 w-full max-w-7xl mx-auto px-6 md:px-12 py-8 flex flex-col relative z-10"
+        className="flex-1 w-full py-8 flex flex-col relative z-10"
         style={{ perspective: '1200px' }}
       >
         <AnimatePresence mode="wait">

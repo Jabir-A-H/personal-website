@@ -1,11 +1,11 @@
-import data from '../../data.json';
-import AnimatedWhisperCard from '../../components/AnimatedWhisperCard';
+import data from '@/data.json';
+import AnimatedWhisperCard from '@/components/AnimatedWhisperCard';
 
 export default function WhispersPage() {
   const { whispers } = data;
 
   return (
-    <div className="col-span-12 w-full py-12 max-w-3xl mx-auto">
+    <div className="col-span-12 w-full py-12 max-w-3xl mx-auto px-6 md:px-12">
       <header className="mb-24 text-center">
         <h1 className="text-5xl md:text-7xl font-serif italic tracking-tighter text-neutral-900 mb-6">Whispers</h1>
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-neutral-400">Fragments of thought &amp; reflection</p>

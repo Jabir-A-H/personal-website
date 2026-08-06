@@ -1,6 +1,6 @@
 import React from 'react';
-import TimelineCard from '../../components/TimelineCard';
-import data from '../../data.json';
+import TimelineCard from '@/components/TimelineCard';
+import data from '@/data.json';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function AboutPage() {
   const { education } = data;
 
   return (
-    <div className="grid grid-cols-12 gap-x-6 gap-y-12 w-full text-neutral-800 py-8">
+    <div className="grid grid-cols-12 gap-x-6 gap-y-12 w-full max-w-7xl mx-auto px-6 md:px-12 text-neutral-800 py-8">
       <header className="col-span-12 border-b border-neutral-300 pb-8">
         <h1 className="font-serif text-5xl md:text-7xl font-light tracking-tight mb-4">Education</h1>
         <p className="font-mono text-xs uppercase tracking-widest text-neutral-500">Core Professional Identity</p>
@@ -58,15 +58,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section>
-          <h3 className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-6">Footnotes &amp; Certifications</h3>
-          <div className="text-xs text-neutral-500 space-y-2 border-t border-neutral-200 pt-4">
-            <p>[1] <strong>Aspire 25 Alumni</strong>: Aspire Leaders Program (Aspire Institute, Oct 2025).</p>
-            <p>[2] <strong>CA, ICAB</strong>: Pursuing Chartered Accountancy (Certificate Level: Passed 2 Papers).</p>
-            <p>[3] <strong>Certifications</strong>: Audit Procedures (Hasan Mohin CA), Generative AI Mastermind, Digital Literacy (ICT Div), Digital Marketing (Google), Big Data Foundations, Excel Beginner to Expert.</p>
-            <p>[4] <strong>Leadership</strong>: President of Alokito Library (Jan 2026 - Present), Coordinator for International Edu Expo & Skills Summit 2026.</p>
-          </div>
-        </section>
+
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ export function PersonSchema() {
         __html: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Person',
+          '@id': 'https://jabirah.pages.dev/#person',
           name: 'Jabir Abdullah Haian',
           url: 'https://jabirah.pages.dev',
           jobTitle: 'BBA Student — Accounting & Information Systems',

@@ -2,8 +2,8 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Book, Briefcase, Globe, Code, ArrowUpRight, Clock } from 'lucide-react';
-import data from '../../data.json';
-import FadeIn from '../../components/FadeIn';
+import data from '@/data.json';
+import FadeIn from '@/components/FadeIn';
 
 export const metadata: Metadata = {
   title: 'Now',
@@ -29,7 +29,7 @@ export default function NowPage() {
   const { now, personal } = data;
 
   return (
-    <div className="w-full max-w-3xl mx-auto py-12 md:py-24">
+    <div className="w-full max-w-3xl mx-auto px-6 md:px-12 py-12 md:py-24">
 
       {/* Header */}
       <FadeIn>

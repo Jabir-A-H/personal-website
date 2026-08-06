@@ -46,12 +46,14 @@
     {
       "name": "Email",
       "url": "mailto:jabirahaian@gmail.com",
-      "handle": "jabirahaian@gmail.com"
+      "handle": "jabirahaian@gmail.com",
+      "preferred": true
     },
     {
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/jabir-abdullah-haian/",
-      "handle": "in/jabir-abdullah-haian"
+      "handle": "in/jabir-abdullah-haian",
+      "preferred": true
     },
     {
       "name": "GitHub",
@@ -433,7 +435,7 @@
   "education": [
     {
       "title": "Institute of Chartered Accountants of Bangladesh (ICAB)",
-      "date": "2024 - Present",
+      "date": "2024 — Present",
       "role": "Certificate Level: Passed 2 Papers (PL Ongoing)",
       "description": "Pursuing the Chartered Accountancy professional qualification alongside undergraduate studies.",
       "skills": [
@@ -445,7 +447,7 @@
     },
     {
       "title": "University of Dhaka",
-      "date": "Sep 2022 - Present",
+      "date": "Sep 2022 — Present",
       "role": "BBA, Accounting & Information Systems",
       "description": "CGPA: 3.35/4.00 (up to 7th semester). Exploring Forensic Accounting, Data Analytics, AI & Technology.",
       "skills": [
@@ -467,7 +469,7 @@
     },
     {
       "title": "Notre Dame College",
-      "date": "Feb 2019 - Jun 2021",
+      "date": "Feb 2019 — Jun 2021",
       "role": "HSC, Business Studies",
       "description": "GPA: 5.00/5.00 | Ranked 35th out of 750 (Perfect Attendance). Activities and societies: Notre Dame Business Club, Notre Dame Information Technology Club.",
       "skills": [
@@ -484,7 +486,7 @@
     },
     {
       "title": "Birshreshtha Noor Mohammad Public College",
-      "date": "Jan 2017 - May 2019",
+      "date": "Jan 2017 — May 2019",
       "role": "SSC, Business Studies",
       "description": "GPA: 4.94/5.00 | Government Board Scholarship Recipient. Activities and societies: Business Club, Chess Club.",
       "skills": [
@@ -499,7 +501,7 @@
     },
     {
       "title": "Birshreshtha Munshi Abdur Rouf Public College",
-      "date": "Dec 2013 - Dec 2016",
+      "date": "Dec 2013 — Dec 2016",
       "role": "JSC",
       "skills": [
         "Microsoft Products",

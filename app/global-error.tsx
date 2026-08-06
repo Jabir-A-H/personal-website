@@ -1,5 +1,7 @@
 'use client';
 
+import './globals.css';
+
 export default function GlobalError({
   error,
   reset,
@@ -11,7 +13,7 @@ export default function GlobalError({
     <html lang="en">
       <body className="font-sans antialiased bg-neutral-50 text-neutral-900">
         <div className="flex flex-col items-center justify-center min-h-screen text-center px-6">
-          <h2 className="text-4xl font-bold tracking-tighter mb-4">Something went wrong</h2>
+          <h1 className="text-4xl font-bold tracking-tighter mb-4">Something went wrong</h1>
           <p className="text-neutral-600 font-serif italic mb-8">An unexpected error occurred.</p>
           <button
             onClick={() => reset()}

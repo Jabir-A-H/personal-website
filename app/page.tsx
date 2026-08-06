@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, FileText } from 'lucide-react';
-import ExperienceCard from '../components/ExperienceCard';
-import SectionHeader from '../components/SectionHeader';
-import FadeIn from '../components/FadeIn';
-import data from '../data.json';
+import ExperienceCard from '@/components/ExperienceCard';
+import SectionHeader from '@/components/SectionHeader';
+import FadeIn from '@/components/FadeIn';
+import data from '@/data.json';
 
 export const metadata: Metadata = {
   title: `${data.personal.name} | Portfolio`,
@@ -23,14 +23,15 @@ export default function Home() {
   );
 
   return (
-    <div className="w-full max-w-7xl mx-auto py-12 md:py-24">
+    <div className="w-full py-12 md:py-24">
       {/* Full Bleed Hero */}
-      <FadeIn className="w-screen relative left-1/2 -translate-x-1/2 mb-16 md:mb-24 min-h-[70vh] flex flex-col justify-center pt-16 md:pt-24 pb-24 md:pb-32 mt-[-3rem] md:mt-[-6rem]">
+      <FadeIn className="w-full mb-16 md:mb-24 min-h-[70vh] flex flex-col justify-center pt-16 md:pt-24 pb-24 md:pb-32 mt-[-3rem] md:mt-[-6rem]">
         {/* Background Image Wrapper */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img 
             src="/images/hero-bg.webp" 
-            alt="Jabir Abdullah Haian" 
+            alt=""
+            aria-hidden="true"
             className="w-full h-full object-cover object-[80%_90%] opacity-90"
           />
           {/* Seamless Edge Fades */}
@@ -63,6 +64,8 @@ export default function Home() {
         </div>
       </FadeIn>
 
+      {/* Constrained content wrapper */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
       <div className="w-full h-1 bg-accent mb-16"></div>
 
       {/* Education Section — Current Institution Summary */}
@@ -192,6 +195,7 @@ export default function Home() {
           </a>
         </div>
       </FadeIn>
+      </div>
     </div>
   );
 }

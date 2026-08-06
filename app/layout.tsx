@@ -53,12 +53,15 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: 'https://jabirah.pages.dev',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased bg-neutral-50 text-neutral-900" suppressHydrationWarning>
+      <body className="font-sans antialiased bg-neutral-50 text-neutral-900">
         <PersonSchema />
         <Shell>
           {children}

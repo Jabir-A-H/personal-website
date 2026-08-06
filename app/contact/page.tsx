@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, FileText } from 'lucide-react';
-import data from '../../data.json';
+import data from '@/data.json';
 
 export const metadata = {
   title: 'Contact | Jabir Abdullah Haian',
@@ -46,7 +46,7 @@ export default function ContactPage() {
   const { endpoints } = data;
 
   return (
-    <div className="w-full max-w-7xl mx-auto py-12 md:py-24">
+    <div className="w-full max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
         
         {/* Left Column: Context */}
@@ -73,7 +73,7 @@ export default function ContactPage() {
                 name={endpoint.name}
                 href={endpoint.url}
                 handle={endpoint.handle}
-                preferred={endpoint.name === 'Email' || endpoint.name === 'LinkedIn'}
+                preferred={endpoint.preferred}
               />
             ))}
           </div>

@@ -1,8 +1,8 @@
-import { Github, ExternalLink, ArrowUpRight, Terminal } from 'lucide-react';
-import data from '../../data.json';
-import AnimatedHeading from '../../components/AnimatedHeading';
-import AnimatedProjectCard from '../../components/AnimatedProjectCard';
-import AnimatedProjectRow from '../../components/AnimatedProjectRow';
+import { Github, ExternalLink, ArrowUpRight, Terminal, Lock } from 'lucide-react';
+import data from '@/data.json';
+import AnimatedHeading from '@/components/AnimatedHeading';
+import AnimatedProjectCard from '@/components/AnimatedProjectCard';
+import AnimatedProjectRow from '@/components/AnimatedProjectRow';
 
 export default function ProjectsPage() {
   const { projects } = data;
@@ -15,7 +15,7 @@ export default function ProjectsPage() {
       <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] z-0"></div>
       <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.25)_51%)] bg-[length:100%_4px] z-50 opacity-10 mix-blend-overlay"></div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <header className="mb-20 flex flex-col items-start border-b border-neutral-800 pb-12 relative">
           <div className="absolute top-0 right-0 p-4 border border-neutral-800 font-mono text-[10px] text-neutral-500 hidden md:block bg-neutral-950/50 backdrop-blur-sm">
             <div>{data.personal.location}</div>
@@ -104,15 +104,22 @@ export default function ProjectsPage() {
                         </a>
                       )}
                       {project.repo && (
-                        <a 
-                          href={project.repo} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex-1 flex items-center justify-center gap-2 font-mono text-xs border border-neutral-700 text-white px-6 py-4 hover:bg-neutral-800 transition-colors uppercase tracking-widest"
-                        >
-                          <span>Source</span>
-                          <Github className="w-4 h-4" />
-                        </a>
+                        project.visibility === 'PUBLIC' ? (
+                          <a 
+                            href={project.repo} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex-1 flex items-center justify-center gap-2 font-mono text-xs border border-neutral-700 text-white px-6 py-4 hover:bg-neutral-800 transition-colors uppercase tracking-widest"
+                          >
+                            <span>Source</span>
+                            <Github className="w-4 h-4" />
+                          </a>
+                        ) : (
+                          <span className="flex-1 flex items-center justify-center gap-2 font-mono text-[10px] border border-neutral-700/50 text-neutral-500 px-6 py-4 uppercase tracking-widest cursor-default">
+                            <Lock className="w-3.5 h-3.5" />
+                            <span>Private Repo</span>
+                          </span>
+                        )
                       )}
                     </div>
                   </div>
@@ -157,7 +164,7 @@ export default function ProjectsPage() {
                   <h3 className="text-lg font-sans font-bold text-neutral-200 group-hover:text-white transition-colors">
                     {project.title}
                   </h3>
-                  <p className="md:hidden text-sm text-neutral-500 group-hover:text-white/70 mt-1 font-serif italic transition-colors">
+                  <p className="text-sm text-neutral-500 group-hover:text-white/70 mt-1 font-serif italic transition-colors">
                     {project.description}
                   </p>
                 </div>

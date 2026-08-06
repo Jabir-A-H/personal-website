@@ -16,10 +16,7 @@ export default function Home() {
   const currentEducations = data.education.filter(e => e.title.includes('ICAB') || e.title.includes('University of Dhaka'));
   // Curated: show only profession-relevant experiences on home
   const featuredExperience = experience.filter(
-    exp => exp.title === 'International Education Expo 2026' || 
-           exp.title === 'Bangladesh Skills Summit 2026' ||
-           exp.title === 'Alokito Library' ||
-           exp.title === 'Morning Riders'
+    (exp: any) => exp.homepage === true
   );
 
   return (
@@ -30,9 +27,12 @@ export default function Home() {
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img 
             src="/images/hero-bg.webp" 
+            srcSet="/images/hero-bg-640w.webp 640w, /images/hero-bg-1024w.webp 1024w, /images/hero-bg-1920w.webp 1920w"
+            sizes="100vw"
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover object-[80%_90%] opacity-90"
+            fetchPriority="high"
           />
           {/* Seamless Edge Fades */}
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#fafafa] via-[#fafafa]/80 to-transparent"></div>

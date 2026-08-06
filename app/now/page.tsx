@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Book, Briefcase, Globe, Code, ArrowUpRight, Clock } from 'lucide-react';
 import data from '@/data.json';
 import FadeIn from '@/components/FadeIn';
+import AnimatedHeading from '@/components/AnimatedHeading';
 
 export const metadata: Metadata = {
   title: 'Now',
@@ -39,14 +40,14 @@ export default function NowPage() {
               <span className="absolute inline-flex h-3 w-3 rounded-full bg-green-400 opacity-75 animate-ping" />
               <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500" />
             </div>
-            <span className="font-mono text-xs uppercase tracking-[0.3em] text-neutral-500">
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted">
               Currently
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-serif font-light tracking-tight text-neutral-900 mb-6">
+          <AnimatedHeading className="text-5xl md:text-7xl font-serif font-light tracking-tight text-neutral-900 mb-6">
             Now
-          </h1>
+          </AnimatedHeading>
 
           <p className="text-xl md:text-2xl font-light text-neutral-600 leading-relaxed max-w-xl">
             {now.status}
@@ -68,7 +69,7 @@ export default function NowPage() {
                   <div className="text-accent opacity-80 group-hover:opacity-100 transition-opacity">
                     {iconMap[item.icon] || <Clock className="w-5 h-5" />}
                   </div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-neutral-400">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
                     {item.label}
                   </span>
                 </div>
@@ -115,7 +116,7 @@ export default function NowPage() {
       <FadeIn delay={0.4}>
         <footer className="mt-20 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-neutral-400 mb-2">
+            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted mb-2">
               Last updated
             </p>
             <time className="text-sm font-mono text-neutral-600">
@@ -124,7 +125,7 @@ export default function NowPage() {
           </div>
 
           <div className="text-right">
-            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-neutral-400 mb-2">
+            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted mb-2">
               Inspired by
             </p>
             <a

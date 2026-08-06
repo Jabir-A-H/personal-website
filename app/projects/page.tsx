@@ -17,7 +17,7 @@ export default function ProjectsPage() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <header className="mb-20 flex flex-col items-start border-b border-neutral-800 pb-12 relative">
-          <div className="absolute top-0 right-0 p-4 border border-neutral-800 font-mono text-[10px] text-neutral-500 hidden md:block bg-neutral-950/50 backdrop-blur-sm">
+          <div className="absolute top-0 right-0 p-4 border border-neutral-800 font-mono text-[10px] text-muted hidden md:block bg-neutral-950/50 backdrop-blur-sm">
             <div>{data.personal.location}</div>
             <div className="text-accent-light mt-2 flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-accent-light rounded-full animate-pulse"></span>
@@ -32,7 +32,7 @@ export default function ProjectsPage() {
           </AnimatedHeading>
           
           <div className="flex flex-col md:flex-row justify-between w-full items-start md:items-end gap-6">
-            <p className="text-sm font-mono text-neutral-400 uppercase tracking-[0.2em] max-w-md leading-relaxed">
+            <p className="text-sm font-mono text-muted uppercase tracking-[0.2em] max-w-md leading-relaxed">
               Featured projects & development work
             </p>
             <a href="https://github.com/Jabir-A-H/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-xs font-mono text-white border border-neutral-700 bg-neutral-900/50 backdrop-blur-sm px-6 py-3 hover:bg-accent hover:text-white hover:border-accent transition-all duration-300">
@@ -77,7 +77,7 @@ export default function ProjectsPage() {
                       {project.title}
                     </h3>
                     
-                    <p className="text-neutral-400 font-serif italic text-lg mb-8 leading-relaxed max-w-3xl">
+                    <p className="text-muted font-serif italic text-lg mb-8 leading-relaxed max-w-3xl">
                       {project.description}
                     </p>
                   </div>
@@ -115,7 +115,7 @@ export default function ProjectsPage() {
                             <Github className="w-4 h-4" />
                           </a>
                         ) : (
-                          <span className="flex-1 flex items-center justify-center gap-2 font-mono text-[10px] border border-neutral-700/50 text-neutral-500 px-6 py-4 uppercase tracking-widest cursor-default">
+                          <span className="flex-1 flex items-center justify-center gap-2 font-mono text-[10px] border border-neutral-700/50 text-muted px-6 py-4 uppercase tracking-widest cursor-default">
                             <Lock className="w-3.5 h-3.5" />
                             <span>Private Repo</span>
                           </span>
@@ -142,7 +142,7 @@ export default function ProjectsPage() {
 
           <div className="flex flex-col border-t-2 border-neutral-800">
             {/* Header Row */}
-            <div className="hidden md:grid grid-cols-12 gap-4 py-4 border-b-2 border-neutral-800 font-mono text-[10px] text-neutral-500 uppercase tracking-widest px-6">
+            <div className="hidden md:grid grid-cols-12 gap-4 py-4 border-b-2 border-neutral-800 font-mono text-[10px] text-muted uppercase tracking-widest px-6">
               <div className="col-span-4">Designation</div>
               <div className="col-span-3">Tech_Stack</div>
               <div className="col-span-2">Status</div>
@@ -164,14 +164,14 @@ export default function ProjectsPage() {
                   <h3 className="text-lg font-sans font-bold text-neutral-200 group-hover:text-white transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-neutral-500 group-hover:text-white/70 mt-1 font-serif italic transition-colors">
+                  <p className="text-sm text-muted group-hover:text-white/70 mt-1 font-serif italic transition-colors">
                     {project.description}
                   </p>
                 </div>
                 
                 <div className="col-span-3 flex flex-wrap gap-2 mt-3 md:mt-0">
                   {project.tech.map(t => (
-                    <span key={t} className="font-mono text-[10px] text-neutral-400 border border-neutral-700 group-hover:border-white/30 group-hover:text-white/80 px-2 py-1 transition-colors uppercase tracking-wider">
+                    <span key={t} className="font-mono text-[10px] text-muted border border-neutral-700 group-hover:border-white/30 group-hover:text-white/80 px-2 py-1 transition-colors uppercase tracking-wider">
                       {t}
                     </span>
                   ))}
@@ -181,14 +181,14 @@ export default function ProjectsPage() {
                   <span className={`font-mono text-[10px] uppercase tracking-widest ${
                     project.status === 'development' ? 'text-accent-light group-hover:text-white' :
                     project.status === 'legacy' ? 'text-amber-400 group-hover:text-white' :
-                    'text-neutral-400 group-hover:text-white'
+                    'text-muted group-hover:text-white'
                   } transition-colors`}>
                     {project.status}
                   </span>
                 </div>
 
                 <div className="col-span-2 mt-2 md:mt-0">
-                  <span className="font-mono text-[10px] text-neutral-500 group-hover:text-white/70 transition-colors">
+                  <span className="font-mono text-[10px] text-muted group-hover:text-white/70 transition-colors">
                     {project.pushedAt ? new Date(project.pushedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '—'}
                   </span>
                 </div>

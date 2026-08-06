@@ -16,7 +16,7 @@ export default function TimelineCard({ title, date, role, description, skills }:
       
       <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between space-y-1 sm:space-y-0 mb-1">
         <div className="font-serif font-medium text-xl md:text-2xl text-neutral-900 group-hover:text-accent-dark transition-colors">{title}</div>
-        <time className="font-mono text-xs text-neutral-500">{date}</time>
+        <time className="font-mono text-xs text-muted">{date}</time>
       </div>
       <div className="text-sm font-medium text-neutral-700 mb-2">{role}</div>
       {description && <div className="text-sm text-neutral-600 leading-relaxed">{description}</div>}

@@ -7,14 +7,23 @@ export const ACCENT = {
   GLOW: 'rgba(232, 145, 90, 0.125)',
 } as const;
 
-export const PAGE_THEMES: Record<string, { bg: string }> = {
-  '/': { bg: '#fafafa' },
-  '/projects': { bg: '#0a0a0a' },
-  '/education': { bg: '#f5f0e8' },
-  '/whispers': { bg: '#f8f6f2' },
-  '/contact': { bg: '#ffffff' },
-  '/now': { bg: '#f4f7f5' },
-  '/experience': { bg: '#faf8f5' },
+export type NavTextTheme = 'light' | 'dark';
+
+export interface PageTheme {
+  bg: string;
+  textMuted: string;
+  navText: NavTextTheme;
+  focusRing: string;
+}
+
+export const PAGE_THEMES: Record<string, PageTheme> = {
+  '/': { bg: '#fafafa', textMuted: '#525252', navText: 'light', focusRing: 'var(--color-accent)' },
+  '/projects': { bg: '#0a0a0a', textMuted: '#a3a3a3', navText: 'dark', focusRing: '#ffffff' },
+  '/education': { bg: '#f5f0e8', textMuted: '#525252', navText: 'light', focusRing: 'var(--color-accent)' },
+  '/whispers': { bg: '#f8f6f2', textMuted: '#525252', navText: 'light', focusRing: 'var(--color-accent)' },
+  '/contact': { bg: '#ffffff', textMuted: '#525252', navText: 'light', focusRing: 'var(--color-accent)' },
+  '/now': { bg: '#f4f7f5', textMuted: '#525252', navText: 'light', focusRing: 'var(--color-accent)' },
+  '/experience': { bg: '#faf8f5', textMuted: '#525252', navText: 'light', focusRing: 'var(--color-accent)' },
 };
 
 export interface AnimationProps {

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { getThemeForRoute } from '@/lib/theme';
 
 const navItems = [
   { name: 'HOME', path: '/' },
@@ -15,12 +16,12 @@ const navItems = [
 
 export default function Navigation() {
   const pathname = usePathname();
-  const isDarkTheme = pathname === '/projects';
-  const textColor = isDarkTheme ? 'text-white' : 'text-neutral-900';
+  const theme = getThemeForRoute(pathname);
+  const textColor = theme.navText === 'dark' ? 'text-white' : 'text-neutral-900';
 
   return (
     <header className={`w-full max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between items-start md:items-center z-50 relative ${textColor}`}>
-      <Link href="/" className="flex items-center text-xl font-sans font-extrabold tracking-tight mb-6 md:mb-0 focus:outline-none focus:ring-2 focus:ring-accent rounded-sm hover:opacity-80 transition-opacity">
+      <Link href="/" className="flex items-center text-xl font-sans font-extrabold tracking-tight mb-6 md:mb-0 rounded-sm hover:opacity-80 transition-opacity">
         J<span className="text-accent ml-[1px] leading-none">.</span>
       </Link>
       
@@ -31,7 +32,7 @@ export default function Navigation() {
             <Link 
               key={item.path} 
               href={item.path}
-              className={`relative py-1 hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-accent rounded-sm ${isActive ? 'opacity-100 font-bold' : 'opacity-60'}`}
+              className={`relative py-1 hover:opacity-100 transition-opacity duration-300 rounded-sm ${isActive ? 'opacity-100 font-bold' : 'opacity-60'}`}
               aria-current={isActive ? 'page' : undefined}
             >
               {item.name}

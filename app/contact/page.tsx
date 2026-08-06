@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, FileText } from 'lucide-react';
+import AnimatedHeading from '@/components/AnimatedHeading';
 import data from '@/data.json';
 
 export const metadata = {
@@ -31,7 +32,7 @@ function ContactLink({ href, name, handle, preferred, download }: { href: string
       </div>
       
       <div className="flex items-center gap-4 mt-4 sm:mt-0 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-        <span className="font-mono text-xs md:text-sm tracking-widest text-neutral-500">
+        <span className="font-mono text-xs md:text-sm tracking-widest text-muted">
           {handle}
         </span>
         <div className="w-10 h-10 rounded-full border border-neutral-300 flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-white transition-all duration-300">
@@ -52,10 +53,10 @@ export default function ContactPage() {
         {/* Left Column: Context */}
         <div className="md:col-span-4">
           <div className="sticky top-8">
-            <h1 className="text-4xl md:text-5xl font-sans font-bold tracking-tighter uppercase mb-6 text-neutral-900">
+            <AnimatedHeading className="text-4xl md:text-5xl font-sans font-bold tracking-tighter uppercase mb-6 text-neutral-900">
               Endpoints
-            </h1>
-            <p className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-6">
+            </AnimatedHeading>
+            <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
               Dhaka, Bangladesh
             </p>
             <p className="font-serif italic text-xl text-neutral-600 leading-relaxed">

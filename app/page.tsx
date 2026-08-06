@@ -4,6 +4,7 @@ import { ArrowRight, FileText } from 'lucide-react';
 import ExperienceCard from '@/components/ExperienceCard';
 import SectionHeader from '@/components/SectionHeader';
 import FadeIn from '@/components/FadeIn';
+import AnimatedHeading from '@/components/AnimatedHeading';
 import data from '@/data.json';
 
 export const metadata: Metadata = {
@@ -44,9 +45,9 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
           <div className="max-w-3xl">
-            <h1 className="text-[clamp(3rem,11vw,8rem)] leading-[0.85] font-sans font-bold tracking-tighter text-neutral-900 uppercase mb-8">
+            <AnimatedHeading className="text-[clamp(3rem,11vw,8rem)] leading-[0.85] font-sans font-bold tracking-tighter text-neutral-900 uppercase mb-8">
               {personal.name.split(' ').slice(0, 2).join(' ')}<br/>{personal.name.split(' ').slice(2).join(' ')}
-            </h1>
+            </AnimatedHeading>
             
             <p className="text-2xl md:text-4xl font-serif italic text-neutral-800 leading-snug mb-8 max-w-2xl drop-shadow-sm">
               {personal.headline}
@@ -78,7 +79,7 @@ export default function Home() {
             <div key={idx} className="group mb-12 last:mb-8">
               <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
                 <h3 className="text-2xl md:text-3xl font-bold text-neutral-900">{edu.title}</h3>
-                <span className="font-mono text-xs text-neutral-500 mt-2 md:mt-0">{edu.date}</span>
+                <span className="font-mono text-xs text-muted mt-2 md:mt-0">{edu.date}</span>
               </div>
               <p className="font-serif italic text-xl text-neutral-600 mb-4">{edu.role}</p>
               {edu.description && (
@@ -145,7 +146,7 @@ export default function Home() {
               <div key={idx} className="text-neutral-800">
                 <span className="text-base font-medium">{cert.title}</span>
                 {cert.issuer && (
-                  <span className="text-sm text-neutral-500 font-mono ml-2">{cert.issuer}</span>
+                  <span className="text-sm text-muted font-mono ml-2">{cert.issuer}</span>
                 )}
               </div>
             ))}
@@ -157,7 +158,7 @@ export default function Home() {
               </span>
             ))}
             {skills.length > 5 && (
-              <span className="text-[10px] uppercase tracking-wider font-mono text-neutral-400 px-2 py-1">
+              <span className="text-[10px] uppercase tracking-wider font-mono text-muted px-2 py-1">
                 +{skills.length - 5} more
               </span>
             )}
@@ -180,7 +181,7 @@ export default function Home() {
             <p className="font-serif italic text-2xl text-neutral-800 mb-2">
               &quot;Still learning. Always building.&quot;
             </p>
-            <a href={`mailto:${personal.email}`} className="font-mono text-sm text-neutral-500 hover:text-accent-dark transition-colors">
+            <a href={`mailto:${personal.email}`} className="font-mono text-sm text-muted hover:text-accent-dark transition-colors">
               {personal.email}
             </a>
           </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import TimelineCard from '@/components/TimelineCard';
+import AnimatedHeading from '@/components/AnimatedHeading';
 import data from '@/data.json';
 import { Metadata } from 'next';
 
@@ -17,8 +18,8 @@ export default function AboutPage() {
   return (
     <div className="grid grid-cols-12 gap-x-6 gap-y-12 w-full max-w-7xl mx-auto px-6 md:px-12 text-neutral-800 py-8">
       <header className="col-span-12 border-b border-neutral-300 pb-8">
-        <h1 className="font-serif text-5xl md:text-7xl font-light tracking-tight mb-4">Education</h1>
-        <p className="font-mono text-xs uppercase tracking-widest text-neutral-500">Core Professional Identity</p>
+        <AnimatedHeading className="font-serif text-5xl md:text-7xl font-light tracking-tight mb-4">Education</AnimatedHeading>
+        <p className="font-mono text-xs uppercase tracking-widest text-muted">Core Professional Identity</p>
       </header>
 
       <div className="col-span-12 md:col-span-4">
@@ -31,7 +32,7 @@ export default function AboutPage() {
             As an aspiring Chartered Accountant, I am driven to integrate robust financial management, audit standards, and cost accounting with modern technological solutions.
           </p>
           <div className="h-[1px] w-12 bg-accent mb-6"></div>
-          <ul className="space-y-2 font-mono text-xs text-neutral-500">
+          <ul className="space-y-2 font-mono text-xs text-muted">
             <li><a href="https://www.linkedin.com/in/jabir-abdullah-haian/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-dark underline underline-offset-4 transition-colors">LinkedIn Profile &#8599;</a></li>
             <li><a href="https://facebook.com/jabir.abdullah.haian" target="_blank" rel="noopener noreferrer" className="hover:text-accent-dark underline underline-offset-4 transition-colors">Facebook Profile &#8599;</a></li>
           </ul>
@@ -40,7 +41,7 @@ export default function AboutPage() {
 
       <div className="col-span-12 md:col-span-8 space-y-12">
         <section>
-          <h3 className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-6">Timeline</h3>
+          <h3 className="font-mono text-xs uppercase tracking-widest text-muted mb-6">Timeline</h3>
           
           <div className="space-y-12 relative before:absolute before:inset-0 before:ml-1 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-neutral-200 before:to-transparent">
             

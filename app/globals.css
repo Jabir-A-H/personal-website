@@ -4,11 +4,18 @@
   --color-accent: #e8915a;
   --color-accent-light: #f4b88a;
   --color-accent-dark: #c97040;
+  --color-muted: var(--theme-muted);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--theme-focus-ring, var(--color-accent));
+    outline-offset: 4px;
+    border-radius: 2px;
   }
 
   ::selection {

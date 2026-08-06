@@ -1,5 +1,6 @@
 import data from '@/data.json';
 import AnimatedWhisperCard from '@/components/AnimatedWhisperCard';
+import AnimatedHeading from '@/components/AnimatedHeading';
 
 export default function WhispersPage() {
   const { whispers } = data;
@@ -7,8 +8,8 @@ export default function WhispersPage() {
   return (
     <div className="col-span-12 w-full py-12 max-w-3xl mx-auto px-6 md:px-12">
       <header className="mb-24 text-center">
-        <h1 className="text-5xl md:text-7xl font-serif italic tracking-tighter text-neutral-900 mb-6">Whispers</h1>
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-neutral-400">Fragments of thought &amp; reflection</p>
+        <AnimatedHeading className="text-5xl md:text-7xl font-serif italic tracking-tighter text-neutral-900 mb-6">Whispers</AnimatedHeading>
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">Fragments of thought &amp; reflection</p>
       </header>
 
       <div className="space-y-32">
@@ -22,7 +23,7 @@ export default function WhispersPage() {
             </div>
 
             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-6">
-              <time className="font-mono text-[10px] tracking-widest text-neutral-400 uppercase">{whisper.date}</time>
+              <time className="font-mono text-[10px] tracking-widest text-muted uppercase">{whisper.date}</time>
               <h2 className={`font-serif font-light text-neutral-800 group-hover:text-neutral-900 transition-colors ${index === 0 ? 'text-3xl md:text-5xl' : 'text-2xl md:text-3xl'}`}>
                 {whisper.title}
               </h2>
@@ -38,7 +39,7 @@ export default function WhispersPage() {
               
               <div className="flex flex-wrap gap-3">
                 {whisper.tags.map(tag => (
-                  <span key={tag} className="text-[10px] font-mono uppercase tracking-widest text-neutral-400 border border-neutral-200 px-2 py-1 rounded-full hover:border-accent hover:text-accent-dark transition-colors cursor-default">
+                  <span key={tag} className="text-[10px] font-mono uppercase tracking-widest text-muted border border-neutral-200 px-2 py-1 rounded-full hover:border-accent hover:text-accent-dark transition-colors cursor-default">
                     #{tag}
                   </span>
                 ))}
@@ -49,7 +50,7 @@ export default function WhispersPage() {
       </div>
 
       <footer className="mt-48 pt-12 border-t border-neutral-100 text-center">
-        <p className="font-serif italic text-neutral-400">More thoughts to come...</p>
+        <p className="font-serif italic text-muted">More thoughts to come...</p>
       </footer>
     </div>
   );

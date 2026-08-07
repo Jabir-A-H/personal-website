@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="w-full py-12 md:py-24">
       {/* Full Bleed Hero */}
-      <FadeIn className="w-full mb-16 md:mb-24 min-h-[70vh] flex flex-col justify-center pt-16 md:pt-24 pb-24 md:pb-32 mt-[-3rem] md:mt-[-6rem]">
+      <FadeIn className="relative w-full mb-16 md:mb-24 min-h-[max(70vh,560px)] flex flex-col justify-center pt-16 md:pt-24 pb-24 md:pb-32 mt-[-3rem] md:mt-[-6rem]">
         {/* Background Image Wrapper */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img 
@@ -32,7 +32,7 @@ export default function Home() {
             sizes="100vw"
             alt=""
             aria-hidden="true"
-            className="w-full h-full object-cover object-[80%_90%] opacity-90"
+            className="w-full h-full object-cover object-[78%_30%] md:object-[78%_32%] opacity-90"
             fetchPriority="high"
           />
           {/* Seamless Edge Fades */}

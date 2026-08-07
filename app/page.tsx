@@ -23,41 +23,47 @@ export default function Home() {
   return (
     <div className="w-full py-12 md:py-24">
       {/* Full Bleed Hero */}
-      <FadeIn className="w-full mb-16 md:mb-24 min-h-[70vh] flex flex-col justify-center pt-16 md:pt-24 pb-24 md:pb-32 mt-[-3rem] md:mt-[-6rem]">
-        {/* Background Image Wrapper */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+      <FadeIn className="relative w-full mb-16 md:mb-24 flex flex-col md:min-h-[max(70vh,560px)] md:justify-center md:pt-24 md:pb-32 mt-[-3rem] md:mt-[-6rem]">
+        {/* Name — always first */}
+        <div className="order-1 relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-8 md:pt-0">
+          <div className="max-w-3xl">
+            <AnimatedHeading className="text-[clamp(3rem,11vw,8rem)] leading-[0.85] font-sans font-bold tracking-tighter text-neutral-900 uppercase mb-0 md:mb-8">
+              {personal.name.split(' ').slice(0, 2).join(' ')}<br/>{personal.name.split(' ').slice(2).join(' ')}
+            </AnimatedHeading>
+          </div>
+        </div>
+
+        {/* Photo — stacked block with overlap on mobile, absolute full-bleed overlay on desktop */}
+        <div className="order-2 relative h-[50vh] -mt-6 md:absolute md:inset-0 md:h-auto md:mt-0 z-0 pointer-events-none overflow-hidden">
           <img 
             src="/images/hero-bg.webp" 
             srcSet="/images/hero-bg-640w.webp 640w, /images/hero-bg-1024w.webp 1024w, /images/hero-bg-1920w.webp 1920w"
             sizes="100vw"
             alt=""
             aria-hidden="true"
-            className="w-full h-full object-cover object-[80%_90%] opacity-90"
+            className="w-full h-full object-cover object-[80%_25%] origin-[80%_25%] scale-105 md:object-[78%_28%] md:origin-[78%_28%] md:scale-125 opacity-90"
             fetchPriority="high"
           />
-          {/* Seamless Edge Fades */}
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#fafafa] via-[#fafafa]/80 to-transparent"></div>
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#fafafa] via-[#fafafa]/80 to-transparent"></div>
-          <div className="absolute inset-y-0 left-0 w-full md:w-2/3 bg-gradient-to-r from-[#fafafa] via-[#fafafa]/90 to-transparent"></div>
-          <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#fafafa] to-transparent"></div>
+          {/* Top fade — always visible */}
+          <div className="absolute inset-x-0 top-0 h-24 md:h-32 bg-gradient-to-b from-[#fafafa] via-[#fafafa]/70 to-transparent"></div>
+          {/* Bottom fade — always visible */}
+          <div className="absolute inset-x-0 bottom-0 h-32 md:h-48 bg-gradient-to-t from-[#fafafa] via-[#fafafa]/80 to-transparent"></div>
+          {/* Left fade — desktop only */}
+          <div className="hidden md:block absolute inset-y-0 left-0 w-full md:w-2/3 bg-gradient-to-r from-[#fafafa] via-[#fafafa]/90 to-transparent"></div>
+          {/* Right fade — desktop only */}
+          <div className="hidden md:block absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#fafafa] to-transparent"></div>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
-          <div className="max-w-3xl">
-            <AnimatedHeading className="text-[clamp(3rem,11vw,8rem)] leading-[0.85] font-sans font-bold tracking-tighter text-neutral-900 uppercase mb-8">
-              {personal.name.split(' ').slice(0, 2).join(' ')}<br/>{personal.name.split(' ').slice(2).join(' ')}
-            </AnimatedHeading>
-            
-            <p className="text-2xl md:text-4xl font-serif italic text-neutral-800 leading-snug mb-8 max-w-2xl drop-shadow-sm">
+        {/* Content — below photo on mobile, overlaid on desktop */}
+        <div className="order-3 relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pb-8 md:pb-0">
+          <div className="max-w-3xl md:max-w-2xl">
+            <p className="text-2xl md:text-4xl font-serif italic text-neutral-800 leading-snug mb-6 md:mb-8 max-w-2xl drop-shadow-sm">
               {personal.headline}
             </p>
-            
-            <div className="font-mono text-xs uppercase tracking-widest text-neutral-600 space-y-1 mb-8">
+            <div className="font-mono text-xs uppercase tracking-widest text-neutral-600 space-y-1 mb-6 md:mb-8">
               <p>{personal.location}</p>
               <p>{personal.email}</p>
             </div>
-            
             <p className="text-lg text-neutral-700 max-w-xl leading-relaxed font-medium">
               {personal.bio}
             </p>

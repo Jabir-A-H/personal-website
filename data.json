@@ -202,7 +202,9 @@
         "Tailwind"
       ],
       "repo": "https://github.com/Jabir-A-H/personal-website",
-      "live": "https://jabirah.pages.dev"
+      "live": "https://jabirah.pages.dev",
+      "pushedAt": "2026-05-15T10:46:11Z",
+      "visibility": "PRIVATE"
     },
     {
       "title": "Report Submission System",
@@ -215,7 +217,9 @@
         "Tailwind"
       ],
       "repo": "https://github.com/Jabir-A-H/report-submission",
-      "live": "https://jabir-a-h.github.io/report-submission/"
+      "live": "https://jabir-a-h.github.io/report-submission/",
+      "pushedAt": "2026-05-02T00:56:21Z",
+      "visibility": "PUBLIC"
     },
     {
       "title": "Gallery",
@@ -227,7 +231,9 @@
         "Tailwind"
       ],
       "repo": "https://github.com/Jabir-A-H/photography-website",
-      "live": "https://jabir-a-h.github.io/gallery/"
+      "live": "https://jabir-a-h.github.io/gallery/",
+      "pushedAt": "2026-04-29T10:03:47Z",
+      "visibility": "PRIVATE"
     },
     {
       "title": "Academic Resort",
@@ -239,7 +245,9 @@
         "PWA"
       ],
       "repo": "https://github.com/Jabir-A-H/academic-resort",
-      "live": "https://jabir-a-h.github.io/academic-resort/"
+      "live": "https://jabir-a-h.github.io/academic-resort/",
+      "pushedAt": "2026-04-17T15:17:44Z",
+      "visibility": "PUBLIC"
     },
     {
       "title": "LazyLedger",
@@ -252,7 +260,9 @@
         "Gemini AI"
       ],
       "repo": "https://github.com/Jabir-A-H/LazyLedger",
-      "live": "https://jabir-a-h.github.io/LazyLedger/"
+      "live": "https://jabir-a-h.github.io/LazyLedger/",
+      "pushedAt": "2026-03-14T10:10:20Z",
+      "visibility": "PRIVATE"
     },
     {
       "title": "Entropy Clock",
@@ -264,7 +274,9 @@
         "CSS"
       ],
       "repo": "https://github.com/Jabir-A-H/entropy-clock",
-      "live": "https://jabir-a-h.github.io/entropy-clock/"
+      "live": "https://jabir-a-h.github.io/entropy-clock/",
+      "pushedAt": "2026-02-28T19:17:46Z",
+      "visibility": "PRIVATE"
     },
     {
       "title": "Library Management System",
@@ -276,7 +288,9 @@
         "TypeScript",
         "JWT"
       ],
-      "repo": "https://github.com/Jabir-A-H/library-management"
+      "repo": "https://github.com/Jabir-A-H/library-management",
+      "pushedAt": "2025-07-27T23:52:38Z",
+      "visibility": "PUBLIC"
     },
     {
       "title": "Gamepacks",
@@ -286,7 +300,9 @@
         "Godot",
         "GDScript"
       ],
-      "repo": "https://github.com/Jabir-A-H/gamepacks"
+      "repo": "https://github.com/Jabir-A-H/gamepacks",
+      "pushedAt": "2025-10-03T16:29:02Z",
+      "visibility": "PUBLIC"
     },
     {
       "title": "Sidescroller",
@@ -295,7 +311,9 @@
       "tech": [
         "Go"
       ],
-      "repo": "https://github.com/Jabir-A-H/Sidescroller"
+      "repo": "https://github.com/Jabir-A-H/Sidescroller",
+      "pushedAt": "2023-04-30T00:21:00Z",
+      "visibility": "PUBLIC"
     }
   ],
   "skills": [

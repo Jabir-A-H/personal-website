@@ -3,44 +3,8 @@
     "name": "Jabir Abdullah Haian",
     "location": "Dhaka, Bangladesh",
     "email": "jabirahaian@gmail.com",
-    "headline": "Aspiring Chartered Accountant | BBA in Accounting & Information Systems, University of Dhaka",
-    "bio": "Aspiring Chartered Accountant and BBA (Accounting & Information Systems) student at the University of Dhaka. Driven to integrate robust financial management, audit standards, and cost accounting with modern technological solutions and data analytics.",
-    "shortTags": [
-      "CA, ICAB (5%)",
-      "Aspire 25 Alumni"
-    ]
-  },
-  "now": {
-    "lastUpdated": "2026-08-01",
-    "status": "In the middle of final exams — head down, fully locked in.",
-    "items": [
-      {
-        "label": "Studying",
-        "title": "Final Examinations",
-        "description": "Currently sitting for final exams at the University of Dhaka. Everything else is on pause until these are done.",
-        "icon": "book"
-      },
-      {
-        "label": "Next Up",
-        "title": "Internship",
-        "description": "Planning to start an internship after exams wrap up. Exploring opportunities in audit firms and corporate finance.",
-        "icon": "briefcase"
-      },
-      {
-        "label": "Building",
-        "title": "This Website",
-        "description": "Continuously refining jabirah.pages.dev — improving performance, accessibility, and adding new sections.",
-        "link": "/projects",
-        "icon": "globe"
-      },
-      {
-        "label": "Building",
-        "title": "Report Submission System",
-        "description": "Iterating on the report automation tool — users submit Excel-like forms, authorized users compile master reports with custom conditions.",
-        "link": "https://jabir-a-h.github.io/report-submission/",
-        "icon": "code"
-      }
-    ]
+    "headline": "Aspiring Chartered Accountant | BBA in Accounting, University of Dhaka",
+    "bio": "Aspiring Chartered Accountant and Accounting student at the University of Dhaka. Driven to integrate robust financial management, audit standards, and cost accounting with modern technological solutions and data analytics."
   },
   "endpoints": [
     {
@@ -86,324 +50,115 @@
       "handle": "@jabirah"
     }
   ],
-  "projects": [
+  "now": {
+    "lastUpdated": "2026-08-01",
+    "status": "In the middle of final exams — head down, fully locked in.",
+    "items": [
+      {
+        "label": "Studying",
+        "title": "Final Examinations",
+        "description": "Currently sitting for final exams at the University of Dhaka. Everything else is on pause until these are done.",
+        "icon": "book"
+      },
+      {
+        "label": "Next Up",
+        "title": "Internship",
+        "description": "Planning to start an internship after exams wrap up. Exploring opportunities in audit firms and corporate finance. Possibly at RSM Bangladesh.",
+        "icon": "briefcase"
+      },
+      {
+        "label": "Building",
+        "title": "This Website",
+        "description": "Continuously refining jabirah.pages.dev — improving performance, accessibility, and adding new sections.",
+        "link": "/projects",
+        "icon": "globe"
+      },
+      {
+        "label": "Building",
+        "title": "Report Submission System",
+        "description": "Iterating on the report automation tool — users submit Excel-like forms, authorized users compile master reports with custom conditions.",
+        "link": "https://jabir-a-h.github.io/report-submission/",
+        "icon": "code"
+      }
+    ]
+  },
+  "education": [
     {
-      "title": "jabirah.pages.dev",
-      "status": "featured",
-      "description": "My personal website.",
-      "tech": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind"
-      ],
-      "repo": "https://github.com/Jabir-A-H/personal-website",
-      "live": "https://jabirah.pages.dev",
-      "primaryLanguage": "TypeScript",
-      "languages": [
-        {
-          "name": "TypeScript",
-          "size": 36284
-        },
-        {
-          "name": "CSS",
-          "size": 23
-        },
-        {
-          "name": "JavaScript",
-          "size": 482
-        }
-      ],
-      "stargazerCount": 1,
-      "forkCount": 0,
-      "pushedAt": "2026-05-15T10:46:11Z",
-      "repositoryTopics": [],
-      "isArchived": false,
-      "visibility": "PRIVATE"
+      "title": "Institute of Chartered Accountants of Bangladesh (ICAB)",
+      "date": "",
+      "role": "Certificate Level: Passed",
+      "description": "Pursuing the Chartered Accountancy professional qualification alongside undergraduate studies.",
+      "skills": [
+        "Accounting",
+        "Audit & Assurance",
+        "Financial Accounting",
+        "Cost Accounting"
+      ]
     },
     {
-      "title": "Report Submission System",
-      "status": "featured",
-      "description": "Report-Submission automates report management. Users submit Excel-like forms, stored in a database. Authorized users compile a master report based on custom conditions, exportable in various formats. Role-based access ensures secure viewing, boosting efficiency and accuracy.",
-      "tech": [
-        "Python",
-        "Flask",
-        "PostgreSQL",
-        "Tailwind"
-      ],
-      "repo": "https://github.com/Jabir-A-H/report-submission",
-      "live": "https://jabir-a-h.github.io/report-submission/",
-      "primaryLanguage": "HTML",
-      "languages": [
-        {
-          "name": "HTML",
-          "size": 204180
-        },
-        {
-          "name": "Python",
-          "size": 181024
-        },
-        {
-          "name": "CSS",
-          "size": 24647
-        },
-        {
-          "name": "JavaScript",
-          "size": 11744
-        },
-        {
-          "name": "Batchfile",
-          "size": 917
-        },
-        {
-          "name": "Shell",
-          "size": 839
-        },
-        {
-          "name": "Procfile",
-          "size": 48
-        }
-      ],
-      "stargazerCount": 1,
-      "forkCount": 0,
-      "pushedAt": "2026-05-02T00:56:21Z",
-      "repositoryTopics": [],
-      "isArchived": false,
-      "visibility": "PUBLIC"
+      "title": "University of Dhaka",
+      "date": "Sep 2022 — Present",
+      "role": "BBA, Accounting & Information Systems",
+      "description": "Exploring Accounting, Data Analytics, AI & Technology.",
+      "skills": [
+        "Microsoft Products",
+        "Online Research",
+        "IT Management",
+        "Technical Support",
+        "Problem Solving",
+        "Cycling",
+        "IT Operations",
+        "Microsoft Excel",
+        "Accounting",
+        "Teamwork",
+        "Big Data",
+        "Microsoft Office",
+        "Communication",
+        "Table Tennis"
+      ]
     },
     {
-      "title": "Gallery",
-      "status": "featured",
-      "description": "A personal photography portfolio website.",
-      "tech": [
-        "TypeScript",
-        "React",
-        "Tailwind"
-      ],
-      "repo": "https://github.com/Jabir-A-H/photography-website",
-      "live": "https://jabir-a-h.github.io/gallery/",
-      "primaryLanguage": "TypeScript",
-      "languages": [
-        {
-          "name": "TypeScript",
-          "size": 312661
-        },
-        {
-          "name": "JavaScript",
-          "size": 114416
-        },
-        {
-          "name": "CSS",
-          "size": 10616
-        },
-        {
-          "name": "HTML",
-          "size": 3311
-        },
-        {
-          "name": "PowerShell",
-          "size": 566
-        }
-      ],
-      "stargazerCount": 1,
-      "forkCount": 0,
-      "pushedAt": "2026-04-29T10:03:47Z",
-      "repositoryTopics": [],
-      "isArchived": false,
-      "visibility": "PRIVATE"
-    },
-    {
-      "title": "Academic Resort",
-      "status": "development",
-      "description": "A take on making a better version of https://sites.google.com/ais.du.ac.bd/academic-resort",
-      "tech": [
-        "TypeScript",
-        "Google Drive API",
-        "PWA"
-      ],
-      "repo": "https://github.com/Jabir-A-H/academic-resort",
-      "live": "https://jabir-a-h.github.io/academic-resort/",
-      "primaryLanguage": "TypeScript",
-      "languages": [
-        {
-          "name": "TypeScript",
-          "size": 221932
-        },
-        {
-          "name": "CSS",
-          "size": 2697
-        },
-        {
-          "name": "JavaScript",
-          "size": 2450
-        }
-      ],
-      "stargazerCount": 1,
-      "forkCount": 0,
-      "pushedAt": "2026-04-17T15:17:44Z",
-      "repositoryTopics": [],
-      "isArchived": false,
-      "visibility": "PUBLIC"
-    },
-    {
-      "title": "LazyLedger",
-      "status": "featured",
-      "description": "Finance tracking for the delightfully lazy. Let AI do the data entry.",
-      "tech": [
-        "Next.js",
-        "Firebase",
-        "Tailwind",
-        "Gemini AI"
-      ],
-      "repo": "https://github.com/Jabir-A-H/LazyLedger",
-      "live": "https://jabir-a-h.github.io/LazyLedger/",
-      "primaryLanguage": "TypeScript",
-      "languages": [
-        {
-          "name": "TypeScript",
-          "size": 118359
-        },
-        {
-          "name": "JavaScript",
-          "size": 482
-        },
-        {
-          "name": "CSS",
-          "size": 62
-        }
-      ],
-      "stargazerCount": 1,
-      "forkCount": 0,
-      "pushedAt": "2026-03-14T10:10:20Z",
-      "repositoryTopics": [],
-      "isArchived": false,
-      "visibility": "PRIVATE"
-    },
-    {
-      "title": "Entropy Clock",
-      "status": "featured",
-      "description": "This clock is a frozen timeline. It only moves forward when someone ticks it to.",
-      "tech": [
-        "TypeScript",
+      "title": "Notre Dame College",
+      "date": "Feb 2019 — Jun 2021",
+      "role": "HSC, Business Studies",
+      "description": "Ranked 35th out of 750 students. Got a perfect attendance certificate. Member of Notre Dame Business Club and Notre Dame Information Technology Club.",
+      "skills": [
+        "Microsoft Products",
+        "IT Management",
+        "Technical Support",
+        "Problem Solving",
+        "IT Operations",
+        "Accounting",
         "HTML",
-        "CSS"
-      ],
-      "repo": "https://github.com/Jabir-A-H/entropy-clock",
-      "live": "https://jabir-a-h.github.io/entropy-clock/",
-      "primaryLanguage": "TypeScript",
-      "languages": [
-        {
-          "name": "TypeScript",
-          "size": 14862
-        },
-        {
-          "name": "HTML",
-          "size": 8927
-        },
-        {
-          "name": "CSS",
-          "size": 408
-        }
-      ],
-      "stargazerCount": 0,
-      "forkCount": 0,
-      "pushedAt": "2026-02-28T19:17:46Z",
-      "repositoryTopics": [],
-      "isArchived": false,
-      "visibility": "PRIVATE"
+        "C (Programming Language)",
+        "Microsoft Office"
+      ]
     },
     {
-      "title": "Library Management System",
-      "status": "development",
-      "description": "A modern, full-stack library management application with FastAPI backend and Next.js frontend, featuring JWT authentication, async operations, and comprehensive book tracking.",
-      "tech": [
-        "FastAPI",
-        "Next.js",
-        "TypeScript",
-        "JWT"
-      ],
-      "repo": "https://github.com/Jabir-A-H/library-management",
-      "primaryLanguage": "TypeScript",
-      "languages": [
-        {
-          "name": "TypeScript",
-          "size": 534947
-        },
-        {
-          "name": "Python",
-          "size": 220340
-        },
-        {
-          "name": "PowerShell",
-          "size": 8983
-        },
-        {
-          "name": "JavaScript",
-          "size": 7899
-        },
-        {
-          "name": "CSS",
-          "size": 1666
-        },
-        {
-          "name": "Batchfile",
-          "size": 1630
-        },
-        {
-          "name": "Mako",
-          "size": 635
-        }
-      ],
-      "stargazerCount": 1,
-      "forkCount": 0,
-      "pushedAt": "2025-07-27T23:52:38Z",
-      "repositoryTopics": [],
-      "isArchived": false,
-      "visibility": "PUBLIC"
+      "title": "Birshreshtha Noor Mohammad Public College",
+      "date": "Jan 2017 — May 2019",
+      "role": "SSC, Business Studies",
+      "description": "Government Board Scholarship Recipient. Member of BNMPC Business Club and Chess Club.",
+      "skills": [
+        "Microsoft Products",
+        "Problem Solving",
+        "Cycling",
+        "IT Operations",
+        "Microsoft Excel",
+        "Accounting",
+        "Microsoft Office"
+      ]
     },
     {
-      "title": "Gamepacks",
-      "status": "legacy",
-      "description": "Gonna make a game out of this tutorial project. Learning and using Godot.",
-      "tech": [
-        "Godot",
-        "GDScript"
-      ],
-      "repo": "https://github.com/Jabir-A-H/gamepacks",
-      "primaryLanguage": "GDScript",
-      "languages": [
-        {
-          "name": "GDScript",
-          "size": 11202
-        }
-      ],
-      "stargazerCount": 1,
-      "forkCount": 0,
-      "pushedAt": "2025-10-03T16:29:02Z",
-      "repositoryTopics": [],
-      "isArchived": false,
-      "visibility": "PUBLIC"
-    },
-    {
-      "title": "Sidescroller",
-      "status": "legacy",
-      "description": "A side-scrolling game project built to explore game mechanics and rendering logic using Go.",
-      "tech": [
-        "Go"
-      ],
-      "repo": "https://github.com/Jabir-A-H/Sidescroller",
-      "primaryLanguage": "Go",
-      "languages": [
-        {
-          "name": "Go",
-          "size": 10670
-        }
-      ],
-      "stargazerCount": 1,
-      "forkCount": 0,
-      "pushedAt": "2023-04-30T00:21:00Z",
-      "repositoryTopics": [],
-      "isArchived": false,
-      "visibility": "PUBLIC"
+      "title": "Birshreshtha Munshi Abdur Rouf Public College",
+      "date": "Dec 2013 — Dec 2016",
+      "role": "JSC",
+      "skills": [
+        "Microsoft Products",
+        "Problem Solving",
+        "IT Operations",
+        "Microsoft Office"
+      ]
     }
   ],
   "experience": [
@@ -436,127 +191,111 @@
       "description": "Organized Iftar mahfils (60+ participants), managed annual badminton tournaments for 2 consecutive years (40+ participants), and led regular programs on spiritual and value-based youth development."
     }
   ],
-  "education": [
+  "projects": [
     {
-      "title": "Institute of Chartered Accountants of Bangladesh (ICAB)",
-      "date": "2024 — Present",
-      "role": "Certificate Level: Passed 2 Papers (PL Ongoing)",
-      "description": "Pursuing the Chartered Accountancy professional qualification alongside undergraduate studies.",
-      "skills": [
-        "Accounting",
-        "Audit & Assurance",
-        "Financial Accounting",
-        "Cost Accounting"
-      ]
+      "title": "jabirah.pages.dev",
+      "status": "featured",
+      "description": "My personal website.",
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind"
+      ],
+      "repo": "https://github.com/Jabir-A-H/personal-website",
+      "live": "https://jabirah.pages.dev"
     },
     {
-      "title": "University of Dhaka",
-      "date": "Sep 2022 — Present",
-      "role": "BBA, Accounting & Information Systems",
-      "description": "CGPA: 3.35/4.00 (up to 7th semester). Exploring Forensic Accounting, Data Analytics, AI & Technology.",
-      "skills": [
-        "Microsoft Products",
-        "Online Research",
-        "IT Management",
-        "Technical Support",
-        "Problem Solving",
-        "Cycling",
-        "IT Operations",
-        "Microsoft Excel",
-        "Accounting",
-        "Teamwork",
-        "Big Data",
-        "Microsoft Office",
-        "Communication",
-        "Table Tennis"
-      ]
+      "title": "Report Submission System",
+      "status": "featured",
+      "description": "Report-Submission automates report management. Users submit Excel-like forms, stored in a database. Authorized users compile a master report based on custom conditions, exportable in various formats. Role-based access ensures secure viewing, boosting efficiency and accuracy.",
+      "tech": [
+        "Python",
+        "Flask",
+        "PostgreSQL",
+        "Tailwind"
+      ],
+      "repo": "https://github.com/Jabir-A-H/report-submission",
+      "live": "https://jabir-a-h.github.io/report-submission/"
     },
     {
-      "title": "Notre Dame College",
-      "date": "Feb 2019 — Jun 2021",
-      "role": "HSC, Business Studies",
-      "description": "GPA: 5.00/5.00 | Ranked 35th out of 750 (Perfect Attendance). Activities and societies: Notre Dame Business Club, Notre Dame Information Technology Club.",
-      "skills": [
-        "Microsoft Products",
-        "IT Management",
-        "Technical Support",
-        "Problem Solving",
-        "IT Operations",
-        "Accounting",
+      "title": "Gallery",
+      "status": "featured",
+      "description": "A personal photography portfolio website.",
+      "tech": [
+        "TypeScript",
+        "React",
+        "Tailwind"
+      ],
+      "repo": "https://github.com/Jabir-A-H/photography-website",
+      "live": "https://jabir-a-h.github.io/gallery/"
+    },
+    {
+      "title": "Academic Resort",
+      "status": "development",
+      "description": "A take on making a better version of https://sites.google.com/ais.du.ac.bd/academic-resort",
+      "tech": [
+        "TypeScript",
+        "Google Drive API",
+        "PWA"
+      ],
+      "repo": "https://github.com/Jabir-A-H/academic-resort",
+      "live": "https://jabir-a-h.github.io/academic-resort/"
+    },
+    {
+      "title": "LazyLedger",
+      "status": "featured",
+      "description": "Finance tracking for the delightfully lazy. Let AI do the data entry.",
+      "tech": [
+        "Next.js",
+        "Firebase",
+        "Tailwind",
+        "Gemini AI"
+      ],
+      "repo": "https://github.com/Jabir-A-H/LazyLedger",
+      "live": "https://jabir-a-h.github.io/LazyLedger/"
+    },
+    {
+      "title": "Entropy Clock",
+      "status": "featured",
+      "description": "This clock is a frozen timeline. It only moves forward when someone ticks it to.",
+      "tech": [
+        "TypeScript",
         "HTML",
-        "C (Programming Language)",
-        "Microsoft Office"
-      ]
+        "CSS"
+      ],
+      "repo": "https://github.com/Jabir-A-H/entropy-clock",
+      "live": "https://jabir-a-h.github.io/entropy-clock/"
     },
     {
-      "title": "Birshreshtha Noor Mohammad Public College",
-      "date": "Jan 2017 — May 2019",
-      "role": "SSC, Business Studies",
-      "description": "GPA: 4.94/5.00 | Government Board Scholarship Recipient. Activities and societies: Business Club, Chess Club.",
-      "skills": [
-        "Microsoft Products",
-        "Problem Solving",
-        "Cycling",
-        "IT Operations",
-        "Microsoft Excel",
-        "Accounting",
-        "Microsoft Office"
-      ]
+      "title": "Library Management System",
+      "status": "development",
+      "description": "A modern, full-stack library management application with FastAPI backend and Next.js frontend, featuring JWT authentication, async operations, and comprehensive book tracking.",
+      "tech": [
+        "FastAPI",
+        "Next.js",
+        "TypeScript",
+        "JWT"
+      ],
+      "repo": "https://github.com/Jabir-A-H/library-management"
     },
     {
-      "title": "Birshreshtha Munshi Abdur Rouf Public College",
-      "date": "Dec 2013 — Dec 2016",
-      "role": "JSC",
-      "skills": [
-        "Microsoft Products",
-        "Problem Solving",
-        "IT Operations",
-        "Microsoft Office"
-      ]
-    }
-  ],
-  "certifications": [
-    {
-      "title": "Generative AI Mastermind",
-      "issuer": "Outskill",
-      "date": "May 2026",
-      "verifyUrl": ""
+      "title": "Gamepacks",
+      "status": "legacy",
+      "description": "Gonna make a game out of this tutorial project. Learning and using Godot.",
+      "tech": [
+        "Godot",
+        "GDScript"
+      ],
+      "repo": "https://github.com/Jabir-A-H/gamepacks"
     },
     {
-      "title": "Aspire Leaders Program",
-      "issuer": "Aspire Institute",
-      "date": "Oct 2025",
-      "verifyUrl": ""
-    },
-    {
-      "title": "Hands-On Training on Audit Procedures",
-      "issuer": "Hasan Mohin Chartered Accountants",
-      "date": "Nov 2025",
-      "verifyUrl": ""
-    },
-    {
-      "title": "Fundamentals of Digital Marketing",
-      "issuer": "Google",
-      "date": "May 2024",
-      "verifyUrl": ""
-    },
-    {
-      "title": "Digital Literacy Course for Youth",
-      "issuer": "ICT Division",
-      "date": "Oct 2023",
-      "verifyUrl": ""
-    },
-    {
-      "title": "Big Data Foundations - Level 1",
-      "verifyUrl": "",
-      "issuer": "IBM",
-      "date": "Oct 2022"
-    },
-    {
-      "title": "Microsoft Excel - Beginner to Expert",
-      "verifyUrl": "",
-      "issuer": "Udemy",
-      "date": "Nov 2022"
+      "title": "Sidescroller",
+      "status": "legacy",
+      "description": "A side-scrolling game project built to explore game mechanics and rendering logic using Go.",
+      "tech": [
+        "Go"
+      ],
+      "repo": "https://github.com/Jabir-A-H/Sidescroller"
     }
   ],
   "skills": [
@@ -661,6 +400,95 @@
       "category": "Languages"
     }
   ],
+  "certifications": [
+    {
+      "title": "Generative AI Mastermind",
+      "issuer": "Outskill",
+      "date": "May 2026",
+      "verifyUrl": ""
+    },
+    {
+      "title": "Aspire Leaders Program",
+      "issuer": "Aspire Institute",
+      "date": "Oct 2025",
+      "verifyUrl": ""
+    },
+    {
+      "title": "Hands-On Training on Audit Procedures",
+      "issuer": "Hasan Mohin Chartered Accountants",
+      "date": "Nov 2025",
+      "verifyUrl": ""
+    },
+    {
+      "title": "Fundamentals of Digital Marketing",
+      "issuer": "Google",
+      "date": "May 2024",
+      "verifyUrl": "https://skillshop.exceedlms.com/student/award/7FZNMX8ZjJuudd458Qm3fZQA"
+    },
+    {
+      "title": "Digital Literacy Course for Youth",
+      "issuer": "ICT Division",
+      "date": "Oct 2023",
+      "verifyUrl": "https://digitalliteracy.gov.bd/verify/certificate/317728"
+    },
+    {
+      "title": "Big Data Foundations - Level 1",
+      "verifyUrl": "https://www.credly.com/badges/b7d53529-d740-41c4-ab87-731705969f00",
+      "issuer": "IBM",
+      "date": "Oct 2022"
+    },
+    {
+      "title": "Microsoft Excel - Beginner to Expert",
+      "verifyUrl": "https://www.udemy.com/certificate/UC-9c402b34-e162-42c4-b3a2-cd3851eb4a4a/",
+      "issuer": "Udemy",
+      "date": "Nov 2022"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Capitalizer '25",
+      "organization": "BUP Finance Club",
+      "year": "2025",
+      "role": "Participant"
+    },
+    {
+      "title": "Mindlogue 1.0",
+      "organization": "University of Dhaka Accounting Forum",
+      "year": "2023",
+      "role": "2nd Round"
+    },
+    {
+      "title": "Sellsation 2023",
+      "organization": "Spartans' Communication Club",
+      "year": "2023",
+      "role": "Participant"
+    },
+    {
+      "title": "Perfect Attendance Certificate",
+      "organization": "Notre Dame College",
+      "year": "2021",
+      "role": ""
+    },
+    {
+      "title": "Intrabiz Olympiad-2019",
+      "organization": "Notre Dame Business Club",
+      "year": "2019",
+      "role": "3rd Place"
+    },
+    {
+      "title": "Government Board Scholarship",
+      "organization": "Dhaka Education Board",
+      "year": "2019",
+      "role": "Recipient (S.S.C)"
+    }
+  ],
+  "references": [
+    {
+      "name": "Amirus Salat",
+      "title": "Professor",
+      "organization": "Department of Accounting & Information Systems, University of Dhaka"
+    }
+  ],
   "whispers": [
     {
       "date": "2026.02.27",
@@ -707,51 +535,6 @@
         "meta",
         "learning"
       ]
-    }
-  ],
-  "achievements": [
-    {
-      "title": "Capitalizer '25",
-      "organization": "BUP Finance Club",
-      "year": "2025",
-      "role": "Participant"
-    },
-    {
-      "title": "Mindlogue 1.0",
-      "organization": "University of Dhaka Accounting Forum",
-      "year": "2023",
-      "role": "2nd Round"
-    },
-    {
-      "title": "Sellsation 2023",
-      "organization": "Spartans' Communication Club",
-      "year": "2023",
-      "role": "Participant"
-    },
-    {
-      "title": "Perfect Attendance Certificate",
-      "organization": "Notre Dame College",
-      "year": "2021",
-      "role": "Ranked 35th out of 750 students"
-    },
-    {
-      "title": "Intrabiz Olympiad-2019",
-      "organization": "Notre Dame Business Club",
-      "year": "2019",
-      "role": "3rd Place"
-    },
-    {
-      "title": "Government Board Scholarship",
-      "organization": "Dhaka Education Board",
-      "year": "2019",
-      "role": "Recipient (S.S.C)"
-    }
-  ],
-  "references": [
-    {
-      "name": "Amirus Salat",
-      "title": "Professor",
-      "organization": "Department of Accounting & Information Systems, University of Dhaka"
     }
   ]
 }

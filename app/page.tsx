@@ -26,7 +26,7 @@ export default function Home() {
       <div className="relative w-full flex flex-col mt-[-3rem] md:mt-[-6rem]">
         
         {/* Photo Background (Natural flow on Mobile, Sticky on Desktop) */}
-        <FadeIn className="order-1 md:absolute md:inset-0 z-0 pointer-events-none flex justify-center w-full">
+        <div className="order-1 md:absolute md:inset-0 z-0 pointer-events-none flex items-start justify-center w-full animate-in fade-in duration-1000">
           <div className="relative h-[50vh] w-full md:h-screen md:sticky md:top-0 overflow-hidden flex justify-center">
             <div className="w-full max-w-[2560px] h-full relative">
               <img 
@@ -48,7 +48,7 @@ export default function Home() {
               <div className="hidden md:block absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#fafafa] to-transparent"></div>
             </div>
           </div>
-        </FadeIn>
+        </div>
 
         {/* Content Container (Scrolls naturally over the sticky background on desktop) */}
         <div className="order-2 relative z-10 w-full flex flex-col">
@@ -81,10 +81,10 @@ export default function Home() {
           </FadeIn>
 
         </div>
-      </div>
-
-      {/* Constrained content wrapper */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        {/* Rest of the Page (Curtain) */}
+        <div className="order-3 relative z-20 w-full bg-[#fafafa]">
+          {/* Constrained content wrapper */}
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
       <div className="w-full h-1 bg-accent mb-16"></div>
 
       {/* Education Section — Current Institution Summary */}
@@ -213,7 +213,9 @@ export default function Home() {
             <FileText className="w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
-      </FadeIn>
+          </FadeIn>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -11,3 +11,4 @@ desktop.ini
 !.env.example
 out/*
 !out/.gitkeep
+*.tsbuildinfo

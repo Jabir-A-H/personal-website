@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import Navigation from './Navigation';
 import { getThemeForRoute, getAnimationForRoute } from '@/lib/theme';
 
@@ -26,23 +26,31 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         Skip to content
       </a>
       <Navigation />
-      <main 
+      <main
         id="main-content"
         className="flex-1 w-full py-8 flex flex-col relative z-10"
         style={pathname === '/education' ? { perspective: '1200px' } : undefined}
       >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={pathname}
-            initial={animProps.initial}
-            animate={animProps.animate}
-            exit={animProps.exit}
-            transition={animProps.transition}
-            className="flex-1 flex flex-col w-full h-full"
-          >
-            {children}
-          </motion.div>
-        </AnimatePresence>
+        <motion.div
+          key={pathname}
+          initial={animProps.initial}
+          animate={animProps.animate}
+          transition={animProps.transition}
+          style={{ transformOrigin: animProps.transformOrigin ?? '50% 50%', position: 'relative' }}
+          className="flex-1 flex flex-col w-full h-full"
+        >
+          {pathname === '/education' && !prefersReducedMotion && (
+            <motion.div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-20"
+              style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.35), transparent 45%)' }}
+              initial={{ opacity: 0.4 }}
+              animate={{ opacity: 0 }}
+              transition={{ duration: 0.75, ease: 'easeOut' }}
+            />
+          )}
+          {children}
+        </motion.div>
       </main>
     </motion.div>
   );

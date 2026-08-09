@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Book, Briefcase, Globe, Code, ArrowUpRight, Clock } from 'lucide-react';
 import data from '@/data.json';
 import FadeIn from '@/components/FadeIn';
-import AnimatedHeading from '@/components/AnimatedHeading';
+import VortexHeading from '@/components/VortexHeading';
 
 export const metadata: Metadata = {
   title: 'Now',
@@ -45,9 +45,9 @@ export default function NowPage() {
             </span>
           </div>
 
-          <AnimatedHeading className="text-5xl md:text-7xl font-serif font-light tracking-tight text-neutral-900 mb-6">
+          <VortexHeading className="text-5xl md:text-7xl font-serif font-light tracking-tight text-neutral-900 mb-6">
             Now
-          </AnimatedHeading>
+          </VortexHeading>
 
           <p className="text-xl md:text-2xl font-light text-neutral-600 leading-relaxed max-w-xl">
             {now.status}

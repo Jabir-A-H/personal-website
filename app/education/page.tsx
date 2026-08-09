@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedTimeline from '@/components/AnimatedTimeline';
 import TimelineCard from '@/components/TimelineCard';
 import AnimatedHeading from '@/components/AnimatedHeading';
 import data from '@/data.json';
@@ -43,20 +44,7 @@ export default function AboutPage() {
         <section>
           <h3 className="font-mono text-xs uppercase tracking-widest text-muted mb-6">Timeline</h3>
           
-          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-1 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-neutral-200 before:to-transparent">
-            
-            {education.map((edu, idx) => (
-              <TimelineCard 
-                key={idx}
-                title={edu.title}
-                date={edu.date}
-                role={edu.role}
-                description={edu.description}
-                skills={edu.skills ? edu.skills.slice(0, 4) : []}
-              />
-            ))}
-
-          </div>
+          <AnimatedTimeline education={education} />
         </section>
 
         {publications && publications.length > 0 && (
@@ -67,6 +55,7 @@ export default function AboutPage() {
               {publications.map((pub, idx) => (
                 <TimelineCard
                   key={idx}
+                  idx={idx}
                   title={pub.title}
                   date={pub.date}
                   role={pub.context}

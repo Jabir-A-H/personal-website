@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans antialiased bg-neutral-50 text-neutral-900">
         <PersonSchema />
         <Shell>

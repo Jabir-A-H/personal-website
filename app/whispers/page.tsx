@@ -1,6 +1,6 @@
 import data from '@/data.json';
 import AnimatedWhisperCard from '@/components/AnimatedWhisperCard';
-import AnimatedHeading from '@/components/AnimatedHeading';
+import FuzzyHeading from '@/components/FuzzyHeading';
 
 export default function WhispersPage() {
   const { whispers } = data;
@@ -8,7 +8,7 @@ export default function WhispersPage() {
   return (
     <div className="col-span-12 w-full py-12 max-w-3xl mx-auto px-6 md:px-12">
       <header className="mb-24 text-center">
-        <AnimatedHeading className="text-5xl md:text-7xl font-serif italic tracking-tighter text-neutral-900 mb-6">Whispers</AnimatedHeading>
+        <FuzzyHeading className="text-5xl md:text-7xl font-serif italic tracking-tighter text-neutral-900 mb-6">Whispers</FuzzyHeading>
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">Fragments of thought &amp; reflection</p>
       </header>
 

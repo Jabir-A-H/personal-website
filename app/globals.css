@@ -59,3 +59,91 @@
     }
   }
 }
+
+/* ---------------------------------------------------------------------
+   Scroll-driven reveal animations (Projects cards/rows).
+   Progressive enhancement: browsers without `animation-timeline: view()`
+   support simply see the element at full opacity, no animation — a
+   perfectly fine fallback, not a broken one.
+   --------------------------------------------------------------------- */
+@supports (animation-timeline: view()) {
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: reveal-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+
+  .reveal-on-scroll-row {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: reveal-row linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+    animation-delay: var(--reveal-delay, 0s);
+  }
+
+  @keyframes reveal-up {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes reveal-row {
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll,
+    .reveal-on-scroll-row {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Now page — decorative vortex spiral behind VortexHeading.
+   @property registers --spiral-angle as an animatable <angle>, so the
+   spin runs natively on the compositor instead of via JS per-frame math.
+   Runs once per mount (route change remounts the DOM node, which
+   naturally replays the animation — no JS replay logic needed).
+   --------------------------------------------------------------------- */
+@property --spiral-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.now-spiral {
+  background: conic-gradient(
+    from var(--spiral-angle),
+    transparent 0deg,
+    var(--color-accent-light) 15deg,
+    transparent 40deg,
+    transparent 180deg,
+    var(--color-accent) 195deg,
+    transparent 220deg,
+    transparent 360deg
+  );
+  animation: spiral-settle 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes spiral-settle {
+  from {
+    --spiral-angle: 300deg;
+    opacity: 0.55;
+    transform: scale(0.6);
+  }
+  to {
+    --spiral-angle: 0deg;
+    opacity: 0;
+    transform: scale(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .now-spiral {
+    display: none;
+  }
+}

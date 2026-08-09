@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const { education } = data;
+  const { education, publications } = data;
 
   return (
     <div className="grid grid-cols-12 gap-x-6 gap-y-12 w-full max-w-7xl mx-auto px-6 md:px-12 text-neutral-800 py-8">
@@ -59,6 +59,27 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {publications && publications.length > 0 && (
+          <section className="pt-8 md:pt-12 border-t border-neutral-300/30">
+            <h3 className="font-mono text-xs uppercase tracking-widest text-muted mb-6">Research &amp; Publications</h3>
+
+            <div className="space-y-12 relative before:absolute before:inset-0 before:ml-1 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-neutral-200 before:to-transparent">
+              {publications.map((pub, idx) => (
+                <TimelineCard
+                  key={idx}
+                  title={pub.title}
+                  date={pub.date}
+                  role={pub.context}
+                  description={pub.description}
+                  skills={pub.tags ? pub.tags.slice(0, 4) : []}
+                  coAuthors={pub.coAuthors}
+                  link={(pub as any).link}
+                  linkLabel="Read Paper"
+                />
+              ))}
+            </div>
+          </section>
+        )}
 
       </div>
     </div>

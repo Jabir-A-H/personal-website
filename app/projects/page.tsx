@@ -3,11 +3,11 @@ import data from '@/data.json';
 import AnimatedHeading from '@/components/AnimatedHeading';
 import AnimatedProjectCard from '@/components/AnimatedProjectCard';
 import AnimatedProjectRow from '@/components/AnimatedProjectRow';
+import OtherProjectsList from '@/components/OtherProjectsList';
 
 export default function ProjectsPage() {
   const { projects } = data;
   const liveProjects = projects.filter(p => p.status === 'featured');
-  const repoProjects = projects.filter(p => p.status !== 'featured');
 
   return (
     <div className="w-full flex flex-col text-neutral-300 py-8 min-h-screen relative">
@@ -129,78 +129,18 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* OTHER PROJECTS */}
+        {/* PROJECT ARCHIVE */}
         <section>
           <div className="flex items-center gap-6 mb-8">
             <h2 className="text-sm font-mono text-white uppercase tracking-[0.3em] flex items-center gap-3">
               <span className="w-2 h-2 bg-neutral-600"></span>
-              Other_Projects
+              Project_Archive
             </h2>
             <div className="h-px bg-neutral-800 flex-1"></div>
-            <span className="font-mono text-xs text-neutral-600">[{repoProjects.length}]</span>
+            <span className="font-mono text-xs text-neutral-600">[{projects.length}]</span>
           </div>
 
-          <div className="flex flex-col border-t-2 border-neutral-800">
-            {/* Header Row */}
-            <div className="hidden md:grid grid-cols-12 gap-4 py-4 border-b-2 border-neutral-800 font-mono text-[10px] text-muted uppercase tracking-widest px-6">
-              <div className="col-span-4">Designation</div>
-              <div className="col-span-3">Tech_Stack</div>
-              <div className="col-span-2">Status</div>
-              <div className="col-span-2">Last_Updated</div>
-              <div className="col-span-1 text-right">Link</div>
-            </div>
-
-            {/* Data Rows */}
-            {repoProjects.map((project, idx) => (
-              <AnimatedProjectRow 
-                idx={idx}
-                key={project.title}
-                href={project.live || project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-neutral-800 hover:bg-accent hover:text-white transition-all duration-300 px-6 items-center cursor-pointer relative overflow-hidden"
-              >
-                <div className="col-span-4">
-                  <h3 className="text-lg font-sans font-bold text-neutral-200 group-hover:text-white transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-muted group-hover:text-white/70 mt-1 font-serif italic transition-colors">
-                    {project.description}
-                  </p>
-                </div>
-                
-                <div className="col-span-3 flex flex-wrap gap-2 mt-3 md:mt-0">
-                  {project.tech.map(t => (
-                    <span key={t} className="font-mono text-[10px] text-muted border border-neutral-700 group-hover:border-white/30 group-hover:text-white/80 px-2 py-1 transition-colors uppercase tracking-wider">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="col-span-2 mt-4 md:mt-0">
-                  <span className={`font-mono text-[10px] uppercase tracking-widest ${
-                    project.status === 'development' ? 'text-accent-light group-hover:text-white' :
-                    project.status === 'legacy' ? 'text-amber-400 group-hover:text-white' :
-                    'text-muted group-hover:text-white'
-                  } transition-colors`}>
-                    {project.status}
-                  </span>
-                </div>
-
-                <div className="col-span-2 mt-2 md:mt-0">
-                  <span className="font-mono text-[10px] text-muted group-hover:text-white/70 transition-colors">
-                    {project.pushedAt ? new Date(project.pushedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '—'}
-                  </span>
-                </div>
-                
-                <div className="col-span-1 flex justify-start md:justify-end mt-4 md:mt-0">
-                  <div className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center group-hover:bg-white group-hover:text-accent transition-all duration-300 transform group-hover:rotate-45">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </AnimatedProjectRow>
-            ))}
-          </div>
+          <OtherProjectsList projects={projects} />
         </section>
       </div>
     </div>

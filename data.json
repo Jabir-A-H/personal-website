@@ -195,6 +195,7 @@
     {
       "title": "jabirah.pages.dev",
       "status": "featured",
+      "category": "portfolio",
       "description": "My personal website.",
       "tech": [
         "Next.js",
@@ -203,12 +204,12 @@
       ],
       "repo": "https://github.com/Jabir-A-H/personal-website",
       "live": "https://jabirah.pages.dev",
-      "pushedAt": "2026-05-15T10:46:11Z",
-      "visibility": "PRIVATE"
+      "visibility": "PUBLIC"
     },
     {
       "title": "Report Submission System",
       "status": "featured",
+      "category": "fullstack",
       "description": "Report-Submission automates report management. Users submit Excel-like forms, stored in a database. Authorized users compile a master report based on custom conditions, exportable in various formats. Role-based access ensures secure viewing, boosting efficiency and accuracy.",
       "tech": [
         "Python",
@@ -217,13 +218,13 @@
         "Tailwind"
       ],
       "repo": "https://github.com/Jabir-A-H/report-submission",
-      "live": "https://jabir-a-h.github.io/report-submission/",
-      "pushedAt": "2026-05-02T00:56:21Z",
+      "live": "https://talimul-report.vercel.app/",
       "visibility": "PUBLIC"
     },
     {
       "title": "Gallery",
-      "status": "featured",
+      "status": "development",
+      "category": "portfolio",
       "description": "A personal photography portfolio website.",
       "tech": [
         "TypeScript",
@@ -232,12 +233,12 @@
       ],
       "repo": "https://github.com/Jabir-A-H/photography-website",
       "live": "https://jabir-a-h.github.io/gallery/",
-      "pushedAt": "2026-04-29T10:03:47Z",
-      "visibility": "PRIVATE"
+      "visibility": "PUBLIC"
     },
     {
       "title": "Academic Resort",
-      "status": "development",
+      "status": "archived",
+      "category": "tools",
       "description": "A take on making a better version of https://sites.google.com/ais.du.ac.bd/academic-resort",
       "tech": [
         "TypeScript",
@@ -246,12 +247,12 @@
       ],
       "repo": "https://github.com/Jabir-A-H/academic-resort",
       "live": "https://jabir-a-h.github.io/academic-resort/",
-      "pushedAt": "2026-04-17T15:17:44Z",
       "visibility": "PUBLIC"
     },
     {
       "title": "LazyLedger",
-      "status": "featured",
+      "status": "development",
+      "category": "tools",
       "description": "Finance tracking for the delightfully lazy. Let AI do the data entry.",
       "tech": [
         "Next.js",
@@ -260,13 +261,13 @@
         "Gemini AI"
       ],
       "repo": "https://github.com/Jabir-A-H/LazyLedger",
-      "live": "https://jabir-a-h.github.io/LazyLedger/",
-      "pushedAt": "2026-03-14T10:10:20Z",
-      "visibility": "PRIVATE"
+      "live": "https://lazyledger-jabir.vercel.app/",
+      "visibility": "PUBLIC"
     },
     {
       "title": "Entropy Clock",
       "status": "featured",
+      "category": "fun",
       "description": "This clock is a frozen timeline. It only moves forward when someone ticks it to.",
       "tech": [
         "TypeScript",
@@ -275,12 +276,12 @@
       ],
       "repo": "https://github.com/Jabir-A-H/entropy-clock",
       "live": "https://jabir-a-h.github.io/entropy-clock/",
-      "pushedAt": "2026-02-28T19:17:46Z",
-      "visibility": "PRIVATE"
+      "visibility": "PUBLIC"
     },
     {
       "title": "Library Management System",
-      "status": "development",
+      "status": "archived",
+      "category": "fullstack",
       "description": "A modern, full-stack library management application with FastAPI backend and Next.js frontend, featuring JWT authentication, async operations, and comprehensive book tracking.",
       "tech": [
         "FastAPI",
@@ -289,31 +290,40 @@
         "JWT"
       ],
       "repo": "https://github.com/Jabir-A-H/library-management",
-      "pushedAt": "2025-07-27T23:52:38Z",
       "visibility": "PUBLIC"
     },
     {
       "title": "Gamepacks",
-      "status": "legacy",
+      "status": "archived",
+      "category": "games",
       "description": "Gonna make a game out of this tutorial project. Learning and using Godot.",
       "tech": [
         "Godot",
         "GDScript"
       ],
       "repo": "https://github.com/Jabir-A-H/gamepacks",
-      "pushedAt": "2025-10-03T16:29:02Z",
       "visibility": "PUBLIC"
     },
     {
       "title": "Sidescroller",
-      "status": "legacy",
+      "status": "archived",
+      "category": "games",
       "description": "A side-scrolling game project built to explore game mechanics and rendering logic using Go.",
       "tech": [
         "Go"
       ],
       "repo": "https://github.com/Jabir-A-H/Sidescroller",
-      "pushedAt": "2023-04-30T00:21:00Z",
       "visibility": "PUBLIC"
+    }
+  ],
+  "publications": [
+    {
+      "title": "Redefining the Role of Management Accountants: The Impact of Data Analytics",
+      "context": "Cost Accounting Coursework — University of Dhaka",
+      "date": "Feb 2024 – Jun 2024",
+      "description": "A mixed-method research project exploring how data analytics is transforming management accounting in Bangladesh, using surveys and case studies to examine tools like MS Excel, Power BI, and Python in real-world accounting practice. The findings highlighted data analytics' growing role in budgeting, forecasting, cost analysis, and strategic decision-making, alongside key adoption challenges such as limited technical infrastructure and skilled personnel.",
+      "tags": ["Cost Accounting", "Data Analytics", "Survey Research", "Microsoft Excel"],
+      "coAuthors": ["Shahan Salehin Sayem", "Md. Rakib Ul Hasan", "Mehrab Alam Taki", "Anas Ferdaus"]
     }
   ],
   "skills": [

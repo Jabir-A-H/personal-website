@@ -1,0 +1,21 @@
+import React from 'react';
+
+export default function Logo({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" className={className} style={{ backgroundColor: 'transparent' }}>
+      <defs>
+        <filter id="ink-bleed" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="4.5" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+      <g id="jah-shodo-mark">
+        <path className="fill-current" style={{ filter: 'url(#ink-bleed)' }} d="M130 150c30-30 90-25 210-25 30 0 20 20-10 20-100 10-170 20-200 5" />
+        <path className="fill-current" style={{ filter: 'url(#ink-bleed)' }} d="M340 120c40 5 30 35 5 40-15 90-25 160-40 190-45 80-175 80-215 0-15-30 20-50 35-20 30 55 110 60 150 0 20-30 30-120 45-205Z" />
+        <path className="fill-current" style={{ filter: 'url(#ink-bleed)' }} d="M350 120c-40 70-110 160-190 240-15 15 15 25 35-5 75-105 125-185 170-230Z" />
+        <path className="fill-current" style={{ filter: 'url(#ink-bleed)' }} d="M190 270c30-30 160-50 270-45 25 0 15 20-20 20-110 10-220 40-250 25" />
+        <path className="fill-current" style={{ filter: 'url(#ink-bleed)' }} d="M435 110c40 5 25 35 5 40-20 70-35 160-50 230-10 30-30 20-15-20 20-90 35-180 45-245Z" />
+      </g>
+    </svg>
+  );
+}

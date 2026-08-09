@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getThemeForRoute } from '@/lib/theme';
+import Logo from '@/components/Logo';
 
 const navItems = [
   { name: 'HOME', path: '/' },
@@ -21,8 +22,8 @@ export default function Navigation() {
 
   return (
     <header className={`w-full max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between items-start md:items-center z-50 relative ${textColor}`}>
-      <Link href="/" className="flex items-center text-xl font-sans font-extrabold tracking-tight mb-6 md:mb-0 rounded-sm hover:opacity-80 transition-opacity">
-        J<span className="text-accent ml-[1px] leading-none">.</span>
+      <Link href="/" className="flex items-center mb-6 md:mb-0 rounded-sm hover:opacity-80 transition-opacity" aria-label="Home">
+        <Logo className="w-12 h-12" />
       </Link>
       
       <nav className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-mono tracking-widest" aria-label="Main Navigation">

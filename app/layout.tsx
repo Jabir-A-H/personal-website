@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Shell from '@/components/Shell';
 import { PersonSchema } from '@/components/JsonLd';
+import { DarkModeProvider } from '@/components/DarkModeProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -61,11 +62,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased bg-neutral-50 text-neutral-900">
+      <body className="font-sans antialiased bg-neutral-50 dark:bg-[#121212] text-neutral-900 dark:text-neutral-100">
         <PersonSchema />
-        <Shell>
-          {children}
-        </Shell>
+        <DarkModeProvider>
+          <Shell>
+            {children}
+          </Shell>
+        </DarkModeProvider>
       </body>
     </html>
   );

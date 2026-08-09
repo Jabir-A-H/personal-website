@@ -4,25 +4,28 @@ import { usePathname } from 'next/navigation';
 import { motion, useReducedMotion } from 'motion/react';
 import Navigation from './Navigation';
 import { getThemeForRoute, getAnimationForRoute } from '@/lib/theme';
+import { useDarkMode } from '@/components/DarkModeProvider';
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const prefersReducedMotion = useReducedMotion() ?? false;
+  const { isDark } = useDarkMode();
 
   const theme = getThemeForRoute(pathname);
+  const activeTheme = isDark ? theme.dark : theme.light;
   const animProps = getAnimationForRoute(pathname, prefersReducedMotion);
 
   return (
     <motion.div
-      animate={{ backgroundColor: theme.bg }}
+      animate={{ backgroundColor: activeTheme.bg }}
       transition={{ duration: prefersReducedMotion ? 0 : 0.7, ease: 'easeInOut' }}
       style={{
-        '--theme-muted': theme.textMuted,
-        '--theme-focus-ring': theme.focusRing,
+        '--theme-muted': activeTheme.textMuted,
+        '--theme-focus-ring': activeTheme.focusRing,
       } as React.CSSProperties}
       className="min-h-screen w-full flex flex-col relative overflow-x-clip"
     >
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-neutral-900 text-white px-4 py-2 z-[100] font-mono text-xs uppercase tracking-widest rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-neutral-900 dark:bg-white dark:text-neutral-900 text-white px-4 py-2 z-[100] font-mono text-xs uppercase tracking-widest rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
         Skip to content
       </a>
       <Navigation />

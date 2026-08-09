@@ -16,7 +16,7 @@ export default function ContactList({ endpoints }: { endpoints: Endpoint[] }) {
     <>
       <motion.div
         aria-hidden="true"
-        className="h-px bg-neutral-300"
+        className="h-px bg-neutral-300 dark:bg-neutral-800"
         style={{ transformOrigin: 'left' }}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}

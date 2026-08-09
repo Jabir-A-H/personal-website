@@ -11,10 +11,10 @@ export default function GlobalError({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased bg-neutral-50 text-neutral-900">
+      <body className="font-sans antialiased bg-neutral-50 dark:bg-[#121212] text-neutral-900 dark:text-neutral-100">
         <div className="flex flex-col items-center justify-center min-h-screen text-center px-6">
           <h1 className="text-4xl font-bold tracking-tighter mb-4">Something went wrong</h1>
-          <p className="text-neutral-600 font-serif italic mb-8">An unexpected error occurred.</p>
+          <p className="text-neutral-600 dark:text-neutral-400 font-serif italic mb-8">An unexpected error occurred.</p>
           <button
             onClick={() => reset()}
             className="px-6 py-3 bg-[#e8915a] text-white font-mono text-xs uppercase tracking-widest hover:bg-[#c97040] transition-colors"

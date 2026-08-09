@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getThemeForRoute } from '@/lib/theme';
 import Logo from '@/components/Logo';
+import { useDarkMode } from '@/components/DarkModeProvider';
 
 const navItems = [
   { name: 'HOME', path: '/' },
@@ -12,13 +13,16 @@ const navItems = [
   { name: 'EXPERIENCE', path: '/experience' },
   { name: 'PROJECTS', path: '/projects' },
   { name: 'WHISPERS', path: '/whispers' },
+  { name: 'JOURNEY', path: '/journey' },
   { name: 'CONTACT', path: '/contact' },
 ];
 
 export default function Navigation() {
   const pathname = usePathname();
+  const { isDark } = useDarkMode();
   const theme = getThemeForRoute(pathname);
-  const textColor = theme.navText === 'dark' ? 'text-white' : 'text-neutral-900';
+  const activeTheme = isDark ? theme.dark : theme.light;
+  const textColor = activeTheme.navText === 'dark' ? 'text-white' : 'text-neutral-900 dark:text-neutral-100';
 
   return (
     <header className={`w-full max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between items-start md:items-center z-50 relative ${textColor}`}>

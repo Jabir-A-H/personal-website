@@ -1,6 +1,7 @@
 import React from 'react';
 import AnimatedHeading from '@/components/AnimatedHeading';
 import ContactList from '@/components/ContactList';
+import ContactFooter from '@/components/ContactFooter';
 import data from '@/data.json';
 
 export const metadata = {
@@ -21,13 +22,13 @@ export default function ContactPage() {
         {/* Left Column: Context */}
         <div className="md:col-span-4">
           <div className="sticky top-8">
-            <AnimatedHeading className="text-4xl md:text-5xl font-sans font-bold tracking-tighter uppercase mb-6 text-neutral-900">
+            <AnimatedHeading className="text-4xl md:text-5xl font-sans font-bold tracking-tighter uppercase mb-6 text-neutral-900 dark:text-neutral-100">
               Endpoints
             </AnimatedHeading>
             <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
               Dhaka, Bangladesh
             </p>
-            <p className="font-serif italic text-xl text-neutral-600 leading-relaxed">
+            <p className="font-serif italic text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed">
               Digital coordinates and communication channels.
             </p>
           </div>
@@ -39,6 +40,7 @@ export default function ContactPage() {
         </div>
 
       </div>
+      <ContactFooter socials={endpoints.filter((e: any) => e.name !== 'Email')} />
     </div>
   );
 }

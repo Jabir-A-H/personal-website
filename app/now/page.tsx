@@ -45,11 +45,11 @@ export default function NowPage() {
             </span>
           </div>
 
-          <VortexHeading className="text-5xl md:text-7xl font-serif font-light tracking-tight text-neutral-900 mb-6">
+          <VortexHeading className="text-5xl md:text-7xl font-serif font-light tracking-tight text-neutral-900 dark:text-neutral-100 mb-6">
             Now
           </VortexHeading>
 
-          <p className="text-xl md:text-2xl font-light text-neutral-600 leading-relaxed max-w-xl">
+          <p className="text-xl md:text-2xl font-light text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-xl">
             {now.status}
           </p>
         </header>
@@ -75,11 +75,11 @@ export default function NowPage() {
                 </div>
 
                 {/* Title & Description */}
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 mb-3 group-hover:text-neutral-800 transition-colors">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 mb-3 group-hover:text-neutral-800 dark:text-neutral-200 transition-colors">
                   {item.title}
                 </h2>
 
-                <p className="text-base md:text-lg font-light text-neutral-600 leading-relaxed max-w-xl mb-4">
+                <p className="text-base md:text-lg font-light text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-xl mb-4">
                   {item.description}
                 </p>
 
@@ -119,7 +119,7 @@ export default function NowPage() {
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted mb-2">
               Last updated
             </p>
-            <time className="text-sm font-mono text-neutral-600">
+            <time className="text-sm font-mono text-neutral-600 dark:text-neutral-400">
               {formatDate(now.lastUpdated)}
             </time>
           </div>

@@ -1,6 +1,7 @@
 import data from '@/data.json';
 import AnimatedWhisperCard from '@/components/AnimatedWhisperCard';
 import FuzzyHeading from '@/components/FuzzyHeading';
+import WhisperBody from '@/components/WhisperBody';
 
 export default function WhispersPage() {
   const { whispers } = data;
@@ -8,7 +9,7 @@ export default function WhispersPage() {
   return (
     <div className="col-span-12 w-full py-12 max-w-3xl mx-auto px-6 md:px-12">
       <header className="mb-24 text-center">
-        <FuzzyHeading className="text-5xl md:text-7xl font-serif italic tracking-tighter text-neutral-900 mb-6">Whispers</FuzzyHeading>
+        <FuzzyHeading className="text-5xl md:text-7xl font-serif italic tracking-tighter text-neutral-900 dark:text-neutral-100 mb-6">Whispers</FuzzyHeading>
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">Fragments of thought &amp; reflection</p>
       </header>
 
@@ -24,18 +25,17 @@ export default function WhispersPage() {
 
             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-6">
               <time className="font-mono text-[10px] tracking-widest text-muted uppercase">{whisper.date}</time>
-              <h2 className={`font-serif font-light text-neutral-800 group-hover:text-neutral-900 transition-colors ${index === 0 ? 'text-3xl md:text-5xl' : 'text-2xl md:text-3xl'}`}>
+              <h2 className={`font-serif font-light text-neutral-800 dark:text-neutral-200 group-hover:text-neutral-900 dark:text-neutral-100 transition-colors ${index === 0 ? 'text-3xl md:text-5xl' : 'text-2xl md:text-3xl'}`}>
                 {whisper.title}
               </h2>
             </div>
 
-            <div className="pl-0 md:pl-4 border-l-2 border-neutral-100 md:border-l-0">
-              <p className={`text-neutral-600 leading-relaxed font-light mb-8 max-w-2xl
-                ${index === 0 ? 'text-xl md:text-2xl' : 'text-lg'}
-                first-letter:float-left first-letter:text-6xl first-letter:pr-3 first-letter:font-serif first-letter:text-accent first-letter:leading-[0.8] first-letter:mt-1
-              `}>
-                {whisper.content}
-              </p>
+            <div className="pl-0 md:pl-4 border-l-2 border-neutral-100 dark:border-neutral-800 md:border-l-0">
+              <WhisperBody
+                content={whisper.content}
+                style={(whisper as any).style}
+                size={index === 0 ? 'lead' : 'default'}
+              />
               
               <div className="flex flex-wrap gap-3">
                 {whisper.tags.map(tag => (

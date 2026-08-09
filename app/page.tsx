@@ -39,13 +39,13 @@ export default function Home() {
                 fetchPriority="high"
               />
               {/* Top fade — always visible */}
-              <div className="absolute inset-x-0 top-0 h-24 md:h-32 bg-gradient-to-b from-[#fafafa] via-[#fafafa]/70 to-transparent"></div>
+              <div className="absolute inset-x-0 top-0 h-24 md:h-32 bg-gradient-to-b from-[#fafafa] dark:from-[#121212] via-[#fafafa]/70 dark:via-[#121212]/70 to-transparent"></div>
               {/* Bottom fade — always visible */}
-              <div className="absolute inset-x-0 bottom-0 h-32 md:h-48 bg-gradient-to-t from-[#fafafa] via-[#fafafa]/80 to-transparent"></div>
+              <div className="absolute inset-x-0 bottom-0 h-32 md:h-48 bg-gradient-to-t from-[#fafafa] dark:from-[#121212] via-[#fafafa]/80 dark:via-[#121212]/80 to-transparent"></div>
               {/* Left fade — desktop only */}
-              <div className="hidden md:block absolute inset-y-0 left-0 w-full md:w-2/3 bg-gradient-to-r from-[#fafafa] via-[#fafafa]/90 to-transparent"></div>
+              <div className="hidden md:block absolute inset-y-0 left-0 w-full md:w-2/3 bg-gradient-to-r from-[#fafafa] dark:from-[#121212] via-[#fafafa]/90 dark:via-[#121212]/90 to-transparent"></div>
               {/* Right fade — desktop only */}
-              <div className="hidden md:block absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#fafafa] to-transparent"></div>
+              <div className="hidden md:block absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#fafafa] dark:from-[#121212] to-transparent"></div>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function Home() {
           <FadeIn className="w-full flex flex-col md:h-[calc(100vh-6rem)] md:min-h-[500px] md:justify-end md:pb-12 pt-0 pb-8 md:pb-0 -mt-6 md:mt-0">
             <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
               <div className="max-w-3xl">
-                <AnimatedHeading className="text-[clamp(3rem,8vw,7rem)] leading-[0.85] font-sans font-bold tracking-tighter text-neutral-900 uppercase mb-0">
+                <AnimatedHeading className="text-[clamp(3rem,8vw,7rem)] leading-[0.85] font-sans font-bold tracking-tighter text-neutral-900 dark:text-neutral-100 uppercase mb-0">
                   {personal.name.split(' ').slice(0, 2).join(' ')}<br/>{personal.name.split(' ').slice(2).join(' ')}
                 </AnimatedHeading>
               </div>
@@ -67,14 +67,14 @@ export default function Home() {
           {/* Bio Block — flows after the Name block, scrolls over background */}
           <FadeIn delay={0.2} className="w-full max-w-7xl mx-auto px-6 md:px-12 mb-16 md:mb-24 mt-8 md:mt-0">
             <div className="max-w-3xl md:max-w-2xl">
-              <p className="text-2xl md:text-4xl font-serif italic text-neutral-800 leading-snug mb-6 md:mb-8 max-w-2xl">
+              <p className="text-2xl md:text-4xl font-serif italic text-neutral-800 dark:text-neutral-200 leading-snug mb-6 md:mb-8 max-w-2xl">
                 {personal.headline}
               </p>
-              <div className="font-mono text-xs uppercase tracking-widest text-neutral-600 space-y-1 mb-6 md:mb-8">
+              <div className="font-mono text-xs uppercase tracking-widest text-neutral-600 dark:text-neutral-400 space-y-1 mb-6 md:mb-8">
                 <p>{personal.location}</p>
                 <p>{personal.email}</p>
               </div>
-              <p className="text-lg text-neutral-700 max-w-xl leading-relaxed font-medium">
+              <p className="text-lg text-neutral-700 dark:text-neutral-300 max-w-xl leading-relaxed font-medium">
                 {personal.bio}
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function Home() {
 
         </div>
         {/* Rest of the Page (Curtain) */}
-        <div className="order-3 relative z-20 w-full bg-[#fafafa]">
+        <div className="order-3 relative z-20 w-full bg-[#fafafa] dark:bg-[#121212]">
           {/* Constrained content wrapper */}
           <div className="max-w-7xl mx-auto px-6 md:px-12">
       <div className="w-full h-1 bg-accent mb-16"></div>
@@ -96,12 +96,12 @@ export default function Home() {
           {currentEducations.map((edu, idx) => (
             <div key={idx} className="group mb-12 last:mb-8">
               <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-                <h3 className="text-2xl md:text-3xl font-bold text-neutral-900">{edu.title}</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-100">{edu.title}</h3>
                 <span className="font-mono text-xs text-muted mt-2 md:mt-0">{edu.date}</span>
               </div>
-              <p className="font-serif italic text-xl text-neutral-600 mb-4">{edu.role}</p>
+              <p className="font-serif italic text-xl text-neutral-600 dark:text-neutral-400 mb-4">{edu.role}</p>
               {edu.description && (
-                <p className="text-neutral-700 mb-6">{edu.description}</p>
+                <p className="text-neutral-700 dark:text-neutral-300 mb-6">{edu.description}</p>
               )}
               {edu.skills && edu.skills.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -161,7 +161,7 @@ export default function Home() {
         <div className="md:col-span-8">
           <div className="flex flex-wrap gap-x-8 gap-y-4 mb-8">
             {certifications.map((cert, idx) => (
-              <div key={idx} className="text-neutral-800">
+              <div key={idx} className="text-neutral-800 dark:text-neutral-200">
                 <span className="text-base font-medium">{cert.title}</span>
                 {cert.issuer && (
                   <span className="text-sm text-muted font-mono ml-2">{cert.issuer}</span>
@@ -196,18 +196,15 @@ export default function Home() {
         <div className="w-full h-1 bg-accent mb-8"></div>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div>
-            <p className="font-serif italic text-2xl text-neutral-800 mb-2">
+            <p className="font-serif italic text-2xl text-neutral-800 dark:text-neutral-200 mb-2">
               &quot;Still learning. Always building.&quot;
             </p>
-            <a href={`mailto:${personal.email}`} className="font-mono text-sm text-muted hover:text-accent-dark transition-colors">
-              {personal.email}
-            </a>
           </div>
           
           <a
             href="/Jabir_Abdullah_Haian_Resume.pdf"
             download
-            className="group flex items-center gap-3 px-6 py-4 bg-neutral-900 text-white hover:bg-accent transition-colors"
+            className="group flex items-center gap-3 px-6 py-4 bg-neutral-900 dark:bg-white dark:text-neutral-900 text-white hover:bg-accent transition-colors"
           >
             <span className="font-mono text-xs uppercase tracking-widest">Download Resume</span>
             <FileText className="w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />

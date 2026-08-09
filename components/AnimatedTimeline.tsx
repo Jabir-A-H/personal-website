@@ -31,7 +31,7 @@ export default function AnimatedTimeline({ education }: { education: EducationEn
           date={edu.date}
           role={edu.role}
           description={edu.description}
-          skills={edu.skills ? edu.skills.slice(0, 4) : []}
+          skills={edu.skills}
         />
       ))}
     </div>

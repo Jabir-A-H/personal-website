@@ -25,7 +25,6 @@ export default function AnimatedHeading({ children, className, ...props }: HTMLM
     <motion.h1
       initial={preset.initial}
       animate={preset.animate}
-      exit={preset.exit}
       transition={preset.transition}
       className={className}
       {...props}

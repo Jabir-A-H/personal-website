@@ -322,8 +322,18 @@
       "context": "Cost Accounting Coursework — University of Dhaka",
       "date": "Feb 2024 – Jun 2024",
       "description": "A mixed-method research project exploring how data analytics is transforming management accounting in Bangladesh, using surveys and case studies to examine tools like MS Excel, Power BI, and Python in real-world accounting practice. The findings highlighted data analytics' growing role in budgeting, forecasting, cost analysis, and strategic decision-making, alongside key adoption challenges such as limited technical infrastructure and skilled personnel.",
-      "tags": ["Cost Accounting", "Data Analytics", "Survey Research", "Microsoft Excel"],
-      "coAuthors": ["Shahan Salehin Sayem", "Md. Rakib Ul Hasan", "Mehrab Alam Taki", "Anas Ferdaus"]
+      "tags": [
+        "Cost Accounting",
+        "Data Analytics",
+        "Survey Research",
+        "Microsoft Excel"
+      ],
+      "coAuthors": [
+        "Shahan Salehin Sayem",
+        "Md. Rakib Ul Hasan",
+        "Mehrab Alam Taki",
+        "Anas Ferdaus"
+      ]
     }
   ],
   "skills": [
@@ -526,7 +536,8 @@
         "reflection",
         "physics",
         "code"
-      ]
+      ],
+      "style": "dropcap"
     },
     {
       "date": "2026.02.15",
@@ -535,7 +546,8 @@
       "tags": [
         "accounting",
         "theory"
-      ]
+      ],
+      "style": "pullQuote"
     },
     {
       "date": "2026.01.20",
@@ -544,7 +556,8 @@
       "tags": [
         "photography",
         "art"
-      ]
+      ],
+      "style": "indentedBlock"
     },
     {
       "date": "2025.12.10",
@@ -553,7 +566,8 @@
       "tags": [
         "tech",
         "systems"
-      ]
+      ],
+      "style": "boldFirstLine"
     },
     {
       "date": "2025.11.05",
@@ -562,7 +576,8 @@
       "tags": [
         "meta",
         "learning"
-      ]
+      ],
+      "style": "decorativeRule"
     }
   ]
 }

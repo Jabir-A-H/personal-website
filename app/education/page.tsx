@@ -17,7 +17,7 @@ export default function AboutPage() {
   const { education, publications } = data;
 
   return (
-    <div className="grid grid-cols-12 gap-x-6 gap-y-12 w-full max-w-7xl mx-auto px-6 md:px-12 text-neutral-800 py-8">
+    <div className="grid grid-cols-12 gap-x-6 gap-y-12 w-full max-w-7xl mx-auto px-6 md:px-12 text-neutral-800 dark:text-neutral-200 py-8">
       <header className="col-span-12 border-b border-neutral-300 pb-8">
         <AnimatedHeading className="font-serif text-5xl md:text-7xl font-light tracking-tight mb-4">Education</AnimatedHeading>
         <p className="font-mono text-xs uppercase tracking-widest text-muted">Core Professional Identity</p>
@@ -60,7 +60,7 @@ export default function AboutPage() {
                   date={pub.date}
                   role={pub.context}
                   description={pub.description}
-                  skills={pub.tags ? pub.tags.slice(0, 4) : []}
+                  skills={pub.tags}
                   coAuthors={pub.coAuthors}
                   link={(pub as any).link}
                   linkLabel="Read Paper"

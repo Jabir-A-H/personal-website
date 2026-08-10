@@ -1,44 +1,81 @@
-# Jabir Abdullah Haian - Personal Portfolio
+# Jabir Abdullah Haian — Personal Portfolio
 
-*One Shell, Multiple Faces. The more you look, the less you see.*
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
+![React](https://img.shields.io/badge/React-19-149eca?logo=react)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwindcss)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript)
+![Deployed on Cloudflare Pages](https://img.shields.io/badge/Deployed-Cloudflare%20Pages-f38020?logo=cloudflare)
 
-A high-performance, statically exported personal portfolio built to showcase development projects, professional experience, and an interactive personal journey. The architecture heavily leans into a "per-page explicit theming" design philosophy, preserving the distinct personality of every route while seamlessly cross-fading backgrounds via Framer Motion.
+Statically exported personal portfolio site. Every route has its own distinct visual theme, palette, and heading treatment rather than one global design system reused everywhere.
 
-## Features & Highlights
-
-- **Per-Page Theming & Dark Mode**: Instead of a generic global inversion, every single route (`/`, `/education`, `/experience`, `/whispers`, etc.) features a hand-tuned Light and Dark mode palette. The `/projects` page specifically features a unique *Solarized Light* theme for daytime reading.
-- **Interactive Journey Narrative**: The `/journey` page acts as an immersive timeline, sliding in decades and pivotal eras with smooth animations rather than just listing static dates.
-- **Fluid Transitions**: A global `<Shell />` wraps the application, utilizing Framer Motion to smoothly transition background colors and UI elements during client-side navigation.
-- **Fully Static Generation**: Everything, including the dynamic `sitemap.ts` file, is compiled into static HTML/CSS/JS via Next.js `output: 'export'` for blazing-fast CDN delivery.
-- **Accessible & Responsive**: Keyboard navigable, optimized for `prefers-reduced-motion`, and meticulously styled across all breakpoints.
+**Live site:** [jabirah.pages.dev](https://jabirah.pages.dev)
 
 ## Tech Stack
 
-- **Framework**: Next.js 16 (App Router)
-- **Library**: React 19
-- **Styling**: Tailwind CSS v4 (Class-based Dark Mode + CSS-first architecture)
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Data Source**: Local `data.json` configuration
+| Layer | Choice |
+|---|---|
+| Framework | [Next.js](https://nextjs.org) 16 (App Router, static export) |
+| UI library | React 19 |
+| Styling | Tailwind CSS 4 |
+| Animation | [Motion](https://motion.dev) (Framer Motion) 12 |
+| Icons | lucide-react |
+| Language | TypeScript |
+| Hosting | Cloudflare Pages |
 
-## Development
+## Routes
 
-First, install the dependencies:
+| Route | Description |
+|---|---|
+| `/` | Home |
+| `/education` | Education history |
+| `/experience` | Work experience |
+| `/projects` | Project showcase (Solarized-light-inspired theme) |
+| `/whispers` | Short-form writing, with per-entry editorial styles |
+| `/now` | Current focus |
+| `/journey` | Chronological personal timeline |
+| `/contact` | Contact links, resume, sitemap, dark mode toggle |
+
+## Project Structure
+
+```
+├── app/                  # Next.js App Router routes (one folder per page)
+├── components/           # Shared React components (cards, headings, shell, nav)
+├── lib/
+│   └── theme.ts          # Per-route animation/heading presets
+├── data.json             # Single source of truth for all page content
+├── public/                # Static assets (images, resume PDF, OG images, icons)
+└── next.config.ts         # Static export config
+```
+
+Content (education, experience, projects, whispers, etc.) is driven entirely by `data.json` — most updates to page content don't require touching component code.
+
+## Getting Started
+
+**Prerequisites:** Node.js 20+ and npm.
 
 ```bash
 npm install
-```
-
-Then, run the development server:
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the site.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Deployment Architecture
+### Other scripts
 
-This project is configured strictly for **Static Export** (`output: 'export'` in `next.config.ts`). It automatically builds and deploys to **Cloudflare Pages** via GitHub integration on every push to the `main` branch. 
+| Command | Description |
+|---|---|
+| `npm run build` | Production build (static export to `out/`) |
+| `npm run start` | Serve a production build locally |
+| `npm run lint` | Run ESLint |
+| `npm run clean` | Clean the `.next` build cache |
 
-Because it is statically exported, all dynamic APIs and Server Actions are omitted in favor of static generation.
+## Deployment
+
+The site is statically exported (`output: 'export'` in `next.config.ts`) and deployed to Cloudflare Pages on every push to `main`. Because it's a static export, there are no server-side API routes or server actions — all data comes from the build-time `data.json`.
+
+An optional `BASE_PATH` environment variable can be set at build time if the site is ever served from a subpath.
+
+## Design Notes
+
+- Every route defines its own light/dark palette rather than inheriting one global theme.
+- Page transitions are enter-only (no exit animations) — this avoids a known Next.js App Router + `AnimatePresence` incompatibility where the router discards the outgoing page tree before exit animations can finish.

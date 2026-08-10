@@ -13,9 +13,10 @@ interface TimelineCardProps {
   coAuthors?: string[];
   link?: string;
   linkLabel?: string;
+  images?: string[];
 }
 
-export default function TimelineCard({ title, date, role, description, skills, idx, coAuthors, link, linkLabel }: TimelineCardProps) {
+export default function TimelineCard({ title, date, role, description, skills, idx, coAuthors, link, linkLabel, images }: TimelineCardProps) {
   const prefersReducedMotion = useReducedMotion();
   const [expanded, setExpanded] = useState(false);
   const VISIBLE_COUNT = 4;
@@ -52,6 +53,13 @@ export default function TimelineCard({ title, date, role, description, skills, i
         <a href={link} target="_blank" rel="noopener noreferrer" className="inline-block mt-1 mb-2 text-sm text-accent-dark hover:text-accent font-medium hover:underline underline-offset-4 transition-colors">
           {linkLabel || 'View'} &rarr;
         </a>
+      )}
+      {images && images.length > 0 && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4 mb-2">
+          {images.map((img, i) => (
+            <img key={i} src={img} alt="" className="rounded-sm object-cover w-full h-32 sm:h-48 shadow-sm" />
+          ))}
+        </div>
       )}
       {skills && skills.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-4">

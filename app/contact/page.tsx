@@ -1,7 +1,7 @@
 import React from 'react';
+import { FileText } from 'lucide-react';
 import AnimatedHeading from '@/components/AnimatedHeading';
 import ContactList from '@/components/ContactList';
-import ContactFooter from '@/components/ContactFooter';
 import data from '@/data.json';
 
 export const metadata = {
@@ -28,9 +28,17 @@ export default function ContactPage() {
             <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
               Dhaka, Bangladesh
             </p>
-            <p className="font-serif italic text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            <p className="font-serif italic text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed mb-8">
               Digital coordinates and communication channels.
             </p>
+            <a
+              href="/Jabir_Abdullah_Haian_Resume.pdf"
+              download
+              className="group inline-flex items-center gap-3 px-6 py-4 bg-neutral-900 dark:bg-white dark:text-neutral-900 text-white hover:bg-accent transition-colors"
+            >
+              <span className="font-mono text-xs uppercase tracking-widest">Download Resume</span>
+              <FileText className="w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </div>
 
@@ -40,7 +48,6 @@ export default function ContactPage() {
         </div>
 
       </div>
-      <ContactFooter socials={endpoints.filter((e: any) => e.name !== 'Email')} />
     </div>
   );
 }

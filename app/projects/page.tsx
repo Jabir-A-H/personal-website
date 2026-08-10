@@ -134,7 +134,7 @@ export default function ProjectsPage() {
           <div className="flex items-center gap-6 mb-8">
             <h2 className="text-sm font-mono text-neutral-900 dark:text-white uppercase tracking-[0.3em] flex items-center gap-3">
               <span className="w-2 h-2 bg-neutral-400 dark:bg-neutral-600"></span>
-              Project_Archive
+              All_Projects
             </h2>
             <div className="h-px bg-neutral-300 dark:bg-neutral-800 flex-1"></div>
             <span className="font-mono text-xs text-neutral-500 dark:text-neutral-600">[{projects.length}]</span>

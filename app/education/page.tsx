@@ -34,8 +34,15 @@ export default function AboutPage() {
           </p>
           <div className="h-[1px] w-12 bg-accent mb-6"></div>
           <ul className="space-y-2 font-mono text-xs text-muted">
-            <li><a href="https://www.linkedin.com/in/jabir-abdullah-haian/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-dark underline underline-offset-4 transition-colors">LinkedIn Profile &#8599;</a></li>
-            <li><a href="https://facebook.com/jabir.abdullah.haian" target="_blank" rel="noopener noreferrer" className="hover:text-accent-dark underline underline-offset-4 transition-colors">Facebook Profile &#8599;</a></li>
+            {data.endpoints
+              .filter((e: any) => e.name === 'LinkedIn' || e.name === 'Facebook')
+              .map((e: any) => (
+                <li key={e.name}>
+                  <a href={e.url} target="_blank" rel="noopener noreferrer" className="hover:text-accent-dark underline underline-offset-4 transition-colors">
+                    {e.name}{' '}Profile &#8599;
+                  </a>
+                </li>
+              ))}
           </ul>
         </div>
       </div>

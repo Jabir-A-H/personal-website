@@ -10,75 +10,52 @@ export const metadata: Metadata = {
   openGraph: { images: [{ url: '/og-journey.png' }] },
 };
 
-// Re-framing existing data chronologically to show the narrative thread
-const journeyData = [
-  {
-    title: 'International Education Expo 2026',
-    date: 'Jun 2026',
-    role: 'Seminar & Volunteer Coordinator',
-    description: 'Coordinated volunteer teams for international seminars and managed attendee flow.',
-    category: 'Experience',
-    link: '/experience'
-  },
-  {
-    title: 'Institute of Chartered Accountants of Bangladesh (ICAB)',
-    date: 'Present',
-    role: 'Certificate Level: Passed',
-    description: 'Pursuing the Chartered Accountancy professional qualification alongside undergraduate studies.',
-    category: 'Education',
-    link: '/education'
-  },
-  {
-    title: 'Report Submission System & LazyLedger',
-    date: '2025 — 2026',
-    role: 'Full-stack Developer',
-    description: 'Started building complex web applications, bridging the gap between accounting needs and technological solutions.',
-    category: 'Projects',
-    link: '/projects'
-  },
-  {
-    title: 'University of Dhaka',
-    date: 'Sep 2022 — Present',
-    role: 'BBA, Accounting & Information Systems',
-    description: 'Exploring Accounting, Data Analytics, AI & Technology.',
-    category: 'Education',
-    link: '/education'
-  },
-  {
-    title: 'Morning Riders',
-    date: 'Apr 2024 — Sep 2025',
-    role: 'President',
-    description: 'Organized community cycling initiatives and coordinated university-wide tournaments.',
-    category: 'Experience',
-    link: '/experience'
-  },
-  {
-    title: 'Notre Dame College',
-    date: 'Feb 2019 — Jun 2021',
-    role: 'HSC, Business Studies',
-    description: 'Ranked 35th out of 750 students. Foundational years in business and IT.',
-    category: 'Education',
-    link: '/education'
-  },
-  {
-    title: 'Alokito Library',
-    date: 'Dec 2018 — Present',
-    role: 'Secretariat Member to President',
-    description: 'Led community programs on spiritual and value-based youth development.',
-    category: 'Experience',
-    link: '/experience'
-  },
-  {
-    title: 'Birshreshtha Noor Mohammad Public College',
-    date: 'Jan 2017 — May 2019',
-    role: 'SSC, Business Studies',
-    description: 'Government Board Scholarship Recipient. Early steps into business studies.',
-    category: 'Education',
-    link: '/education'
+type JourneyRef = 
+  | { type: 'education' | 'experience' | 'project'; title: string }
+  | { type: 'custom'; category: string; title: string; date?: string; role?: string; description?: string; link?: string; images?: string[] };
+
+const CATEGORY_META: Record<Exclude<JourneyRef['type'], 'custom'>, { label: string; link: string }> = {
+  education: { label: 'Education', link: '/education' },
+  experience: { label: 'Experience', link: '/experience' },
+  project: { label: 'Projects', link: '/projects' },
+};
+
+function resolveNode(ref: JourneyRef) {
+  if (ref.type === 'custom') {
+    return {
+      title: ref.title,
+      date: ref.date || '',
+      role: ref.role || '',
+      description: ref.description || '',
+      category: ref.category,
+      link: ref.link || '',
+      images: ref.images,
+    };
   }
-];
+
+  const source = ref.type === 'education' ? data.education
+    : ref.type === 'experience' ? data.experience
+    : data.projects;
+
+  const entry: any = source.find((item: any) => item.title === ref.title);
+  if (!entry) return null;
+
+  const meta = CATEGORY_META[ref.type];
+
+  return {
+    title: entry.title,
+    date: ref.type === 'project' ? '' : entry.date,
+    role: ref.type === 'project' ? entry.category : entry.role,
+    description: entry.description,
+    category: meta.label,
+    link: meta.link,
+    images: entry.images,
+  };
+}
 
 export default function JourneyPage() {
+  const nodes = ((data as any).journey as JourneyRef[]).map(resolveNode).filter((n): n is NonNullable<typeof n> => n !== null);
+
   return (
     <div className="col-span-12 w-full max-w-4xl mx-auto px-6 md:px-12 py-12 text-neutral-800 dark:text-neutral-200">
       <header className="mb-16">
@@ -91,7 +68,7 @@ export default function JourneyPage() {
       </header>
       
       <div className="space-y-12 relative before:absolute before:inset-0 before:ml-1 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-neutral-200 before:to-transparent">
-        {journeyData.map((node, idx) => (
+        {nodes.map((node, idx) => (
           <TimelineCard
             key={idx}
             idx={idx}
@@ -101,6 +78,7 @@ export default function JourneyPage() {
             description={node.description}
             link={node.link}
             linkLabel={`See ${node.category}`}
+            images={node.images}
           />
         ))}
       </div>

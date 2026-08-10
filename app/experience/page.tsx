@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function ExperiencePage() {
-  const { experience, certifications, skills, achievements, references } = data;
+  const { experience, certifications, skills, achievements } = data;
 
   // Group skills by category
   const skillsByCategory = skills.reduce((acc, skill) => {

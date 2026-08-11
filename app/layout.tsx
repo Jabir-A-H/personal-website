@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: 'Jabir Abdullah Haian',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Jabir Abdullah Haian — Portfolio',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jabir Abdullah Haian',
     description: 'BBA in Accounting & Information Systems at University of Dhaka.',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
     creator: '@JabirHaian',
   },
   robots: {
@@ -56,12 +56,34 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://jabirah.pages.dev',
+    types: {
+      'application/rss+xml': 'https://jabirah.pages.dev/rss.xml',
+    },
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                let isDark = localStorage.getItem('darkMode') === 'true';
+                if (localStorage.getItem('darkMode') === null) {
+                  isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                }
+                if (isDark) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
       <body className="font-sans antialiased bg-neutral-50 dark:bg-[#121212] text-neutral-900 dark:text-neutral-100">
         <PersonSchema />
         <DarkModeProvider>

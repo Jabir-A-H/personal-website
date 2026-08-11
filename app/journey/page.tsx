@@ -7,7 +7,7 @@ import data from '@/data.json';
 export const metadata: Metadata = {
   title: 'Journey | Jabir Abdullah Haian',
   description: 'How education, experience, and projects connect.',
-  openGraph: { images: [{ url: '/og-journey.png' }] },
+  openGraph: { images: [{ url: '/og-journey.jpg' }] },
 };
 
 type JourneyRef = 

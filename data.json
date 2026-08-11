@@ -106,20 +106,12 @@
       "role": "BBA, Accounting & Information Systems",
       "description": "Exploring Accounting, Data Analytics, AI & Technology.",
       "skills": [
-        "Microsoft Products",
-        "Online Research",
-        "IT Management",
-        "Technical Support",
-        "Problem Solving",
-        "Cycling",
-        "IT Operations",
-        "Microsoft Excel",
         "Accounting",
-        "Teamwork",
+        "Data Analytics",
         "Big Data",
-        "Microsoft Office",
-        "Communication",
-        "Table Tennis"
+        "IT Management",
+        "IT Operations",
+        "Problem Solving"
       ]
     },
     {
@@ -128,15 +120,11 @@
       "role": "HSC, Business Studies",
       "description": "Ranked 35th out of 750 students. Got a perfect attendance certificate. Member of Notre Dame Business Club and Notre Dame Information Technology Club.",
       "skills": [
-        "Microsoft Products",
-        "IT Management",
-        "Technical Support",
-        "Problem Solving",
-        "IT Operations",
         "Accounting",
         "HTML",
         "C (Programming Language)",
-        "Microsoft Office"
+        "IT Management",
+        "Problem Solving"
       ]
     },
     {
@@ -145,13 +133,9 @@
       "role": "SSC, Business Studies",
       "description": "Government Board Scholarship Recipient. Member of BNMPC Business Club and Chess Club.",
       "skills": [
-        "Microsoft Products",
-        "Problem Solving",
-        "Cycling",
-        "IT Operations",
-        "Microsoft Excel",
         "Accounting",
-        "Microsoft Office"
+        "Problem Solving",
+        "Microsoft Excel"
       ]
     },
     {

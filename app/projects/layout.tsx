@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Projects | Jabir Abdullah Haian',
   description: 'Technical experiments, code, and live projects by Jabir Abdullah Haian.',
   openGraph: {
-    images: [{ url: '/og-projects.png' }]
+    images: [{ url: '/og-projects.jpg' }]
   }
 };
 

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Whispers | Jabir Abdullah Haian',
   description: 'Fragments of thought, reflection, and writing by Jabir Abdullah Haian.',
   openGraph: {
-    images: [{ url: '/og-whispers.png' }]
+    images: [{ url: '/og-whispers.jpg' }]
   }
 };
 

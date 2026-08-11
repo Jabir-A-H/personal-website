@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Education | Jabir Abdullah Haian',
   description: 'Academic background and continuous learning journey.',
   openGraph: {
-    images: [{ url: '/og-education.png' }]
+    images: [{ url: '/og-education.jpg' }]
   }
 };
 

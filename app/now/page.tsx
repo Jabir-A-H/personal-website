@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Now',
   description: 'What Jabir Abdullah Haian is focused on right now.',
   openGraph: {
-    images: [{ url: '/og-image.png' }]
+    images: [{ url: '/og-now.jpg' }]
   }
 };
 

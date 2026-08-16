@@ -18,10 +18,11 @@ function RestParagraphs({ paragraphs, baseClasses }: { paragraphs: string[]; bas
 }
 
 export default function WhisperBody({ content, style = 'plain', size }: WhisperBodyProps) {
+  const paragraphs = Array.isArray(content) ? content : [content];
   const baseSize = size === 'lead' ? 'text-xl md:text-2xl' : 'text-lg';
   const baseClasses = `prose prose-neutral max-w-2xl text-neutral-600 dark:text-neutral-400 leading-relaxed font-light mb-8 ${baseSize}`;
 
-  const [first, ...rest] = content;
+  const [first, ...rest] = paragraphs;
 
   switch (style) {
     case 'dropcap':

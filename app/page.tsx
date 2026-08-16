@@ -19,6 +19,10 @@ export default function Home() {
   const featuredExperience = experience.filter(
     (exp: any) => exp.homepage === true
   );
+  
+  const featuredCertifications = certifications.filter(
+    (cert: any) => cert.homepage === true
+  );
 
   return (
     <div className="w-full py-12 md:py-24">
@@ -106,7 +110,7 @@ export default function Home() {
               {edu.skills && edu.skills.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-6">
                   {edu.skills.slice(0, 4).map(skill => (
-                    <span key={skill} className="text-[10px] uppercase tracking-wider font-mono bg-accent/5 text-accent-dark px-2 py-1 rounded-sm border border-accent/10">
+                    <span key={skill} className="text-[10px] uppercase tracking-wider font-mono bg-accent/5 text-accent-dark dark:text-accent-light px-2 py-1 rounded-sm border border-accent/10">
                       {skill}
                     </span>
                   ))}
@@ -116,7 +120,7 @@ export default function Home() {
           ))}
           <Link
             href="/education"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark hover:text-accent transition-colors group/link"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark dark:text-accent-light hover:text-accent transition-colors group/link"
           >
             Full academic timeline
             <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
@@ -143,7 +147,7 @@ export default function Home() {
           ))}
           <Link
             href="/experience"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark hover:text-accent transition-colors group/link"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark dark:text-accent-light hover:text-accent transition-colors group/link"
           >
             All experience &amp; credentials
             <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
@@ -160,7 +164,7 @@ export default function Home() {
         </div>
         <div className="md:col-span-8">
           <div className="flex flex-wrap gap-x-8 gap-y-4 mb-8">
-            {certifications.map((cert, idx) => (
+            {featuredCertifications.map((cert: any, idx: number) => (
               <div key={idx} className="text-neutral-800 dark:text-neutral-200">
                 <span className="text-base font-medium">{cert.title}</span>
                 {cert.issuer && (
@@ -171,7 +175,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-3 mb-8">
             {skills.slice(0, 5).map(skill => (
-              <span key={skill.name} className="text-[10px] uppercase tracking-wider font-mono bg-accent/5 text-accent-dark px-2 py-1 rounded-sm border border-accent/10">
+              <span key={skill.name} className="text-[10px] uppercase tracking-wider font-mono bg-accent/5 text-accent-dark dark:text-accent-light px-2 py-1 rounded-sm border border-accent/10">
                 {skill.name}
               </span>
             ))}
@@ -183,7 +187,7 @@ export default function Home() {
           </div>
           <Link
             href="/experience"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark hover:text-accent transition-colors group/link"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark dark:text-accent-light hover:text-accent transition-colors group/link"
           >
             Full credentials &amp; certifications
             <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />

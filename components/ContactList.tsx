@@ -30,7 +30,6 @@ export default function ContactList({ endpoints }: { endpoints: Endpoint[] }) {
             name={endpoint.name}
             href={endpoint.url}
             handle={endpoint.handle}
-            preferred={endpoint.preferred}
             download={endpoint.download}
           />
         ))}

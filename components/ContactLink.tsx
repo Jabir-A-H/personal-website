@@ -7,19 +7,19 @@ interface ContactLinkProps {
   href: string;
   name: string;
   handle: string;
-  preferred?: boolean;
   download?: boolean;
   idx: number;
 }
 
-export default function ContactLink({ href, name, handle, preferred, download, idx }: ContactLinkProps) {
+export default function ContactLink({ href, name, handle, download, idx }: ContactLinkProps) {
   const prefersReducedMotion = useReducedMotion();
+
+  const isProtocolLink = href.startsWith('mailto:') || href.startsWith('tel:');
 
   return (
     <motion.a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...(!isProtocolLink && { target: '_blank', rel: 'noopener noreferrer' })}
       download={download}
       initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
       whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
@@ -31,11 +31,7 @@ export default function ContactLink({ href, name, handle, preferred, download, i
         <span className="text-3xl md:text-5xl font-light tracking-tight text-neutral-900 dark:text-neutral-100 group-hover:translate-x-4 transition-transform duration-500 ease-out">
           {name}
         </span>
-        {preferred && (
-          <span className="font-mono text-[10px] uppercase tracking-widest bg-accent/5 text-accent-dark px-2 py-1 rounded-sm border border-accent/10 transition-opacity opacity-70 group-hover:opacity-100 hidden sm:block">
-            Preferred
-          </span>
-        )}
+
       </div>
 
       <div className="flex items-center gap-4 mt-4 sm:mt-0 opacity-60 group-hover:opacity-100 transition-opacity duration-300">

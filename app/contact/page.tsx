@@ -8,7 +8,7 @@ export const metadata = {
   title: 'Contact | Jabir Abdullah Haian',
   description: 'Connect with Jabir Abdullah Haian.',
   openGraph: {
-    images: [{ url: '/og-contact.jpg' }]
+    images: [{ url: '/og-contact.jpg', width: 1376, height: 768, alt: 'A sleek minimal envelope icon signifying contact' }]
   }
 };
 

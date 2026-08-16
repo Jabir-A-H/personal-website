@@ -7,12 +7,12 @@ import data from '@/data.json';
 export const metadata: Metadata = {
   title: 'Journey | Jabir Abdullah Haian',
   description: 'How education, experience, and projects connect.',
-  openGraph: { images: [{ url: '/og-journey.jpg' }] },
+  openGraph: { images: [{ url: '/og-journey.jpg', width: 1376, height: 768, alt: 'A timeline or path denoting a journey' }] },
 };
 
 type JourneyRef = 
   | { type: 'education' | 'experience' | 'project'; title: string }
-  | { type: 'custom'; category: string; title: string; date?: string; role?: string; description?: string; link?: string; images?: string[] };
+  | { type: 'custom'; category: string; title: string; date?: string; role?: string; description?: string; link?: string; images?: { src: string; alt: string }[] };
 
 const CATEGORY_META: Record<Exclude<JourneyRef['type'], 'custom'>, { label: string; link: string }> = {
   education: { label: 'Education', link: '/education' },

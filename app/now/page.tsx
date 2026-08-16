@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Now',
   description: 'What Jabir Abdullah Haian is focused on right now.',
   openGraph: {
-    images: [{ url: '/og-now.jpg' }]
+    images: [{ url: '/og-now.jpg', width: 1376, height: 768, alt: 'A twisting hourglass and spiral representing time and current focus' }]
   }
 };
 
@@ -90,7 +90,7 @@ export default function NowPage() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark hover:text-accent transition-colors"
+                      className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark dark:text-accent-light hover:text-accent transition-colors"
                     >
                       View project
                       <ArrowUpRight className="w-3 h-3" />
@@ -98,7 +98,7 @@ export default function NowPage() {
                   ) : (
                     <Link
                       href={item.link}
-                      className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark hover:text-accent transition-colors"
+                      className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark dark:text-accent-light hover:text-accent transition-colors"
                     >
                       View project
                       <ArrowUpRight className="w-3 h-3" />
@@ -132,7 +132,7 @@ export default function NowPage() {
               href="https://nownownow.com/about"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-mono text-accent-dark hover:text-accent transition-colors"
+              className="text-sm font-mono text-accent-dark dark:text-accent-light hover:text-accent transition-colors"
             >
               nownownow.com
             </a>

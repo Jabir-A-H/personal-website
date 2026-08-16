@@ -17,7 +17,7 @@ export default function GlobalError({
           <p className="text-neutral-600 dark:text-neutral-400 font-serif italic mb-8">An unexpected error occurred.</p>
           <button
             onClick={() => reset()}
-            className="px-6 py-3 bg-[#e8915a] text-white font-mono text-xs uppercase tracking-widest hover:bg-[#c97040] transition-colors"
+            className="px-6 py-3 bg-[#9f552d] text-white font-mono text-xs uppercase tracking-widest hover:opacity-90 transition-opacity"
           >
             Try again
           </button>

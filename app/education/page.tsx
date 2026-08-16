@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Education | Jabir Abdullah Haian',
   description: 'Academic background and continuous learning journey.',
   openGraph: {
-    images: [{ url: '/og-education.jpg' }]
+    images: [{ url: '/og-education.jpg', width: 1376, height: 768, alt: 'A graduation cap or university building denoting education' }]
   }
 };
 
@@ -38,7 +38,7 @@ export default function AboutPage() {
               .filter((e: any) => e.name === 'LinkedIn' || e.name === 'Facebook')
               .map((e: any) => (
                 <li key={e.name}>
-                  <a href={e.url} target="_blank" rel="noopener noreferrer" className="hover:text-accent-dark underline underline-offset-4 transition-colors">
+                  <a href={e.url} target="_blank" rel="noopener noreferrer" className="hover:text-accent-dark dark:hover:text-accent-light underline underline-offset-4 transition-colors">
                     {e.name}{' '}Profile &#8599;
                   </a>
                 </li>

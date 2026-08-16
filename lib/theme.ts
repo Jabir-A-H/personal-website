@@ -170,13 +170,21 @@ const REDUCED_MOTION_PRESET: AnimationProps = {
   transition: { duration: 0.15, ease: 'easeOut' },
 };
 
+function matchRoute<T>(map: Record<string, T>, pathname: string, fallback: T): T {
+  if (pathname in map) return map[pathname];
+  const prefixMatch = Object.keys(map)
+    .filter(key => key !== '/' && pathname.startsWith(key + '/'))
+    .sort((a, b) => b.length - a.length)[0];
+  return prefixMatch ? map[prefixMatch] : fallback;
+}
+
 export function getThemeForRoute(pathname: string) {
-  return PAGE_THEMES[pathname] || PAGE_THEMES['/'];
+  return matchRoute(PAGE_THEMES, pathname, PAGE_THEMES['/']);
 }
 
 export function getAnimationForRoute(pathname: string, reducedMotion = false): AnimationProps {
   if (reducedMotion) return REDUCED_MOTION_PRESET;
-  return ANIMATION_PRESETS[pathname] || ANIMATION_PRESETS['default'];
+  return matchRoute(ANIMATION_PRESETS, pathname, ANIMATION_PRESETS['default']);
 }
 
 /** Returns null for both "explicitly no independent motion" (Education) and
@@ -184,6 +192,5 @@ export function getAnimationForRoute(pathname: string, reducedMotion = false): A
  * back to the `default` heading preset, only Education explicitly maps to null. */
 export function getHeadingAnimationForRoute(pathname: string, reducedMotion = false): AnimationProps | null {
   if (reducedMotion) return REDUCED_MOTION_PRESET;
-  if (pathname in HEADING_PRESETS) return HEADING_PRESETS[pathname];
-  return HEADING_PRESETS['default'];
+  return matchRoute(HEADING_PRESETS, pathname, HEADING_PRESETS['default']);
 }

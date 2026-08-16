@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Experience | Jabir Abdullah Haian',
   description: 'Professional experience, certifications, and skills progression.',
   openGraph: {
-    images: [{ url: '/og-experience.jpg' }]
+    images: [{ url: '/og-experience.jpg', width: 1376, height: 768, alt: 'A briefcase or professional setting denoting experience' }]
   }
 };
 
@@ -34,13 +34,23 @@ export default function ExperiencePage() {
         <AnimatedHeading className="text-5xl md:text-7xl font-sans font-bold tracking-tighter uppercase mb-4 text-neutral-900 dark:text-neutral-100">
           Experience &<br />Credentials
         </AnimatedHeading>
-        <p className="font-mono text-xs uppercase tracking-widest text-muted">
-          Leadership · Community · Qualifications
-        </p>
+        <nav className="flex flex-wrap justify-center md:justify-start gap-x-3 gap-y-1 font-mono text-xs uppercase tracking-widest text-muted" aria-label="Jump to section">
+          <a href="#leadership" className="text-accent-dark dark:text-accent-light hover:text-accent transition-colors">Leadership</a>
+          <span aria-hidden="true">·</span>
+          <a href="#certifications" className="text-accent-dark dark:text-accent-light hover:text-accent transition-colors">Certifications</a>
+          {achievements && achievements.length > 0 && (
+            <>
+              <span aria-hidden="true">·</span>
+              <a href="#achievements" className="text-accent-dark dark:text-accent-light hover:text-accent transition-colors">Achievements</a>
+            </>
+          )}
+          <span aria-hidden="true">·</span>
+          <a href="#skills" className="text-accent-dark dark:text-accent-light hover:text-accent transition-colors">Skills</a>
+        </nav>
       </header>
 
       {/* Leadership & Community */}
-      <section className="mb-24">
+      <section id="leadership" className="mb-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <SectionHeader title="Leadership & Community" />
@@ -62,7 +72,7 @@ export default function ExperiencePage() {
       <div className="w-full h-px bg-neutral-300 mb-24"></div>
 
       {/* Certifications */}
-      <section className="mb-24">
+      <section id="certifications" className="mb-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <SectionHeader title="Certifications" />
@@ -84,7 +94,7 @@ export default function ExperiencePage() {
                       href={cert.verifyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark hover:text-accent transition-colors shrink-0 mt-2 sm:mt-0"
+                      className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark dark:text-accent-light hover:text-accent transition-colors shrink-0 mt-2 sm:mt-0"
                     >
                       Verify
                       <ExternalLink className="w-3 h-3" />
@@ -102,7 +112,7 @@ export default function ExperiencePage() {
       {/* Achievements */}
       {achievements && achievements.length > 0 && (
         <>
-          <section className="mb-24">
+          <section id="achievements" className="mb-24">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
               <div className="md:col-span-4">
                 <SectionHeader title={<>Achievements &<br/>Competitions</>} />
@@ -129,7 +139,7 @@ export default function ExperiencePage() {
       )}
 
       {/* Skills */}
-      <section className="mb-24">
+      <section id="skills" className="mb-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <SectionHeader title="Skills" />

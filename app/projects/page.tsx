@@ -1,4 +1,4 @@
-import { Github, ExternalLink, ArrowUpRight, Terminal } from 'lucide-react';
+import { ExternalLink, Terminal } from 'lucide-react';
 import data from '@/data.json';
 import Link from 'next/link';
 import AnimatedHeading from '@/components/AnimatedHeading';

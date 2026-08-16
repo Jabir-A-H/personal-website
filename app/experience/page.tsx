@@ -69,7 +69,7 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      <div className="w-full h-px bg-neutral-300 mb-24"></div>
+      <div className="w-full h-px bg-neutral-300 dark:bg-neutral-700 mb-24"></div>
 
       {/* Certifications */}
       <section id="certifications" className="mb-24">
@@ -80,12 +80,12 @@ export default function ExperiencePage() {
           <div className="md:col-span-8">
             <div className="space-y-8">
               {certifications.map((cert, idx) => (
-                <div key={idx} className="group flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-8 border-b border-neutral-200 last:border-0">
+                <div key={idx} className="group flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-8 border-b border-neutral-200 dark:border-neutral-700 last:border-0">
                   <div>
                     <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-1">{cert.title}</h3>
                     <div className="flex flex-wrap items-center gap-2 text-sm text-muted font-mono">
                       {cert.issuer && <span>{cert.issuer}</span>}
-                      {cert.issuer && cert.date && <span className="text-neutral-300">·</span>}
+                      {cert.issuer && cert.date && <span className="text-neutral-300 dark:text-neutral-700">·</span>}
                       {cert.date && <span>{cert.date}</span>}
                     </div>
                   </div>
@@ -107,7 +107,7 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      <div className="w-full h-px bg-neutral-300 mb-24"></div>
+      <div className="w-full h-px bg-neutral-300 dark:bg-neutral-700 mb-24"></div>
 
       {/* Achievements */}
       {achievements && achievements.length > 0 && (
@@ -120,7 +120,7 @@ export default function ExperiencePage() {
               <div className="md:col-span-8">
                 <div className="space-y-8">
                   {achievements.map((ach, idx) => (
-                    <div key={idx} className="pb-8 border-b border-neutral-200 last:border-0">
+                    <div key={idx} className="pb-8 border-b border-neutral-200 dark:border-neutral-700 last:border-0">
                       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
                         <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">{ach.title}</h3>
                         <span className="font-mono text-xs text-muted mt-2 sm:mt-0">{ach.year}</span>
@@ -134,7 +134,7 @@ export default function ExperiencePage() {
             </div>
           </section>
 
-          <div className="w-full h-px bg-neutral-300 mb-24"></div>
+          <div className="w-full h-px bg-neutral-300 dark:bg-neutral-700 mb-24"></div>
         </>
       )}
 
@@ -156,7 +156,7 @@ export default function ExperiencePage() {
                         {[1, 2, 3, 4, 5].map(dot => (
                           <div
                             key={dot}
-                            className={`w-2 h-2 rounded-full transition-colors ${dot <= skill.level ? 'bg-accent' : 'bg-neutral-200 group-hover:bg-neutral-300'}`}
+                            className={`w-2 h-2 rounded-full transition-colors ${dot <= skill.level ? 'bg-accent' : 'bg-neutral-200 dark:bg-neutral-700 group-hover:bg-neutral-300 dark:group-hover:bg-neutral-600'}`}
                           />
                         ))}
                       </div>

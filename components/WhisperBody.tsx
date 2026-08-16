@@ -82,7 +82,7 @@ export default function WhisperBody({ content, style = 'plain', size }: WhisperB
     case 'indentedBlock':
       return (
         <>
-          <blockquote className={`${baseClasses} pl-6 border-l-2 border-neutral-200 italic`}>
+          <blockquote className={`${baseClasses} pl-6 border-l-2 border-neutral-200 dark:border-neutral-700 italic`}>
             {first}
           </blockquote>
           <RestParagraphs paragraphs={rest} baseClasses={baseClasses} />

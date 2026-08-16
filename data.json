@@ -4,7 +4,8 @@
     "location": "Dhaka, Bangladesh",
     "email": "jabirahaian@gmail.com",
     "headline": "Aspiring Chartered Accountant | BBA in Accounting, University of Dhaka",
-    "bio": "Aspiring Chartered Accountant and Accounting student at the University of Dhaka. Driven to integrate robust financial management, audit standards, and cost accounting with modern technological solutions and data analytics."
+    "bio": "Aspiring Chartered Accountant and Accounting student at the University of Dhaka. Driven to integrate robust financial management, audit standards, and cost accounting with modern technological solutions and data analytics.",
+    "seoDescription": "Aspiring Chartered Accountant and BBA Accounting student at the University of Dhaka — exploring audit, financial analysis, and data analytics."
   },
   "endpoints": [
     {
@@ -189,8 +190,7 @@
         "TypeScript",
         "Tailwind"
       ],
-      "repo": "https://github.com/Jabir-A-H/personal-website",
-      "live": "https://jabirah.pages.dev"
+      "repo": "https://github.com/Jabir-A-H/personal-website"
     },
     {
       "title": "Talimul Quran Report Submission System",

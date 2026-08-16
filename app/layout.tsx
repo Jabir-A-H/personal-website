@@ -4,6 +4,7 @@ import './globals.css';
 import Shell from '@/components/Shell';
 import { PersonSchema } from '@/components/JsonLd';
 import { DarkModeProvider } from '@/components/DarkModeProvider';
+import data from '@/data.json';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,10 +27,10 @@ export const metadata: Metadata = {
     default: 'Jabir Abdullah Haian',
     template: '%s | Jabir Abdullah Haian',
   },
-  description: 'BBA in Accounting & Information Systems at University of Dhaka. Exploring Forensic Accounting, Data Analytics & AI.',
+  description: data.personal.seoDescription,
   openGraph: {
     title: 'Jabir Abdullah Haian',
-    description: 'BBA in Accounting & Information Systems at University of Dhaka. Exploring Forensic Accounting, Data Analytics & AI.',
+    description: data.personal.seoDescription,
     url: 'https://jabirah.pages.dev',
     siteName: 'Jabir Abdullah Haian',
     images: [
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Jabir Abdullah Haian',
-    description: 'BBA in Accounting & Information Systems at University of Dhaka.',
+    description: data.personal.seoDescription,
     images: ['/og-image.jpg'],
     creator: '@JabirHaian',
   },

@@ -62,7 +62,7 @@ export default function NowPage() {
 
           return (
             <FadeIn key={index} delay={index * 0.1}>
-              <article className="group relative py-10 border-b border-neutral-200 first:border-t">
+              <article className="group relative py-10 border-b border-neutral-200 dark:border-neutral-700 first:border-t">
 
                 {/* Label */}
                 <div className="flex items-center gap-3 mb-4">

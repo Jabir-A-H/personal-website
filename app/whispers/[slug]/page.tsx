@@ -14,10 +14,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const whisper = data.whispers.find((w) => w.slug === slug);
   if (!whisper) return {};
   const description = Array.isArray(whisper.content) ? whisper.content.join(' ') : whisper.content;
+  const trimmedDescription = description.slice(0, 160);
+  const publishedTime = whisper.date.replace(/\./g, '-');
   return {
     title: whisper.title,
-    description: description.slice(0, 160),
-    openGraph: { images: [{ url: '/og-whispers.jpg', width: 1376, height: 768, alt: 'Watercolor ink-bleed behind the word "Whispers"' }] },
+    description: trimmedDescription,
+    alternates: { canonical: `https://jabirah.pages.dev/whispers/${whisper.slug}` },
+    openGraph: {
+      title: whisper.title,
+      description: trimmedDescription,
+      type: 'article',
+      publishedTime,
+      images: [{ url: '/og-whispers.jpg', width: 1376, height: 768, alt: 'Watercolor ink-bleed behind the word "Whispers"' }],
+    },
   };
 }
 

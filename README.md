@@ -6,9 +6,11 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript)
 ![Deployed on Cloudflare Pages](https://img.shields.io/badge/Deployed-Cloudflare%20Pages-f38020?logo=cloudflare)
 
-Statically exported personal portfolio site. Every route has its own distinct visual theme, palette, and heading treatment rather than one global design system reused everywhere.
+A statically exported personal website where every route has its own visual identity — distinct background palette, heading animation, and transition style — rather than one global theme reused everywhere.
 
-**Live site:** [jabirah.pages.dev](https://jabirah.pages.dev)
+**Live:** [jabirah.pages.dev](https://jabirah.pages.dev)
+
+---
 
 ## Tech Stack
 
@@ -24,30 +26,75 @@ Statically exported personal portfolio site. Every route has its own distinct vi
 
 ## Routes
 
-| Route | Description |
-|---|---|
-| `/` | Home |
-| `/education` | Education history |
-| `/experience` | Work experience |
-| `/projects` | Project showcase (Solarized-light-inspired theme) |
-| `/whispers` | Short-form writing, with per-entry editorial styles |
-| `/now` | Current focus |
-| `/journey` | Chronological personal timeline |
-| `/contact` | Contact links, resume, sitemap, dark mode toggle |
+| Route | Description | Heading style |
+|---|---|---|
+| `/` | Home — curated overview | Typewriter effect |
+| `/education` | Academic timeline | Page-turn entry (left-hinged) |
+| `/experience` | Leadership, certs, skills | Rack-focus blur |
+| `/projects` | Project showcase | Clip-path reveal |
+| `/whispers` | Short-form writing | Fuzzy blur fade |
+| `/now` | Current focus | Vortex spin-in |
+| `/journey` | Chronological timeline | Horizontal slide |
+| `/contact` | Links, resume, sitemap | Letter unfold |
+
+## Architecture
+
+### Content model
+
+All page content lives in a single [`data.json`](data.json) file — education entries, experience items, projects, whispers, certifications, skills, achievements, and the journey timeline. Most site updates require editing only this file; no component code changes needed.
+
+### Per-route theming
+
+Each route defines its own light and dark palette in [`lib/theme.ts`](lib/theme.ts) via the `PAGE_THEMES` map. At runtime, [`Shell.tsx`](components/Shell.tsx) reads the current pathname, picks the matching theme, and injects CSS custom properties (`--theme-bg`, `--theme-muted`, `--theme-focus-ring`) onto the page wrapper. Tailwind utility classes like `text-muted` and `bg-divider` resolve to these variables, so the same class produces different colors on different routes.
+
+### Dark mode
+
+A blocking `<script>` in `<head>` reads `localStorage` before first paint to avoid a flash of wrong theme. The [`DarkModeProvider`](components/DarkModeProvider.tsx) context then manages state for the rest of the session. Colors that need to vary by route use semantic tokens (see above); colors that are globally consistent across all routes use standard Tailwind `dark:` variants.
+
+### Animations
+
+Page transitions and heading animations are defined as presets in `lib/theme.ts` (`ANIMATION_PRESETS` and `HEADING_PRESETS`). Each route maps to a different enter transition — clip-path reveals, page turns, blur racks, vortex spins — while exit animations are deliberately omitted to avoid a known Next.js App Router + `AnimatePresence` incompatibility.
 
 ## Project Structure
 
 ```
-├── app/                  # Next.js App Router routes (one folder per page)
-├── components/           # Shared React components (cards, headings, shell, nav)
+├── app/
+│   ├── layout.tsx              # Root layout, fonts, global metadata
+│   ├── page.tsx                # Home (/)
+│   ├── globals.css             # Tailwind config, CSS custom properties
+│   ├── global-error.tsx        # Error boundary
+│   ├── education/page.tsx
+│   ├── experience/page.tsx
+│   ├── projects/
+│   │   ├── page.tsx            # Project list
+│   │   └── [slug]/page.tsx     # Project detail + case study
+│   ├── whispers/
+│   │   ├── page.tsx            # Whisper list (paginated, filterable)
+│   │   └── [slug]/page.tsx     # Whisper detail
+│   ├── now/page.tsx
+│   ├── journey/page.tsx
+│   ├── contact/page.tsx
+│   ├── sitemap.xml/route.ts    # Dynamic sitemap generation
+│   └── rss.xml/route.ts       # RSS feed generation
+├── components/
+│   ├── Shell.tsx               # Layout shell — applies per-route theme
+│   ├── DarkModeProvider.tsx    # Dark mode context
+│   ├── JsonLd.tsx              # Structured data (Person schema)
+│   ├── AnimatedHeading.tsx     # Route-aware heading animations
+│   ├── TypewriterHeading.tsx   # Home page heading effect
+│   ├── FuzzyHeading.tsx        # Whispers heading effect
+│   ├── VortexHeading.tsx       # Now page heading effect
+│   ├── TimelineCard.tsx        # Reused across education/journey
+│   ├── ExperienceCard.tsx
+│   ├── WhisperBody.tsx         # Per-whisper editorial styling
+│   └── AllProjectsList.tsx     # Filterable project grid
 ├── lib/
-│   └── theme.ts          # Per-route animation/heading presets
-├── data.json             # Single source of truth for all page content
-├── public/                # Static assets (images, resume PDF, OG images, icons)
-└── next.config.ts         # Static export config
+│   ├── theme.ts                # PAGE_THEMES, animation presets
+│   └── utils.ts                # Reading time calculation, helpers
+├── data.json                   # Single source of truth for all content
+├── public/                     # Static assets (images, resume, OG images)
+└── next.config.ts              # Static export config, base path support
 ```
-
-Content (education, experience, projects, whispers, etc.) is driven entirely by `data.json` — most updates to page content don't require touching component code.
 
 ## Getting Started
 
@@ -60,22 +107,38 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-### Other scripts
+### Scripts
 
 | Command | Description |
 |---|---|
+| `npm run dev` | Start development server |
 | `npm run build` | Production build (static export to `out/`) |
-| `npm run start` | Serve a production build locally |
 | `npm run lint` | Run ESLint |
 | `npm run clean` | Clean the `.next` build cache |
 
+## Editing Content
+
+Most updates only require editing `data.json`:
+
+- **Add a project:** Add an object to the `projects` array with `title`, `slug`, `status`, `category`, `description`, `tech`, and optionally `repo`, `live`, and `caseStudy`.
+- **Add a whisper:** Add an object to the `whispers` array with `title`, `slug`, `date`, `tags`, `content` (array of paragraphs), and optionally `style` (`dropcap`, `boldFirstLine`, `pullQuote`, `leadParagraph`, `decorativeRule`, `indentedBlock`, or `plain`).
+- **Update the "Now" page:** Edit the `now.items` array and `now.lastUpdated` date.
+- **Add a journey milestone:** Add a reference to the `journey` array — either `{ "type": "education", "title": "..." }` to pull from existing data, or `{ "type": "custom", ... }` for standalone entries.
+
+After editing, run `npm run build` to regenerate static pages.
+
 ## Deployment
 
-The site is statically exported (`output: 'export'` in `next.config.ts`) and deployed to Cloudflare Pages on every push to `main`. Because it's a static export, there are no server-side API routes or server actions — all data comes from the build-time `data.json`.
+The site is statically exported (`output: 'export'` in `next.config.ts`) and deployed to Cloudflare Pages on every push to `main`. There are no server-side API routes or server actions — all data is baked in at build time from `data.json`.
 
-An optional `BASE_PATH` environment variable can be set at build time if the site is ever served from a subpath.
+An optional `BASE_PATH` environment variable can be set at build time if the site is served from a subpath.
 
-## Design Notes
+## Future Considerations
 
-- Every route defines its own light/dark palette rather than inheriting one global theme.
-- Page transitions are enter-only (no exit animations) — this avoids a known Next.js App Router + `AnimatePresence` incompatibility where the router discards the outgoing page tree before exit animations can finish.
+- **Clickable tags + URL-synced filters.** Make whisper/project detail-page tags link back to a pre-filtered list, with the active tag reflected in the URL so filtered views are shareable and survive a page refresh.
+
+## License
+
+The **source code** in this repository is licensed under the [MIT License](LICENSE).
+
+**Personal content** — including text, images, biographical data, writings (whispers), and case studies contained in `data.json` and `public/` — is © Jabir Abdullah Haian and is not licensed for reuse. Individual projects referenced on the site have their own separate repositories and licenses.

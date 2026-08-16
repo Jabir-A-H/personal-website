@@ -34,7 +34,7 @@ export default function Home() {
           <div className="relative h-[50vh] w-full md:h-screen md:sticky md:top-0 overflow-hidden flex justify-center">
             <div className="w-full max-w-[2560px] h-full relative">
               <img 
-                src="/images/hero-bg.webp" 
+                src="/images/hero-bg-640w.webp" 
                 srcSet="/images/hero-bg-640w.webp 640w, /images/hero-bg-1024w.webp 1024w, /images/hero-bg-1920w.webp 1920w"
                 sizes="100vw"
                 alt=""
@@ -128,7 +128,7 @@ export default function Home() {
         </div>
       </FadeIn>
 
-      <div className="w-full h-px bg-neutral-300 mb-16"></div>
+      <div className="w-full h-px bg-neutral-300 dark:bg-neutral-700 mb-16"></div>
 
       {/* Leadership & Experience — Curated */}
       <FadeIn className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
@@ -155,7 +155,7 @@ export default function Home() {
         </div>
       </FadeIn>
 
-      <div className="w-full h-px bg-neutral-300 mb-16"></div>
+      <div className="w-full h-px bg-neutral-300 dark:bg-neutral-700 mb-16"></div>
 
       {/* Credentials — Compact Summary */}
       <FadeIn className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">

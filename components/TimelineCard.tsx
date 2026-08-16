@@ -36,7 +36,7 @@ export default function TimelineCard({ title, date, role, description, skills, i
         ease: 'easeOut',
       }}
     >
-      <div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-neutral-300 group-hover:bg-accent transition-colors"></div>
+      <div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-700 group-hover:bg-accent transition-colors"></div>
 
       <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between space-y-1 sm:space-y-0 mb-1">
         <div className="font-serif font-medium text-xl md:text-2xl text-neutral-900 dark:text-neutral-100 group-hover:text-accent-dark dark:group-hover:text-accent-light transition-colors">{title}</div>

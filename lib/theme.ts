@@ -1,12 +1,5 @@
 import type { Transition } from 'motion/react';
 
-export const ACCENT = {
-  DEFAULT: '#e8915a',
-  LIGHT: '#f4b88a',
-  DARK: '#c97040',
-  GLOW: 'rgba(232, 145, 90, 0.125)',
-} as const;
-
 export type NavTextTheme = 'light' | 'dark';
 
 export interface ThemeTokens {

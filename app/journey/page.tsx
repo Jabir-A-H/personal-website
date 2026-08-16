@@ -6,7 +6,7 @@ import data from '@/data.json';
 
 export const metadata: Metadata = {
   title: 'Journey | Jabir Abdullah Haian',
-  description: 'How education, experience, and projects connect.',
+  description: 'The walkthrough.',
   openGraph: { images: [{ url: '/og-journey.jpg', width: 1376, height: 768, alt: 'A timeline or path denoting a journey' }] },
 };
 
@@ -63,11 +63,11 @@ export default function JourneyPage() {
           Journey
         </AnimatedHeading>
         <p className="font-mono text-xs uppercase tracking-widest text-muted">
-          How education, experience, and projects connect
+          The walkthrough
         </p>
       </header>
       
-      <div className="space-y-12 relative before:absolute before:inset-0 before:ml-1 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-neutral-200 before:to-transparent">
+      <div className="space-y-12 relative before:absolute before:inset-0 before:ml-1 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-neutral-200 dark:before:via-neutral-700 before:to-transparent">
         {nodes.map((node, idx) => (
           <TimelineCard
             key={idx}

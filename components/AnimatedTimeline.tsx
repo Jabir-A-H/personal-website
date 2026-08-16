@@ -16,7 +16,7 @@ export default function AnimatedTimeline({ education }: { education: EducationEn
     <div className="space-y-12 relative" style={{ perspective: '800px' }}>
       <motion.div
         aria-hidden="true"
-        className="absolute inset-0 ml-1 h-full w-px bg-gradient-to-b from-transparent via-neutral-200 to-transparent"
+        className="absolute inset-0 ml-1 h-full w-px bg-gradient-to-b from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"
         style={{ transformOrigin: 'top' }}
         initial={{ scaleY: 0 }}
         whileInView={{ scaleY: 1 }}

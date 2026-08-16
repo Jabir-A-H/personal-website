@@ -13,11 +13,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const project = data.projects.find((p) => p.slug === slug);
   if (!project) return {};
+  const trimmedDescription = project.description.slice(0, 160);
   
   return {
     title: project.title,
-    description: project.description.slice(0, 160),
-    openGraph: { images: [{ url: '/og-projects.jpg', width: 1376, height: 768, alt: 'Terminal-styled title card for Projects' }] },
+    description: trimmedDescription,
+    alternates: { canonical: `https://jabirah.pages.dev/projects/${project.slug}` },
+    openGraph: {
+      title: project.title,
+      description: trimmedDescription,
+      images: [{ url: '/og-projects.jpg', width: 1376, height: 768, alt: 'Terminal-styled title card for Projects' }],
+    },
   };
 }
 

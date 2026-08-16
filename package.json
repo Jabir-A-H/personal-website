@@ -1,11 +1,17 @@
 {
   "name": "jabir-abdullah-haian-portfolio",
-  "version": "0.2.0",
+  "version": "0.6.0",
+  "description": "Personal website and portfolio of Jabir Abdullah Haian",
+  "author": "Jabir Abdullah Haian",
   "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jabir-A-H/personal-website.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
     "lint": "eslint .",
     "clean": "next clean"
   },

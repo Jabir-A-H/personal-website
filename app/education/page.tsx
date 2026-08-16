@@ -18,7 +18,7 @@ export default function AboutPage() {
 
   return (
     <div className="grid grid-cols-12 gap-x-6 gap-y-12 w-full max-w-7xl mx-auto px-6 md:px-12 text-neutral-800 dark:text-neutral-200 py-8">
-      <header className="col-span-12 border-b border-neutral-300 pb-8">
+      <header className="col-span-12 border-b border-neutral-300 dark:border-neutral-700 pb-8">
         <AnimatedHeading className="font-serif text-5xl md:text-7xl font-light tracking-tight mb-4">Education</AnimatedHeading>
         <p className="font-mono text-xs uppercase tracking-widest text-muted">Core Professional Identity</p>
       </header>
@@ -55,10 +55,10 @@ export default function AboutPage() {
         </section>
 
         {publications && publications.length > 0 && (
-          <section className="pt-8 md:pt-12 border-t border-neutral-300/30">
+          <section className="pt-8 md:pt-12 border-t border-neutral-300/30 dark:border-neutral-700/30">
             <h3 className="font-mono text-xs uppercase tracking-widest text-muted mb-6">Research &amp; Publications</h3>
 
-            <div className="space-y-12 relative before:absolute before:inset-0 before:ml-1 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-neutral-200 before:to-transparent">
+            <div className="space-y-12 relative before:absolute before:inset-0 before:ml-1 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-neutral-200 dark:before:via-neutral-700 before:to-transparent">
               {publications.map((pub, idx) => (
                 <TimelineCard
                   key={idx}

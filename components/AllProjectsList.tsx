@@ -78,6 +78,7 @@ export default function AllProjectsList({ projects }: { projects: Project[] }) {
         <div className="flex flex-wrap gap-3 font-mono text-xs uppercase tracking-widest">
           <button
             onClick={() => handleCategoryClick('all')}
+            aria-pressed={activeCategory === 'all'}
             className={`px-4 py-2 border transition-colors ${
               activeCategory === 'all'
                 ? 'bg-neutral-900 dark:bg-white text-white dark:text-black border-neutral-900 dark:border-white'
@@ -93,6 +94,7 @@ export default function AllProjectsList({ projects }: { projects: Project[] }) {
               <button
                 key={cat}
                 onClick={() => handleCategoryClick(cat)}
+                aria-pressed={isActive}
                 className={`px-4 py-2 border transition-colors ${
                   isActive
                     ? 'bg-neutral-900 dark:bg-white text-white dark:text-black border-neutral-900 dark:border-white'

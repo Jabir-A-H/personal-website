@@ -83,6 +83,7 @@ function WhispersContent() {
       <div className="flex flex-wrap gap-2 mb-8 font-mono text-[10px] uppercase tracking-widest justify-center">
         <button 
           onClick={() => handleTagClick(null)} 
+          aria-pressed={activeTag === null}
           className={`px-3 py-1.5 rounded-full border transition-colors ${
             activeTag === null 
               ? 'border-accent bg-accent/10 text-accent-dark dark:text-accent-light' 
@@ -95,6 +96,7 @@ function WhispersContent() {
           <button 
             key={tag} 
             onClick={() => handleTagClick(tag)} 
+            aria-pressed={activeTag === tag}
             className={`px-3 py-1.5 rounded-full border transition-colors ${
               activeTag === tag 
                 ? 'border-accent bg-accent/10 text-accent-dark dark:text-accent-light' 
@@ -118,8 +120,8 @@ function WhispersContent() {
                 id={whisper.slug}
                 className="group relative"
               >
-                <div className="absolute -left-12 md:-left-24 top-0 h-full w-[1px] bg-neutral-200 hidden md:block">
-                  <div className="sticky top-1/2 w-2 h-2 -ml-[4px] rounded-full bg-neutral-300 group-hover:bg-accent transition-colors duration-500" />
+                <div className="absolute -left-12 md:-left-24 top-0 h-full w-[1px] bg-neutral-200 dark:bg-neutral-700 hidden md:block">
+                  <div className="sticky top-1/2 w-2 h-2 -ml-[4px] rounded-full bg-neutral-300 dark:bg-neutral-700 group-hover:bg-accent transition-colors duration-500" />
                 </div>
 
                 <div className="flex flex-col gap-2 mb-6">
@@ -147,6 +149,7 @@ function WhispersContent() {
                       <button 
                         key={tag} 
                         onClick={() => handleTagClick(tag)}
+                        aria-pressed={activeTag === tag}
                         className={`text-[10px] font-mono uppercase tracking-widest border px-2 py-1 rounded-full transition-colors cursor-pointer ${
                           activeTag === tag
                             ? 'border-accent bg-accent/10 text-accent-dark dark:text-accent-light'
@@ -166,7 +169,7 @@ function WhispersContent() {
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="mt-20 flex justify-between items-center border-t border-neutral-200 pt-8">
+        <div className="mt-20 flex justify-between items-center border-t border-neutral-200 dark:border-neutral-700 pt-8">
           {safePage > 1 ? (
             <Link href={`/whispers?page=${safePage - 1}`} className="font-mono text-xs uppercase tracking-widest text-accent-dark dark:text-accent-light hover:text-accent transition-colors">
               &larr; Newer

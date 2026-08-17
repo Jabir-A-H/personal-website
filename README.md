@@ -45,7 +45,7 @@ All page content lives in a single [`data.json`](data.json) file — education e
 
 ### Per-route theming
 
-Each route defines its own light and dark palette in [`lib/theme.ts`](lib/theme.ts) via the `PAGE_THEMES` map. At runtime, [`Shell.tsx`](components/Shell.tsx) reads the current pathname, picks the matching theme, and injects CSS custom properties (`--theme-bg`, `--theme-muted`, `--theme-focus-ring`) onto the page wrapper. Tailwind utility classes like `text-muted` and `bg-divider` resolve to these variables, so the same class produces different colors on different routes.
+Each route defines its own light and dark palette in [`lib/theme.ts`](lib/theme.ts) via the `PAGE_THEMES` map. At runtime, [`Shell.tsx`](components/Shell.tsx) reads the current pathname and picks the matching theme: background color is animated directly via Framer Motion (`animate={{ backgroundColor }}`), while `--theme-muted` and `--theme-focus-ring` are injected as CSS custom properties that the `text-muted` and `bg-muted` Tailwind utilities resolve to. Colors that don't vary by route (like divider lines) use plain Tailwind `dark:` variants instead.
 
 ### Dark mode
 
@@ -74,7 +74,7 @@ Page transitions and heading animations are defined as presets in `lib/theme.ts`
 │   ├── now/page.tsx
 │   ├── journey/page.tsx
 │   ├── contact/page.tsx
-│   ├── sitemap.xml/route.ts    # Dynamic sitemap generation
+│   ├── sitemap.ts              # Dynamic sitemap generation (Next.js metadata file)
 │   └── rss.xml/route.ts       # RSS feed generation
 ├── components/
 │   ├── Shell.tsx               # Layout shell — applies per-route theme

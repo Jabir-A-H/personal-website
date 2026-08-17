@@ -1,6 +1,20 @@
 import React from 'react';
+import data from '@/data.json';
 
 export function PersonSchema() {
+  const sameAs = data.endpoints
+    .filter((endpoint) => !endpoint.url.startsWith('mailto:'))
+    .map((endpoint) => endpoint.url);
+
+  const alumniOf = data.education.map((entry) => ({
+    '@type': 'EducationalOrganization',
+    name: entry.title,
+  }));
+
+  const knowsAbout = data.skills
+    .filter((skill) => skill.category === 'Technical Expertise' && skill.level >= 4)
+    .map((skill) => skill.name);
+
   return (
     <script
       type="application/ld+json"
@@ -9,25 +23,12 @@ export function PersonSchema() {
           '@context': 'https://schema.org',
           '@type': 'Person',
           '@id': 'https://jabirah.pages.dev/#person',
-          name: 'Jabir Abdullah Haian',
+          name: data.personal.name,
           url: 'https://jabirah.pages.dev',
-          jobTitle: 'BBA Student — Accounting & Information Systems',
-          alumniOf: {
-            '@type': 'CollegeOrUniversity',
-            name: 'University of Dhaka',
-          },
-          knowsAbout: [
-            'Accounting',
-            'Financial Analysis',
-            'Data Analytics',
-            'Web Development',
-          ],
-          sameAs: [
-            'https://www.linkedin.com/in/jabir-abdullah-haian/',
-            'https://github.com/Jabir-A-H/',
-            'https://twitter.com/JabirHaian',
-            'https://www.instagram.com/jabir_a_haian',
-          ],
+          jobTitle: data.personal.headline,
+          alumniOf,
+          knowsAbout,
+          sameAs,
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Dhaka',

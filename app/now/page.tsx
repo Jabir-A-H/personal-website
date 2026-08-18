@@ -8,6 +8,7 @@ import VortexHeading from '@/components/VortexHeading';
 
 export const metadata: Metadata = {
   title: 'Now',
+  alternates: { canonical: 'https://jabirah.pages.dev/now' },
   description: 'What Jabir Abdullah Haian is focused on right now.',
   openGraph: {
     images: [{ url: '/og-now.jpg', width: 1376, height: 768, alt: 'A twisting hourglass and spiral representing time and current focus' }]

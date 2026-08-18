@@ -6,7 +6,8 @@ import data from '@/data.json';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Education | Jabir Abdullah Haian',
+  title: 'Education',
+  alternates: { canonical: 'https://jabirah.pages.dev/education' },
   description: 'Academic background and continuous learning journey.',
   openGraph: {
     images: [{ url: '/og-education.jpg', width: 1376, height: 768, alt: 'A graduation cap or university building denoting education' }]

@@ -57,7 +57,14 @@ export default function TimelineCard({ title, date, role, description, skills, i
       {images && images.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4 mb-2">
           {images.map((img, i) => (
-            <img key={i} src={img.src} alt={img.alt} className="rounded-sm object-cover w-full h-32 sm:h-48 shadow-sm" />
+            <img
+              key={i}
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              decoding="async"
+              className="rounded-sm object-cover w-full h-32 sm:h-48 shadow-sm"
+            />
           ))}
         </div>
       )}

@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const whisperRoutes = data.whispers.map(whisper => ({
     url: `${BASE_URL}/whispers/${whisper.slug}`,
     lastModified,
-    priority: 0.6,
+    priority: 0.1,
   }));
 
   return [...staticRoutes, ...projectRoutes, ...whisperRoutes];

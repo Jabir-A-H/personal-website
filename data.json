@@ -81,7 +81,7 @@
         "label": "Building",
         "title": "Report Submission System",
         "description": "Iterating on the report automation tool — users submit Excel-like forms, authorized users compile master reports with custom conditions.",
-        "link": "https://jabir-a-h.github.io/report-submission/",
+        "link": "https://talimul-report.vercel.app/",
         "icon": "code"
       }
     ]

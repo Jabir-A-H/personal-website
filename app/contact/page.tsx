@@ -5,7 +5,8 @@ import ContactList from '@/components/ContactList';
 import data from '@/data.json';
 
 export const metadata = {
-  title: 'Contact | Jabir Abdullah Haian',
+  title: 'Contact',
+  alternates: { canonical: 'https://jabirah.pages.dev/contact' },
   description: 'Connect with Jabir Abdullah Haian.',
   openGraph: {
     images: [{ url: '/og-contact.jpg', width: 1376, height: 768, alt: 'A sleek minimal envelope icon signifying contact' }]
@@ -47,6 +48,12 @@ export default function ContactPage() {
           <ContactList endpoints={endpoints} />
         </div>
 
+      </div>
+
+      <div className="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+        <p className="font-mono text-[10px] uppercase tracking-widest text-muted text-center md:text-left">
+          © {new Date().getFullYear()} Jabir Abdullah Haian
+        </p>
       </div>
     </div>
   );

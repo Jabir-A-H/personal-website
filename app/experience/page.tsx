@@ -7,7 +7,8 @@ import SectionHeader from '@/components/SectionHeader';
 import data from '@/data.json';
 
 export const metadata: Metadata = {
-  title: 'Experience | Jabir Abdullah Haian',
+  title: 'Experience',
+  alternates: { canonical: 'https://jabirah.pages.dev/experience' },
   description: 'Professional experience, certifications, and skills progression.',
   openGraph: {
     images: [{ url: '/og-experience.jpg', width: 1376, height: 768, alt: 'A briefcase or professional setting denoting experience' }]

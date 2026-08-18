@@ -5,7 +5,8 @@ import TimelineCard from '@/components/TimelineCard';
 import data from '@/data.json';
 
 export const metadata: Metadata = {
-  title: 'Journey | Jabir Abdullah Haian',
+  title: 'Journey',
+  alternates: { canonical: 'https://jabirah.pages.dev/journey' },
   description: 'The walkthrough.',
   openGraph: { images: [{ url: '/og-journey.jpg', width: 1376, height: 768, alt: 'A timeline or path denoting a journey' }] },
 };

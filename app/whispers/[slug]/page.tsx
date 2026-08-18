@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: whisper.title,
     description: trimmedDescription,
-    alternates: { canonical: `https://jabirah.pages.dev/whispers/${whisper.slug}` },
+    alternates: { canonical: 'https://jabirah.pages.dev/whispers' },
     openGraph: {
       title: whisper.title,
       description: trimmedDescription,

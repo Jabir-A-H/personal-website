@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useState, useRef } from 'react';
 import data from '@/data.json';
 import AnimatedWhisperCard from '@/components/AnimatedWhisperCard';
 import FuzzyHeading from '@/components/FuzzyHeading';
@@ -17,6 +17,7 @@ function WhispersContent() {
 
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   // Search-filtered whispers (before tag filter) — used for dynamic tag counts
   const query = searchQuery.trim().toLowerCase();
@@ -49,6 +50,7 @@ function WhispersContent() {
   const handleTagClick = (tag: string | null) => {
     setActiveTag(tag);
     router.push('/whispers');
+    resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,7 +82,7 @@ function WhispersContent() {
       </div>
 
       {/* Tag filter bar */}
-      <div className="flex flex-wrap gap-2 mb-8 font-mono text-[10px] uppercase tracking-widest justify-center">
+      <div ref={resultsRef} className="flex flex-wrap gap-2 mb-8 font-mono text-[10px] uppercase tracking-widest justify-center">
         <button 
           onClick={() => handleTagClick(null)} 
           aria-pressed={activeTag === null}

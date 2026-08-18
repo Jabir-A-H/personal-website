@@ -136,6 +136,7 @@ An optional `BASE_PATH` environment variable can be set at build time if the sit
 ## Future Considerations
 
 - **Clickable tags + URL-synced filters.** Make whisper/project detail-page tags link back to a pre-filtered list, with the active tag reflected in the URL so filtered views are shareable and survive a page refresh.
+- **Per-entry structured data.** Extend the existing `PersonSchema` pattern in `JsonLd.tsx` to whisper detail pages (`Article`/`BlogPosting` schema — author, datePublished, etc.) and project detail pages (`CreativeWork`/`SoftwareApplication` schema), to unlock richer search results for individual entries rather than relying solely on the sitewide Person schema.
 
 ## License
 

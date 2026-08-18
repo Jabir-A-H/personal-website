@@ -439,21 +439,24 @@
       "title": "Generative AI Mastermind",
       "issuer": "Outskill",
       "date": "May 2026",
-      "verifyUrl": ""
+      "verifyUrl": "/certificates/generative-ai-mastermind.pdf",
+      "hosted": true
     },
     {
       "title": "Aspire Leaders Program",
       "homepage": true,
       "issuer": "Aspire Institute",
       "date": "Oct 2025",
-      "verifyUrl": ""
+      "verifyUrl": "/certificates/aspire-leaders-program.pdf",
+      "hosted": true
     },
     {
       "title": "Hands-On Training on Audit Procedures",
       "homepage": true,
       "issuer": "Hasan Mohin Chartered Accountants",
       "date": "Nov 2025",
-      "verifyUrl": ""
+      "verifyUrl": "/certificates/hands-on-training-on-audit-procedures.pdf",
+      "hosted": true
     },
     {
       "title": "Fundamentals of Digital Marketing",

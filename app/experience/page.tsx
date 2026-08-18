@@ -97,7 +97,7 @@ export default function ExperiencePage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-dark dark:text-accent-light hover:text-accent transition-colors shrink-0 mt-2 sm:mt-0"
                     >
-                      Verify
+                      {cert.hosted ? 'View Certificate' : 'Verify'}
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   )}

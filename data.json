@@ -55,13 +55,13 @@
     }
   ],
   "now": {
-    "lastUpdated": "2026-08-01",
+    "lastUpdated": "2026-08-18",
     "status": "In the middle of final exams — head down, fully locked in.",
     "items": [
       {
         "label": "Studying",
         "title": "Final Examinations",
-        "description": "Currently sitting for final exams at the University of Dhaka. Everything else is on pause until these are done.",
+        "description": "Currently sitting for final exams at the Department of Accounting. Everything else is on pause until these end on the 27th of this month.",
         "icon": "book"
       },
       {
@@ -72,17 +72,10 @@
       },
       {
         "label": "Building",
-        "title": "This Website",
+        "title": "This Site",
         "description": "Continuously refining jabirah.pages.dev — improving performance, accessibility, and adding new sections.",
         "link": "/projects",
         "icon": "globe"
-      },
-      {
-        "label": "Building",
-        "title": "Report Submission System",
-        "description": "Iterating on the report automation tool — users submit Excel-like forms, authorized users compile master reports with custom conditions.",
-        "link": "https://talimul-report.vercel.app/",
-        "icon": "code"
       }
     ]
   },
@@ -531,7 +524,9 @@
       "date": "2026.02.27",
       "title": "The Entropy of Time",
       "slug": "the-entropy-of-time",
-      "content": ["Time doesn't just pass; it disperses. My Entropy Clock project was an attempt to visualize this—how order slowly yields to chaos, yet remains measurable."],
+      "content": [
+        "Time doesn't just pass; it disperses. My Entropy Clock project was an attempt to visualize this—how order slowly yields to chaos, yet remains measurable."
+      ],
       "tags": [
         "reflection",
         "physics",
@@ -543,7 +538,9 @@
       "date": "2026.02.15",
       "title": "Accounting as a Language",
       "slug": "accounting-as-a-language",
-      "content": ["We often think of accounting as math, but it's actually a grammar for value. It defines the relationships between entities through a strict, logical syntax."],
+      "content": [
+        "We often think of accounting as math, but it's actually a grammar for value. It defines the relationships between entities through a strict, logical syntax."
+      ],
       "tags": [
         "accounting",
         "theory"
@@ -554,7 +551,9 @@
       "date": "2026.01.20",
       "title": "The Silent Gallery",
       "slug": "the-silent-gallery",
-      "content": ["Photography is about what you leave out of the frame. The most powerful images are often the ones that whisper rather than shout."],
+      "content": [
+        "Photography is about what you leave out of the frame. The most powerful images are often the ones that whisper rather than shout."
+      ],
       "tags": [
         "photography",
         "art"
@@ -565,7 +564,9 @@
       "date": "2025.12.10",
       "title": "Systems vs. Goals",
       "slug": "systems-vs-goals",
-      "content": ["Building a library management system taught me that the goal (organizing books) is secondary to the system (managing state). If the system is robust, the goal is inevitable."],
+      "content": [
+        "Building a library management system taught me that the goal (organizing books) is secondary to the system (managing state). If the system is robust, the goal is inevitable."
+      ],
       "tags": [
         "tech",
         "systems"
@@ -576,7 +577,9 @@
       "date": "2025.11.05",
       "title": "Learning in Public",
       "slug": "learning-in-public",
-      "content": ["My GitHub is a messy record of my curiosity. Not everything is a \"project,\" but everything is a step. The \"Nightblade\" prototype was a failure in mechanics but a triumph in learning Godot."],
+      "content": [
+        "My GitHub is a messy record of my curiosity. Not everything is a \"project,\" but everything is a step. The \"Nightblade\" prototype was a failure in mechanics but a triumph in learning Godot."
+      ],
       "tags": [
         "meta",
         "learning"
@@ -585,7 +588,10 @@
     }
   ],
   "journey": [
-    { "type": "experience", "title": "International Education Expo 2026" },
+    {
+      "type": "experience",
+      "title": "International Education Expo 2026"
+    },
     {
       "type": "custom",
       "category": "Life Event",
@@ -593,14 +599,40 @@
       "date": "Apr 14, 2026",
       "role": "Traveler",
       "description": "Traveled to Sylhet with family. Visited beautiful spots including Shadapathor and Ratargul Swamp Forest.",
-      "images": [{ "src": "/images/2026-04-14-sylhet-shadapathor-horse.jpg", "alt": "A horse standing at Shadapathor, Sylhet" }]
+      "images": [
+        {
+          "src": "/images/2026-04-14-sylhet-shadapathor-horse.jpg",
+          "alt": "A horse standing at Shadapathor, Sylhet"
+        }
+      ]
     },
-    { "type": "education", "title": "Institute of Chartered Accountants of Bangladesh (ICAB)" },
-    { "type": "project", "title": "Report Submission System" },
-    { "type": "education", "title": "University of Dhaka" },
-    { "type": "experience", "title": "Morning Riders" },
-    { "type": "education", "title": "Notre Dame College" },
-    { "type": "experience", "title": "Alokito Library" },
-    { "type": "education", "title": "Birshreshtha Noor Mohammad Public College" }
+    {
+      "type": "education",
+      "title": "Institute of Chartered Accountants of Bangladesh (ICAB)"
+    },
+    {
+      "type": "project",
+      "title": "Report Submission System"
+    },
+    {
+      "type": "education",
+      "title": "University of Dhaka"
+    },
+    {
+      "type": "experience",
+      "title": "Morning Riders"
+    },
+    {
+      "type": "education",
+      "title": "Notre Dame College"
+    },
+    {
+      "type": "experience",
+      "title": "Alokito Library"
+    },
+    {
+      "type": "education",
+      "title": "Birshreshtha Noor Mohammad Public College"
+    }
   ]
 }

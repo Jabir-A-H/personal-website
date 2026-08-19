@@ -31,7 +31,6 @@
     "@types/react-dom": "^19",
     "eslint": "10.0.2",
     "eslint-config-next": "16.1.6",
-    "fast-xml-parser": "^5.11.0",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3"
   }

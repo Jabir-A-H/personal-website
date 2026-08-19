@@ -29,7 +29,7 @@ function WhispersContent() {
 
   // Build tag frequency map from search-filtered set, sort by count desc then alphabetically
   const tagCounts = searchFiltered.reduce<Record<string, number>>((acc, w) => {
-    w.tags.forEach((t) => { acc[t] = (acc[t] ?? 0) + 1; });
+    (w.tags as string[]).forEach((t) => { acc[t] = (acc[t] ?? 0) + 1; });
     return acc;
   }, {});
   const allTags = Object.entries(tagCounts)
@@ -37,7 +37,7 @@ function WhispersContent() {
     .map(([tag, count]) => ({ tag, count }));
 
   // Apply tag filter on top of search results
-  const tagFiltered = activeTag ? searchFiltered.filter((w) => w.tags.includes(activeTag)) : searchFiltered;
+  const tagFiltered = activeTag ? searchFiltered.filter((w) => (w.tags as string[]).includes(activeTag)) : searchFiltered;
 
   const pageParam = searchParams.get('page');
   const page = pageParam ? parseInt(pageParam, 10) : 1;

@@ -524,6 +524,18 @@
   ],
   "whispers": [
     {
+      "date": "2026.08.19",
+      "title": "🇵🇸",
+      "slug": "for-sale-baby-shoes-never",
+      "content": [
+        "\"For sale: baby shoes, never worn.\""
+      ],
+      "tags": [],
+      "style": "plain",
+      "leafletId": "3mtgczzw57c2l",
+      "leafletHash": "a0431eaf25835bfd55de2ca9d0d2ce8fc4db760b"
+    },
+    {
       "date": "2026.02.27",
       "title": "The Entropy of Time",
       "slug": "the-entropy-of-time",
@@ -532,7 +544,6 @@
       ],
       "tags": [
         "reflection",
-        "physics",
         "code"
       ],
       "style": "dropcap"
@@ -584,7 +595,6 @@
         "My GitHub is a messy record of my curiosity. Not everything is a \"project,\" but everything is a step. The \"Nightblade\" prototype was a failure in mechanics but a triumph in learning Godot."
       ],
       "tags": [
-        "meta",
         "learning"
       ],
       "style": "decorativeRule"

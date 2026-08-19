@@ -53,7 +53,7 @@ export default function Navigation() {
         <button
           onClick={toggle}
           aria-label="Toggle dark mode"
-          className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 ml-0 md:ml-6 mt-4 md:mt-0 ${textColor === 'text-white' ? 'border-white/40 hover:border-white' : 'border-neutral-300 dark:border-neutral-700 hover:border-accent hover:text-accent-dark'}`}
+          className={`absolute top-8 right-6 md:static w-8 h-8 rounded-full border flex items-center justify-center transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 md:ml-6 ${textColor === 'text-white' ? 'border-white/40 hover:border-white' : 'border-neutral-300 dark:border-neutral-700 hover:border-accent hover:text-accent-dark'}`}
         >
           {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
         </button>

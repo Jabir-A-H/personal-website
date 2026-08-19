@@ -199,7 +199,7 @@ function WhispersContent() {
 
 export default function WhispersPage() {
   return (
-    <div className="col-span-12 w-full py-12 max-w-3xl mx-auto px-6 md:px-12">
+    <div className="col-span-12 w-full pt-6 pb-12 md:py-12 max-w-3xl mx-auto px-6 md:px-12">
       <header className="mb-12 text-center">
         <FuzzyHeading className="text-5xl md:text-7xl font-serif italic tracking-tighter text-neutral-900 dark:text-neutral-100 mb-4">Whispers</FuzzyHeading>
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">Fragments of thought &amp; reflection</p>

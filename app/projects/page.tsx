@@ -1,14 +1,14 @@
 import { ExternalLink, Terminal } from 'lucide-react';
 import data from '@/data.json';
+import { Project } from '@/lib/types';
 import Link from 'next/link';
 import AnimatedHeading from '@/components/AnimatedHeading';
 import AnimatedProjectCard from '@/components/AnimatedProjectCard';
-import AnimatedProjectRow from '@/components/AnimatedProjectRow';
 import AllProjectsList from '@/components/AllProjectsList';
 import { calculateReadingTime } from '@/lib/utils';
 
 export default function ProjectsPage() {
-  const { projects } = data;
+  const projects = data.projects as Project[];
   const liveProjects = projects.filter(p => p.status === 'featured');
 
   return (
@@ -75,9 +75,9 @@ export default function ProjectsPage() {
                         <span className="w-1.5 h-1.5 bg-accent-light rounded-full animate-pulse"></span>
                         {project.status === 'featured' ? 'Featured' : project.status}
                       </span>
-                      {project.caseStudy && project.caseStudy.length > 0 && (
+                      {project.story && project.story.length > 0 && (
                         <span className="font-mono text-[10px] tracking-widest text-muted uppercase">
-                          ~{calculateReadingTime(project.caseStudy)} min read
+                          ~{calculateReadingTime(project.story)} min read
                         </span>
                       )}
                     </div>

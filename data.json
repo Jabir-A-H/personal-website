@@ -177,13 +177,13 @@
       "status": "featured",
       "category": "portfolio",
       "description": "My personal website.",
-      "caseStudy": [],
       "tech": [
         "Next.js",
         "TypeScript",
         "Tailwind"
       ],
-      "repo": "https://github.com/Jabir-A-H/personal-website"
+      "repo": "https://github.com/Jabir-A-H/personal-website",
+      "story": []
     },
     {
       "title": "Talimul Quran Report Submission System",
@@ -191,15 +191,6 @@
       "status": "featured",
       "category": "fullstack",
       "description": "An enterprise-grade reporting and analytics platform modernizing multi-period zone assessments and city-wide data aggregation with zero-latency autosave, atomic PostgreSQL operations, and dual-language PDF/Excel exports.",
-      "caseStudy": [
-        "Managing operational monitoring across ~14 geographical zones for Talimul Quran previously relied on fragmented paper sheets and manual Excel spreadsheets. Zone managers would fill in handwritten reports spanning 7 different domains—educational courses, organizational outreach, personal initiatives, meetings, maktab statistics, travel audits, and qualitative comments—totaling over 250 individual metrics. These were then manually compiled into a city-wide master report, a process plagued by lost progress, calculation errors, and weeks of consolidation overhead.",
-        "I designed and built a complete replacement: an enterprise-grade, mobile-first web application on Next.js 16 (App Router), React 19, TypeScript, Supabase PostgreSQL, and Tailwind CSS v4. The platform supports 5 temporal reporting periods—Monthly, Quarterly, Half-Yearly, Nine-Month, and Yearly—with guided, modular data entry across the 7 report sections.",
-        "The core engineering challenge was making data entry feel instant and bulletproof. I implemented zero-latency autosave that syncs every field to PostgreSQL the moment a user shifts focus (onBlur), with immediate visual feedback. To eliminate race conditions during report initialization, I wrote a custom PostgreSQL RPC function (get_or_create_report) that atomically seeds the root report and all 7 child tables—handling 50+ category rows—inside a single database transaction, cutting initialization from 8 network requests down to 1.",
-        "For city-wide analytics, I offloaded all multi-zone aggregation to 6 specialized PostgreSQL views that compute totals at the storage layer, so the frontend renders consolidated reports instantly without heavy client-side computation. Administrators can inspect and override any aggregated value inline via a View/Edit mode toggle, with corrections stored in a dedicated override table using COALESCE-based injection into the views. The admin dashboard tracks real-time submission status across all zones with KPI panels strictly verifying the is_submitted flag.",
-        "Authentication uses Supabase Auth with a middleware-enforced approval gate—new accounts land at a pending state until an administrator explicitly activates them. I implemented anti-enumeration guards using GoTrue's silent email collision detection (identities: []) and bypassed the 1,000-user API cap by synchronizing profiles via PostgreSQL triggers (ADR 003). Row Level Security policies ensure managers can only access their own zone's data, while admins retain global read and override privileges.",
-        "The interface features seamless zero-refresh dual-language support (Bengali & English) via React Context, a 4-theme visual suite (Light, Dark, Solarized Light, Solarized Dark) using HSL token contracts, and strict mobile-first touch ergonomics—desktop data grids transform into swipeable step-by-step cards with a fixed bottom navigation bar on mobile. All 12 architectural decisions are formally documented in Architecture Decision Records (ADRs).",
-        "Export capabilities include landscape 2-page A4 PDF generation via @react-pdf/renderer—engineered with strict page budgeting to guarantee double-sided single-sheet printing—and Excel exports via exceljs. Both use the universal Kalpurush font to prevent rendering crashes with Bengali typography. Automated zero-cost cloud backups run via a GitHub Actions cron workflow executing encrypted pg_dump to a secure private repository."
-      ],
       "tech": [
         "Next.js",
         "TypeScript",
@@ -208,7 +199,37 @@
         "PostgreSQL"
       ],
       "repo": "https://github.com/Jabir-A-H/report-submission",
-      "live": "https://talimul-report.vercel.app/"
+      "live": "https://talimul-report.vercel.app/",
+      "story": [
+        {
+          "type": "paragraph",
+          "text": "Managing operational monitoring across ~14 geographical zones for Talimul Quran previously relied on fragmented paper sheets and manual Excel spreadsheets. Zone managers would fill in handwritten reports spanning 7 different domains—educational courses, organizational outreach, personal initiatives, meetings, maktab statistics, travel audits, and qualitative comments—totaling over 250 individual metrics. These were then manually compiled into a city-wide master report, a process plagued by lost progress, calculation errors, and weeks of consolidation overhead."
+        },
+        {
+          "type": "paragraph",
+          "text": "I designed and built a complete replacement: an enterprise-grade, mobile-first web application on Next.js 16 (App Router), React 19, TypeScript, Supabase PostgreSQL, and Tailwind CSS v4. The platform supports 5 temporal reporting periods—Monthly, Quarterly, Half-Yearly, Nine-Month, and Yearly—with guided, modular data entry across the 7 report sections."
+        },
+        {
+          "type": "paragraph",
+          "text": "The core engineering challenge was making data entry feel instant and bulletproof. I implemented zero-latency autosave that syncs every field to PostgreSQL the moment a user shifts focus (onBlur), with immediate visual feedback. To eliminate race conditions during report initialization, I wrote a custom PostgreSQL RPC function (get_or_create_report) that atomically seeds the root report and all 7 child tables—handling 50+ category rows—inside a single database transaction, cutting initialization from 8 network requests down to 1."
+        },
+        {
+          "type": "paragraph",
+          "text": "For city-wide analytics, I offloaded all multi-zone aggregation to 6 specialized PostgreSQL views that compute totals at the storage layer, so the frontend renders consolidated reports instantly without heavy client-side computation. Administrators can inspect and override any aggregated value inline via a View/Edit mode toggle, with corrections stored in a dedicated override table using COALESCE-based injection into the views. The admin dashboard tracks real-time submission status across all zones with KPI panels strictly verifying the is_submitted flag."
+        },
+        {
+          "type": "paragraph",
+          "text": "Authentication uses Supabase Auth with a middleware-enforced approval gate—new accounts land at a pending state until an administrator explicitly activates them. I implemented anti-enumeration guards using GoTrue's silent email collision detection (identities: []) and bypassed the 1,000-user API cap by synchronizing profiles via PostgreSQL triggers (ADR 003). Row Level Security policies ensure managers can only access their own zone's data, while admins retain global read and override privileges."
+        },
+        {
+          "type": "paragraph",
+          "text": "The interface features seamless zero-refresh dual-language support (Bengali & English) via React Context, a 4-theme visual suite (Light, Dark, Solarized Light, Solarized Dark) using HSL token contracts, and strict mobile-first touch ergonomics—desktop data grids transform into swipeable step-by-step cards with a fixed bottom navigation bar on mobile. All 12 architectural decisions are formally documented in Architecture Decision Records (ADRs)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Export capabilities include landscape 2-page A4 PDF generation via @react-pdf/renderer—engineered with strict page budgeting to guarantee double-sided single-sheet printing—and Excel exports via exceljs. Both use the universal Kalpurush font to prevent rendering crashes with Bengali typography. Automated zero-cost cloud backups run via a GitHub Actions cron workflow executing encrypted pg_dump to a secure private repository."
+        }
+      ]
     },
     {
       "title": "Jabir's Gallery",
@@ -216,14 +237,14 @@
       "status": "development",
       "category": "portfolio",
       "description": "A personal photography portfolio website.",
-      "caseStudy": [],
       "tech": [
         "TypeScript",
         "React",
         "Tailwind"
       ],
       "repo": "https://github.com/Jabir-A-H/photography-website",
-      "live": "https://jabir-a-h.github.io/gallery/"
+      "live": "https://jabir-a-h.github.io/gallery/",
+      "story": []
     },
     {
       "title": "Academic Resort",
@@ -231,14 +252,14 @@
       "status": "archived",
       "category": "tools",
       "description": "A take on making a better version of https://sites.google.com/ais.du.ac.bd/academic-resort",
-      "caseStudy": [],
       "tech": [
         "TypeScript",
         "Google Drive API",
         "PWA"
       ],
       "repo": "https://github.com/Jabir-A-H/academic-resort",
-      "live": "https://jabir-a-h.github.io/academic-resort/"
+      "live": "https://jabir-a-h.github.io/academic-resort/",
+      "story": []
     },
     {
       "title": "LazyLedger",
@@ -246,7 +267,6 @@
       "status": "development",
       "category": "tools",
       "description": "Finance tracking for the delightfully lazy. Let AI do the data entry.",
-      "caseStudy": [],
       "tech": [
         "Next.js",
         "Firebase",
@@ -254,7 +274,8 @@
         "Gemini AI"
       ],
       "repo": "https://github.com/Jabir-A-H/LazyLedger",
-      "live": "https://lazyledger-jabir.vercel.app/"
+      "live": "https://lazyledger-jabir.vercel.app/",
+      "story": []
     },
     {
       "title": "Entropy Clock",
@@ -262,14 +283,14 @@
       "status": "featured",
       "category": "fun",
       "description": "This clock is a frozen timeline. It only moves forward when someone ticks it to.",
-      "caseStudy": [],
       "tech": [
         "TypeScript",
         "HTML",
         "CSS"
       ],
       "repo": "https://github.com/Jabir-A-H/entropy-clock",
-      "live": "https://jabir-a-h.github.io/entropy-clock/"
+      "live": "https://jabir-a-h.github.io/entropy-clock/",
+      "story": []
     },
     {
       "title": "Chotopata Library Management System",
@@ -277,14 +298,14 @@
       "status": "archived",
       "category": "fullstack",
       "description": "A modern, full-stack library management application with FastAPI backend and Next.js frontend, featuring JWT authentication, async operations, and comprehensive book tracking.",
-      "caseStudy": [],
       "tech": [
         "FastAPI",
         "Next.js",
         "TypeScript",
         "JWT"
       ],
-      "repo": "https://github.com/Jabir-A-H/library-management"
+      "repo": "https://github.com/Jabir-A-H/library-management",
+      "story": []
     },
     {
       "title": "Gamepacks",
@@ -292,12 +313,12 @@
       "status": "archived",
       "category": "games",
       "description": "Gonna make a game out of this tutorial project. Learning and using Godot.",
-      "caseStudy": [],
       "tech": [
         "Godot",
         "GDScript"
       ],
-      "repo": "https://github.com/Jabir-A-H/gamepacks"
+      "repo": "https://github.com/Jabir-A-H/gamepacks",
+      "story": []
     },
     {
       "title": "Sidescroller",
@@ -305,11 +326,11 @@
       "status": "archived",
       "category": "games",
       "description": "A side-scrolling game project built to explore game mechanics and rendering logic using Go.",
-      "caseStudy": [],
       "tech": [
         "Go"
       ],
-      "repo": "https://github.com/Jabir-A-H/Sidescroller"
+      "repo": "https://github.com/Jabir-A-H/Sidescroller",
+      "story": []
     }
   ],
   "publications": [
@@ -527,72 +548,90 @@
       "date": "2026.08.19",
       "title": "🇵🇸",
       "slug": "for-sale-baby-shoes-never",
-      "content": [
-        "\"For sale: baby shoes, never worn.\""
-      ],
       "tags": [],
-      "style": "plain"
+      "style": "plain",
+      "story": [
+        {
+          "type": "paragraph",
+          "text": "\"For sale: baby shoes, never worn.\""
+        }
+      ]
     },
     {
       "date": "2026.02.27",
       "title": "The Entropy of Time",
       "slug": "the-entropy-of-time",
-      "content": [
-        "Time doesn't just pass; it disperses. My Entropy Clock project was an attempt to visualize this—how order slowly yields to chaos, yet remains measurable."
-      ],
       "tags": [
         "reflection"
       ],
-      "style": "dropcap"
+      "style": "dropcap",
+      "story": [
+        {
+          "type": "paragraph",
+          "text": "Time doesn't just pass; it disperses. My Entropy Clock project was an attempt to visualize this—how order slowly yields to chaos, yet remains measurable."
+        }
+      ]
     },
     {
       "date": "2026.02.15",
       "title": "Accounting as a Language",
       "slug": "accounting-as-a-language",
-      "content": [
-        "We often think of accounting as math, but it's actually a grammar for value. It defines the relationships between entities through a strict, logical syntax."
-      ],
       "tags": [
         "accounting"
       ],
-      "style": "pullQuote"
+      "style": "pullQuote",
+      "story": [
+        {
+          "type": "paragraph",
+          "text": "We often think of accounting as math, but it's actually a grammar for value. It defines the relationships between entities through a strict, logical syntax."
+        }
+      ]
     },
     {
       "date": "2026.01.20",
       "title": "The Silent Gallery",
       "slug": "the-silent-gallery",
-      "content": [
-        "Photography is about what you leave out of the frame. The most powerful images are often the ones that whisper rather than shout."
-      ],
       "tags": [
         "photography"
       ],
-      "style": "indentedBlock"
+      "style": "indentedBlock",
+      "story": [
+        {
+          "type": "paragraph",
+          "text": "Photography is about what you leave out of the frame. The most powerful images are often the ones that whisper rather than shout."
+        }
+      ]
     },
     {
       "date": "2025.12.10",
       "title": "Systems vs. Goals",
       "slug": "systems-vs-goals",
-      "content": [
-        "Building a library management system taught me that the goal (organizing books) is secondary to the system (managing state). If the system is robust, the goal is inevitable."
-      ],
       "tags": [
         "tech",
         "systems"
       ],
-      "style": "boldFirstLine"
+      "style": "boldFirstLine",
+      "story": [
+        {
+          "type": "paragraph",
+          "text": "Building a library management system taught me that the goal (organizing books) is secondary to the system (managing state). If the system is robust, the goal is inevitable."
+        }
+      ]
     },
     {
       "date": "2025.11.05",
       "title": "Learning in Public",
       "slug": "learning-in-public",
-      "content": [
-        "My GitHub is a messy record of my curiosity. Not everything is a \"project,\" but everything is a step. The \"Nightblade\" prototype was a failure in mechanics but a triumph in learning Godot."
-      ],
       "tags": [
         "learning"
       ],
-      "style": "decorativeRule"
+      "style": "decorativeRule",
+      "story": [
+        {
+          "type": "paragraph",
+          "text": "My GitHub is a messy record of my curiosity. Not everything is a \"project,\" but everything is a step. The \"Nightblade\" prototype was a failure in mechanics but a triumph in learning Godot."
+        }
+      ]
     }
   ],
   "journey": [

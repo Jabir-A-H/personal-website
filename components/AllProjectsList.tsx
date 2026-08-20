@@ -4,16 +4,7 @@ import { useState } from 'react';
 import { ArrowUpRight, Search } from 'lucide-react';
 import AnimatedProjectRow from './AnimatedProjectRow';
 
-interface Project {
-  title: string;
-  description: string;
-  tech: string[];
-  status: string;
-  category?: string;
-  repo?: string;
-  live?: string;
-  slug: string;
-}
+import { Project } from '@/lib/types';
 
 const CATEGORY_LABELS: Record<string, string> = {
   fullstack: 'Full-Stack',

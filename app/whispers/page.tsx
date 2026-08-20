@@ -2,6 +2,7 @@
 
 import React, { Suspense, useState, useRef } from 'react';
 import data from '@/data.json';
+import { Whisper } from '@/lib/types';
 import AnimatedWhisperCard from '@/components/AnimatedWhisperCard';
 import FuzzyHeading from '@/components/FuzzyHeading';
 import WhisperBody from '@/components/WhisperBody';
@@ -11,7 +12,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { calculateReadingTime } from '@/lib/utils';
 
 function WhispersContent() {
-  const { whispers } = data;
+  const whispers = data.whispers as Whisper[];
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -23,13 +24,16 @@ function WhispersContent() {
   const query = searchQuery.trim().toLowerCase();
   const searchFiltered = whispers.filter((w) => {
     if (!query) return true;
-    return w.title.toLowerCase().includes(query) ||
-      (Array.isArray(w.content) ? w.content.join(' ') : w.content).toLowerCase().includes(query);
+    const textContent = w.story
+      .filter(b => b.type === 'paragraph')
+      .map(b => (b as Extract<typeof b, {type: 'paragraph'}>).text)
+      .join(' ');
+    return w.title.toLowerCase().includes(query) || textContent.toLowerCase().includes(query);
   });
 
   // Build tag frequency map from search-filtered set, sort by count desc then alphabetically
   const tagCounts = searchFiltered.reduce<Record<string, number>>((acc, w) => {
-    (w.tags as string[]).forEach((t) => { acc[t] = (acc[t] ?? 0) + 1; });
+    w.tags.forEach((t) => { acc[t] = (acc[t] ?? 0) + 1; });
     return acc;
   }, {});
   const allTags = Object.entries(tagCounts)
@@ -37,7 +41,7 @@ function WhispersContent() {
     .map(([tag, count]) => ({ tag, count }));
 
   // Apply tag filter on top of search results
-  const tagFiltered = activeTag ? searchFiltered.filter((w) => (w.tags as string[]).includes(activeTag)) : searchFiltered;
+  const tagFiltered = activeTag ? searchFiltered.filter((w) => w.tags.includes(activeTag)) : searchFiltered;
 
   const pageParam = searchParams.get('page');
   const page = pageParam ? parseInt(pageParam, 10) : 1;
@@ -135,18 +139,18 @@ function WhispersContent() {
                   <div className="flex items-center gap-3">
                     <time className="font-mono text-[10px] tracking-widest text-muted uppercase">{whisper.date}</time>
                     <span className="font-mono text-[10px] text-muted">•</span>
-                    <span className="font-mono text-[10px] tracking-widest text-muted uppercase">~{calculateReadingTime(whisper.content)} min read</span>
+                    <span className="font-mono text-[10px] tracking-widest text-muted uppercase">~{calculateReadingTime(whisper.story)} min read</span>
                   </div>
                 </div>
 
                 <div className="pl-0 md:pl-4 border-l-2 border-neutral-100 dark:border-neutral-800 md:border-l-0">
                   <WhisperBody
-                    content={whisper.content}
-                    style={(whisper as any).style}
+                    story={whisper.story}
+                    style={whisper.style as any}
                     size="default"
                   />
                   
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-3 mt-8">
                     {whisper.tags.map(tag => (
                       <button 
                         key={tag} 

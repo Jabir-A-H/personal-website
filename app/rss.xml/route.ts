@@ -1,10 +1,11 @@
 import data from '@/data.json';
+import { Whisper } from '@/lib/types';
 import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-static';
 
 export async function GET() {
-  const { whispers } = data;
+  const whispers = data.whispers as Whisper[];
   
   const siteUrl = 'https://jabirah.pages.dev';
 
@@ -12,7 +13,12 @@ export async function GET() {
     // Convert "YYYY.MM.DD" to "YYYY-MM-DD" for reliable Date parsing
     const dateStr = whisper.date.replace(/\./g, '-');
     const date = new Date(dateStr).toUTCString();
-    const content = Array.isArray(whisper.content) ? whisper.content.join(' ') : whisper.content;
+    
+    // Extract only paragraph text for RSS description
+    const content = whisper.story
+      .filter(b => b.type === 'paragraph')
+      .map(b => (b as Extract<typeof b, {type: 'paragraph'}>).text)
+      .join(' ');
     
     return `    <item>
       <title><![CDATA[${whisper.title}]]></title>

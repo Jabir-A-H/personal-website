@@ -2,16 +2,20 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import data from '@/data.json';
+import { Project } from '@/lib/types';
 import { Github, ExternalLink } from 'lucide-react';
 import { calculateReadingTime } from '@/lib/utils';
+import WhisperBody from '@/components/WhisperBody';
 
 export async function generateStaticParams() {
-  return data.projects.map((p) => ({ slug: p.slug }));
+  const projects = data.projects as Project[];
+  return projects.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const project = data.projects.find((p) => p.slug === slug);
+  const projects = data.projects as Project[];
+  const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
   const trimmedDescription = project.description.slice(0, 160);
   
@@ -22,17 +26,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: project.title,
       description: trimmedDescription,
-      images: [{ url: '/og-projects.jpg', width: 1376, height: 768, alt: 'Terminal-styled title card for Projects' }],
+      images: [
+        project.coverImage 
+          ? { url: project.coverImage.src, width: 1376, height: 768, alt: project.coverImage.alt }
+          : { url: '/og-projects.jpg', width: 1376, height: 768, alt: 'Terminal-styled title card for Projects' }
+      ],
     },
   };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const project = data.projects.find((p) => p.slug === slug);
+  const projects = data.projects as Project[];
+  const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
-  const hasCaseStudy = project.caseStudy && project.caseStudy.length > 0;
+  const hasStory = project.story && project.story.length > 0;
 
   return (
     <div className="col-span-12 w-full py-12 max-w-4xl mx-auto px-6 md:px-12 relative z-10">
@@ -46,9 +55,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <span className="w-1.5 h-1.5 bg-accent-light rounded-full animate-pulse"></span>
             {project.status === 'featured' ? 'Featured' : project.status}
           </span>
-          {hasCaseStudy && (
+          {hasStory && (
             <span className="font-mono text-[10px] tracking-widest text-muted uppercase">
-              ~{calculateReadingTime(project.caseStudy)} min read
+              ~{calculateReadingTime(project.story)} min read
             </span>
           )}
         </div>
@@ -95,15 +104,26 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
       </header>
 
-      {hasCaseStudy && (
-        <article className="mt-16 pt-12 border-t border-neutral-200 dark:border-neutral-800 flex flex-col gap-6 font-serif font-light text-lg md:text-xl text-neutral-800 dark:text-neutral-200 leading-relaxed">
-          <div className="flex items-center justify-between font-mono text-[10px] text-muted uppercase tracking-widest">
+      {project.coverImage && (
+        <figure className="my-12">
+          <img
+            src={project.coverImage.src}
+            srcSet={`${project.coverImage.src.replace('-1024w.webp', '-640w.webp')} 640w, ${project.coverImage.src} 1024w, ${project.coverImage.src.replace('-1024w.webp', '-1920w.webp')} 1920w`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 1024px, 1920px"
+            alt={project.coverImage.alt}
+            className="w-full h-auto rounded-lg shadow-md"
+            loading="eager"
+          />
+        </figure>
+      )}
+
+      {hasStory && (
+        <article className="mt-16 pt-12 border-t border-neutral-200 dark:border-neutral-800 flex flex-col font-serif font-light text-lg md:text-xl text-neutral-800 dark:text-neutral-200 leading-relaxed">
+          <div className="flex items-center justify-between font-mono text-[10px] text-muted uppercase tracking-widest mb-10">
             <span>Case Study</span>
-            <span>~{calculateReadingTime(project.caseStudy)} min read</span>
+            <span>~{calculateReadingTime(project.story)} min read</span>
           </div>
-          {project.caseStudy.map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
-          ))}
+          <WhisperBody story={project.story} size="default" />
         </article>
       )}
     </div>

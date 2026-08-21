@@ -88,6 +88,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              console.log(
+                "%cif you're reading this, hi.",
+                "font-family: monospace; font-size: 14px; color: #e8915a;"
+              );
+              console.log(
+                "%cthere are more than 10 games hidden somewhere on this site. good luck.",
+                "font-family: monospace; font-size: 11px; color: #888;"
+              );
+            `,
+          }}
+        />
       </head>
       <body className="font-sans antialiased bg-neutral-50 dark:bg-[#121212] text-neutral-900 dark:text-neutral-100">
         <PersonSchema />

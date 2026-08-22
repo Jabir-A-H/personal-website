@@ -8,6 +8,11 @@
   --color-accent-light: #f4b88a;
   --color-accent-dark: #9f552d;
   --color-muted: var(--theme-muted);
+  /* Arcade-only ink tokens — two-party convention across every game
+     needing to distinguish "player one" from "player two." */
+  --color-ink-primary: #1a1a1a;      /* player one, light mode: true black ink */
+  --color-ink-primary-dark: #d4c4a8; /* player one, dark mode: light sepia */
+  --color-ink-secondary: #b3312c;    /* player two, both modes: vermillion/cinnabar */
 }
 
 @layer base {

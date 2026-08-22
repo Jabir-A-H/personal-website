@@ -11,6 +11,10 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   const prefersReducedMotion = useReducedMotion() ?? false;
   const { isDark } = useDarkMode();
 
+  if (pathname.startsWith('/rift')) {
+    return <div className="min-h-screen w-full">{children}</div>;
+  }
+
   const theme = getThemeForRoute(pathname);
   const activeTheme = isDark ? theme.dark : theme.light;
   const animProps = getAnimationForRoute(pathname, prefersReducedMotion);
